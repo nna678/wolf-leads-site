@@ -1,0 +1,3100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="description" content="Sub-Zero & Wolf Repair Specialists. Same-day service available. Transparent pricing." />
+  <title>Sub-Zero & Wolf Repair Specialists | Same-Day Service</title>
+  <!-- Preconnect for faster API calls -->
+  <link rel="preconnect" href="https://ipapi.co" crossorigin />
+  <link rel="dns-prefetch" href="https://ipapi.co" />
+  <style>
+    :root {
+      --bg: #0a0d12;
+      --panel: rgba(22,24,32,0.98);
+      --border: #424656;
+      --text: #fbfbf9;
+      --text-bright: #ffffff;
+      --muted: #dcdcd4;
+      --accent: #cd853f;
+      --accent-dark: #b87333;
+      --accent-light: #f0b873;
+      --accent-glow: rgba(205,133,63,0.32);
+      --error: #d05b4c;
+      --success: #9dd6a5;
+      --urgency: #ff6b6b;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.18);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.28);
+      --shadow-lg: 0 8px 28px rgba(0,0,0,0.34);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+      overflow-x: hidden;
+      font-size: 16px;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 25%, rgba(205,133,63,0.08), transparent 50%),
+        radial-gradient(circle at 85% 15%, rgba(205,133,63,0.08), transparent 50%),
+        radial-gradient(circle at 50% 80%, rgba(205,133,63,0.06), transparent 60%),
+        linear-gradient(135deg, rgba(14,16,20,1) 0%, rgba(18,19,25,1) 50%, rgba(13,14,19,1) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.004) 1px, rgba(255,255,255,0.004) 2px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 8%; right: 8%;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle at 50% 50%, rgba(205,133,63,0.06), transparent 70%);
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath fill='%23000' fill-opacity='0.8' d='M42 48h116v12H42zM58 72h84v10H58zM42 94h116v12H42zM66 120h68v30H66z'/%3E%3C/svg%3E");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Decorative trust elements */
+    .trust-visual {
+      position: fixed;
+      bottom: 10%; left: 5%;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle at 50% 50%, rgba(205,133,63,0.05), transparent 70%);
+      border-radius: 50%;
+      opacity: 0.2;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+
+    .page { position: relative; z-index: 2; min-height: 100vh; }
+
+    /* Enhanced Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    /* Sticky top bar - enhanced */
+    .top-bar {
+      position: sticky;
+      top: 0; left: 0; right: 0;
+      z-index: 20;
+      background: rgba(11,11,12,0.98);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+    }
+    .top-bar .bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .bar-note {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .brand {
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .btn {
+      padding: 14px 26px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--text);
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 0; height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+    .btn:active::before {
+      width: 300px; height: 300px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #f2b36c 0%, #d88a43 100%);
+      color: #0a0a0c;
+      box-shadow: 0 6px 24px var(--accent-glow), 0 2px 10px rgba(0,0,0,0.3);
+      font-weight: 800;
+      position: relative;
+      overflow: visible;
+    }
+    .btn-primary:not(.form-submit)::after {
+      content: "→";
+      margin-left: 8px;
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px var(--accent-glow), 0 4px 16px rgba(0,0,0,0.4);
+    }
+    .btn-primary:hover::after {
+      transform: translateX(4px);
+    }
+    .btn-primary:active {
+      transform: translateY(-1px);
+    }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-outline {
+      background: rgba(255,255,255,0.04);
+      border: 2px solid rgba(255,255,255,0.2);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .btn-outline:hover {
+      background: rgba(205,133,63,0.14);
+      border-color: var(--accent-light);
+      color: var(--accent-light);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(205,133,63,0.2);
+    }
+
+    /* Layout */
+    .section { padding: 48px 18px; }
+    .section + .section { border-top: 1px solid rgba(255,255,255,0.04); }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: flex-start;
+      padding-top: 18px;
+    }
+    .hero-copy { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 14px;
+      max-width: 1080px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(16,18,24,0.96) 0%, rgba(14,16,22,0.98) 100%);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow-md);
+    }
+    .form-card {
+      align-self: flex-start;
+      justify-self: center;
+      max-width: 560px;
+      width: 100%;
+    }
+
+    /* Headline group */
+    .headline-group {
+      margin-bottom: 8px;
+      max-width: 760px;
+    }
+    h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, #f0f0eb 50%, #e8e8e3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 12px;
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 0%, #e8e8e3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-lead {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 32px;
+      font-size: 16px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .subheadline {
+      color: #e6e6df;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+    }
+    .independence-line {
+      font-size: 13px;
+      color: #d8d8d3;
+    }
+
+    /* Service areas */
+    .service-areas {
+      color: var(--text);
+      font-size: 15px;
+      padding: 16px 0;
+      font-weight: 400;
+      line-height: 1.5;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .appliance-line {
+      margin-top: 10px;
+      color: #e5e5e0;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+    }
+    .appliance-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+      color: var(--accent-light);
+    }
+    .appliance-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-sm);
+      color: var(--accent-light);
+    }
+    .appliance-icon svg { width: 22px; height: 22px; stroke-width: 1.8; }
+    .badges-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 12.5px;
+      letter-spacing: 0.2px;
+    }
+    .pill-badge svg { width: 16px; height: 16px; color: var(--accent-light); }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: rgba(205,133,63,0.12);
+      border: 1px solid rgba(205,133,63,0.3);
+      border-radius: 12px;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .hero-tag svg { width: 18px; height: 18px; color: var(--accent-light); }
+    .location-dynamic {
+      color: var(--accent-light);
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    /* Trust benefits */
+    .trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+      color: var(--text);
+      font-size: 15px;
+      padding: 16px 0;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+    }
+    .trust-item::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    /* Pricing group */
+    .pricing-group {
+      padding: 16px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .fee-line {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--accent-light);
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .fee-footnote {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* CTA row - Enhanced for conversion */
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 24px 0 12px;
+      position: relative;
+    }
+    .cta-row::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -20px;
+      right: -20px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(205,133,63,0.3), transparent);
+    }
+    .cta-row .btn { 
+      flex: 1; 
+      min-width: 200px;
+      position: relative;
+    }
+    .cta-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: -6px;
+    }
+    .cta-inline + .cta-note { margin-top: 8px; }
+    .cta-note + .cta-note { margin-top: 4px; }
+    .cta-trust {
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .cta-row .btn-primary {
+      font-size: 17px;
+      padding: 18px 32px;
+      font-weight: 800;
+      box-shadow: 0 6px 24px rgba(205,133,63,0.4), 0 2px 8px rgba(0,0,0,0.3);
+      animation: ctaPulse 3s ease-in-out infinite;
+    }
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 6px 24px rgba(205,133,63,0.4), 0 2px 8px rgba(0,0,0,0.3); }
+      50% { box-shadow: 0 8px 32px rgba(205,133,63,0.5), 0 4px 12px rgba(0,0,0,0.4); }
+    }
+    .cta-row .btn-outline {
+      font-size: 16px;
+      padding: 18px 28px;
+      font-weight: 700;
+    }
+    .social-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      align-items: center;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .social-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 12.5px;
+      letter-spacing: 0.2px;
+    }
+
+    /* Appliance visual strip */
+    .appliance-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 12px 0 8px;
+    }
+    .appliance-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      background: rgba(20,20,22,0.85);
+      color: var(--text);
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+    }
+    .appliance-pill svg { width: 22px; height: 22px; color: var(--accent-light); flex-shrink: 0; }
+
+    /* Issues and parts chips */
+    .chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .chip {
+      padding: 8px 10px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.1px;
+    }
+    .chips-caption {
+      margin-top: 10px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    .issue-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .issue-chip {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .issue-chip:hover {
+      border-color: rgba(205,133,63,0.5);
+      background: rgba(205,133,63,0.08);
+    }
+    .issue-chip.active {
+      border-color: var(--accent);
+      background: rgba(205,133,63,0.18);
+      color: var(--accent-light);
+    }
+
+    .scope-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .scope-card {
+      background: rgba(18,18,20,0.85);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .scope-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .scope-pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(205,156,100,0.16);
+      border: 1px solid rgba(205,156,100,0.35);
+      color: var(--accent);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+    }
+    .scope-time {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .scope-card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: var(--text);
+    }
+    .scope-card p {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .scope-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--text);
+      font-size: 13px;
+    }
+    .scope-list li {
+      padding-left: 18px;
+      position: relative;
+    }
+    .scope-card.common .scope-list li::before,
+    .scope-card.complex .scope-list li::before {
+      position: absolute;
+      left: 0;
+      color: var(--accent-light);
+    }
+    .scope-card.common .scope-list li::before { content: "✓"; }
+    .scope-card.complex .scope-list li::before { content: "•"; }
+
+    /* Desktop mini floating CTA */
+    .float-cta {
+      position: fixed;
+      right: 18px;
+      bottom: 24px;
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 40;
+    }
+    .float-cta button,
+    .float-cta a {
+      border: none;
+      cursor: pointer;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      font-size: 14px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .float-cta a { text-align: center; }
+    .float-cta .call { background: var(--accent); color: #0b0b0c; }
+    .float-cta .book { background: rgba(15,15,18,0.92); color: var(--text); border: 1px solid rgba(255,255,255,0.1); }
+    .float-cta button:hover,
+    .float-cta a:hover { transform: translateY(-1px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+
+    @media (min-width: 1025px) {
+      .float-cta { display: flex; }
+    }
+
+    .social-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      align-items: center;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .social-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 12.5px;
+      letter-spacing: 0.2px;
+    }
+
+    /* Enhanced form card with conversion focus */
+    .form-card {
+      background: rgba(24,26,34,0.98);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: var(--shadow-md);
+      position: static;
+    }
+    .form-title {
+      font-size: 26px;
+      margin-bottom: 10px;
+      font-weight: 800;
+      color: var(--text-bright);
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, #ffffff 0%, #f0f0eb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .callback-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(205,133,63,0.35);
+      background: rgba(205,133,63,0.12);
+      color: var(--accent-light);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      margin-bottom: 8px;
+    }
+    .form-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+    .form-urgency {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: rgba(205,133,63,0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(205,133,63,0.25);
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+    .urgency-icon {
+      font-size: 18px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.1); }
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 11px;
+      color: #e5e5df;
+      letter-spacing: 0.3px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .form-section {
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .form-section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .form-section-title {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-top: 4px;
+    }
+    .form-section-title::before {
+      content: "";
+      width: 4px;
+      height: 14px;
+      background: linear-gradient(180deg, var(--accent) 0%, rgba(205,133,63,0.6) 100%);
+      display: block;
+      border-radius: 2px;
+    }
+    /* Two-column form layout (desktop), stacks on mobile */
+    .form-two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .form-two-col .form-section-title { grid-column: span 2; }
+    .form-two-col .full { grid-column: span 2; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 768px) {
+      .form-two-col { grid-template-columns: 1fr; }
+      .form-two-col .form-section-title,
+      .form-two-col .full { grid-column: span 1; }
+    }
+    .form-row-full {
+      grid-column: 1 / -1;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(11,11,12,0.8);
+      border: 2px solid var(--border);
+      color: var(--text);
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      font-size: 16px;
+      -webkit-appearance: none;
+      appearance: none;
+      font-family: inherit;
+    }
+    .form-group input:focus, .form-group select:focus {
+      border-color: var(--accent);
+      outline: none;
+      background: rgba(20,20,22,0.95);
+      box-shadow: 0 0 0 4px rgba(205,133,63,0.2), 0 4px 12px rgba(205,133,63,0.1);
+      transform: translateY(-2px);
+    }
+    .form-group input::placeholder { color: #8f8f8a; }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23cd853f' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 44px;
+      cursor: pointer;
+    }
+    .form-group textarea {
+      width: 100%;
+      min-height: 96px;
+      padding: 14px 16px;
+      background: rgba(11,11,12,0.8);
+      border: 2px solid var(--border);
+      color: var(--text);
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      resize: vertical;
+    }
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      outline: none;
+      background: rgba(20,20,22,0.95);
+      box-shadow: 0 0 0 4px rgba(205,133,63,0.2), 0 4px 12px rgba(205,133,63,0.1);
+    }
+    .hint {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 13px;
+      color: #e5e5df;
+      line-height: 1.6;
+      padding: 18px;
+      background: linear-gradient(135deg, rgba(205,133,63,0.12) 0%, rgba(205,133,63,0.08) 100%);
+      border-radius: 10px;
+      border: 2px solid rgba(205,133,63,0.3);
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .checkbox-row:hover {
+      background: linear-gradient(135deg, rgba(205,133,63,0.15) 0%, rgba(205,133,63,0.1) 100%);
+      border-color: rgba(205,133,63,0.4);
+    }
+    .checkbox-row input {
+      margin-top: 2px;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      cursor: pointer;
+      accent-color: var(--accent);
+    }
+    .error-msg {
+      display: none;
+      color: var(--error);
+      font-size: 12px;
+      margin-top: 8px;
+      padding-left: 4px;
+      font-weight: 500;
+    }
+    .success-msg {
+      display: none;
+      color: var(--success);
+      font-size: 14px;
+      margin-top: 16px;
+      line-height: 1.7;
+      padding: 20px;
+      background: rgba(157,214,165,0.15);
+      border-radius: 8px;
+      border: 2px solid rgba(157,214,165,0.3);
+      font-weight: 500;
+      white-space: pre-line;
+    }
+    .input-error {
+      border-color: var(--error) !important;
+      background: rgba(208,91,76,0.12) !important;
+    }
+
+    /* Conversion badges */
+    .conversion-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(205,133,63,0.15);
+      color: var(--accent-light);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-left: 10px;
+      border: 1px solid rgba(205,133,63,0.3);
+    }
+    .conversion-badge::before {
+      content: "⚡";
+      font-size: 14px;
+    }
+
+    /* Steps section - enhanced */
+    .steps {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .step {
+      background: rgba(20,20,22,0.9);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 24px 24px 32px;
+      font-size: 15px;
+      color: #e8e8e3;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .step::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dark) 100%);
+    }
+    .step-number {
+      position: static;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      color: #0b0b0c;
+      box-shadow: 0 4px 12px rgba(205,133,63,0.3);
+    }
+    .step:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 20px rgba(205,133,63,0.2);
+      background: rgba(20,20,22,0.95);
+    }
+    .step:hover .step-number {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(205,133,63,0.4);
+    }
+    .step strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: var(--accent-light);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    /* Objections/assurances */
+    .objection-section {
+      background: rgba(18,18,22,0.9);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 44px 18px;
+    }
+    .objection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .objection-card {
+      background: rgba(14,14,18,0.9);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .objection-title {
+      font-weight: 800;
+      color: var(--text-bright);
+      margin-bottom: 6px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .objection-text {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .cta-inline {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .cta-inline .btn { flex: 1; min-width: 200px; }
+
+    /* FAQ - enhanced */
+    .faq {
+      margin-top: 32px;
+      display: grid;
+      gap: 16px;
+    }
+    .faq-item {
+      position: relative;
+      background: rgba(18,18,20,0.92);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 20px;
+      transition: border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+    .faq-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, rgba(205,133,63,0.7), rgba(205,133,63,0.4));
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .faq-item:hover {
+      border-color: rgba(205,133,63,0.35);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.24);
+      background: rgba(20,20,22,0.95);
+    }
+    .faq-item[open] {
+      border-color: var(--accent);
+      background: rgba(22,22,26,0.96);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+    }
+    .faq-item[open]::before { opacity: 1; }
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 800;
+      font-size: 17px;
+      padding-right: 32px;
+      position: relative;
+      color: var(--text-bright);
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+      transition: color 0.25s ease;
+    }
+    .faq-item summary::after {
+      content: "›";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--accent);
+      transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+    .faq-item[open] summary::after {
+      content: "›";
+      transform: translateY(-50%) rotate(-90deg);
+      color: #f2f2ec;
+      opacity: 1;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-body {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: max-height 0.42s ease-in-out, opacity 0.32s ease, transform 0.32s ease;
+    }
+    .faq-body p {
+      margin-top: 12px;
+      color: #d8d8d3;
+      font-size: 15px;
+      line-height: 1.8;
+      padding-left: 4px;
+    }
+
+    .footer {
+      padding: 28px 18px;
+      color: #bdbdb7;
+      font-size: 13px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      background: rgba(11,11,12,0.95);
+      line-height: 1.8;
+    }
+    .footer-call { font-weight: 700; margin-bottom: 10px; font-size: 15px; }
+    .footer-note { margin-top: 6px; color: var(--muted); }
+
+    /* Mobile CTA bar - enhanced */
+    .mobile-call {
+      display: none;
+      background: linear-gradient(180deg, rgba(11,11,12,0) 0%, rgba(11,11,12,0.85) 45%, rgba(11,11,12,0.98) 100%);
+      padding-top: 6px;
+    }
+    .mobile-call .bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-items: stretch;
+      background: rgba(11,11,12,0.95);
+      padding: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.35);
+    }
+    .mobile-call .call-time {
+      margin: 8px auto 6px;
+      font-size: 11px;
+      color: var(--text);
+      text-align: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 4px 10px;
+      border-radius: 999px;
+      width: fit-content;
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .mobile-call .bar { padding: 10px 14px; }
+      .mobile-call .call-time { font-size: 12px; }
+    }
+    .mobile-call a,
+    .mobile-call button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 14px 10px;
+      border-radius: 8px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .mobile-call .call-btn { background: var(--accent); color: #0b0b0c; }
+    .mobile-call .book-btn { background: rgba(205,133,63,0.18); color: var(--text); border: 1px solid rgba(205,133,63,0.45); }
+    .mobile-call a:hover,
+    .mobile-call button:hover { transform: translateY(-1px); }
+
+    /* Privacy & cookies */
+    /* Legal modal */
+    .legal-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 60;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .legal-modal {
+      background: rgba(18,18,22,0.98);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      max-width: 900px;
+      width: min(900px, 100%);
+      max-height: 90vh;
+      overflow: auto;
+      padding: 20px;
+      box-shadow: var(--shadow-lg);
+    }
+    .legal-modal h3 { font-size: 22px; margin-bottom: 6px; }
+    .legal-modal h4 { font-size: 16px; margin: 14px 0 6px; color: var(--accent); }
+    .legal-modal p { color: #dcdcd6; margin: 6px 0; line-height: 1.6; font-size: 14px; }
+    .legal-modal .close-legal {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .cookie-banner {
+      position: fixed;
+      bottom: 18px;
+      left: 14px;
+      right: auto;
+      transform: none;
+      width: min(320px, calc(100% - 28px));
+      background: linear-gradient(135deg, rgba(20,20,24,0.95) 0%, rgba(12,12,14,0.92) 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+      padding: 12px 14px;
+      display: none;
+      gap: 10px;
+      align-items: flex-start;
+      z-index: 30;
+      color: #e8e8e3;
+      font-size: 12.5px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-left: 2px solid rgba(205,133,63,0.35);
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .cookie-banner:hover { transform: translateY(-2px); }
+    .cookie-content { display: flex; flex-direction: column; gap: 0px; flex: 1; min-width: 0; }
+    .cookie-title { font-weight: 700; font-size: 12.5px; color: var(--text); }
+    .cookie-copy { color: #d8d8d3; line-height: 1.35; font-size: 12px; }
+    .cookie-actions { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+    .cookie-banner .btn {
+      padding: 8px 11px;
+      font-size: 12px;
+      border-radius: 7px;
+      box-shadow: none;
+    }
+    .cookie-banner .btn-primary {
+      background: var(--accent);
+      color: #0b0b0c;
+      border: 1px solid rgba(205,133,63,0.7);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.24);
+    }
+    .cookie-banner .btn-outline {
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #e8e8e3;
+    }
+
+    @media (max-width: 1024px) {
+      .cookie-banner {
+        bottom: 88px; /* sits above mobile CTA bar */
+        right: 12px;
+        left: 12px;
+        width: calc(100% - 24px);
+        border-left: 1px solid rgba(205,133,63,0.3);
+      }
+    }
+    @media (max-width: 600px) {
+      .legal-title { font-size: 20px; }
+      .cookie-banner { align-items: flex-start; }
+    }
+
+    /* Urgency badge */
+    .urgency-badge {
+      display: inline-block;
+      background: rgba(255,107,107,0.2);
+      color: var(--urgency);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      margin-left: 10px;
+      border: 1px solid rgba(255,107,107,0.3);
+    }
+
+    /* Loading state */
+    .loading {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    /* Social proof counter (subtle) */
+
+    /* Availability badge (simplified) */
+    .availability-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: rgba(157,214,165,0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(157,214,165,0.3);
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--success);
+      font-weight: 600;
+      align-self: flex-start;
+    }
+    .availability-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.2); }
+    }
+
+
+
+    /* Trust badges section */
+    .trust-badges {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+      padding: 32px;
+      background: rgba(16,18,24,0.7);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .trust-badge {
+      text-align: center;
+      padding: 24px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+    }
+    .trust-badge:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(205,133,63,0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .trust-badge-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(205,133,63,0.2) 0%, rgba(205,133,63,0.1) 100%);
+      border-radius: 16px;
+      border: 2px solid rgba(205,133,63,0.3);
+      padding: 12px;
+      transition: all 0.3s ease;
+    }
+    .trust-badge:hover .trust-badge-icon {
+      background: linear-gradient(135deg, rgba(205,133,63,0.3) 0%, rgba(205,133,63,0.2) 100%);
+      border-color: var(--accent);
+      transform: scale(1.05);
+    }
+    .trust-badge-icon svg {
+      width: 36px;
+      height: 36px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2;
+    }
+    .trust-badge-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 6px;
+    }
+    .trust-badge-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Brand specialization visual */
+    .brand-specialization {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 24px;
+      background: rgba(20,20,22,0.5);
+      border-radius: 10px;
+      margin-top: 24px;
+      border: 1px solid rgba(205,133,63,0.2);
+    }
+    .brand-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 16px;
+      background: rgba(11,11,12,0.6);
+      border-radius: 8px;
+      border: 1px solid rgba(205,133,63,0.15);
+      min-width: 120px;
+      transition: all 0.3s ease;
+    }
+    .brand-item:hover {
+      border-color: var(--accent);
+      background: rgba(20,20,22,0.8);
+      transform: translateY(-2px);
+    }
+    .brand-item-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-bright);
+      letter-spacing: 0.5px;
+    }
+    .brand-item-label {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Recent repairs */
+    .repairs {
+      padding-top: 12px;
+    }
+    .repairs-header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .repairs-header h2 {
+      font-size: 32px;
+      margin-bottom: 6px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 0%, #e8e8e3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .repairs-header p { color: var(--muted); font-size: 15px; max-width: 720px; margin: 0 auto; }
+    .repairs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+    .repair-card {
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 100%;
+    }
+    .repair-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .repair-review {
+      margin-top: auto;
+    }
+    .repair-media {
+      position: relative;
+      width: 100%;
+      padding-top: 62%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: radial-gradient(circle at 30% 30%, rgba(205,133,63,0.14), rgba(20,20,24,0.9));
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .repair-media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    .repair-media.loaded img { opacity: 1; }
+    .repair-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 10px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    }
+    .repair-meta { display: flex; flex-direction: column; gap: 4px; }
+    .repair-title { font-weight: 700; font-size: 15px; color: var(--text); }
+    .repair-note { color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+    .repair-review { color: var(--muted); font-size: 12.5px; line-height: 1.5; font-weight: 600; }
+
+    /* Responsive - Enhanced for all devices */
+    @media (max-width: 1400px) {
+      .container { max-width: 1100px; }
+    }
+
+    @media (max-width: 1200px) {
+      .hero {
+        grid-template-columns: 1fr 0.95fr;
+        gap: 28px;
+      }
+      .form-card { max-width: 520px; padding: 24px; }
+      h1 { font-size: 46px; }
+    }
+
+    @media (max-width: 1024px) {
+      .section { padding: 40px 16px; }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .form-card {
+        order: 2;
+        padding: 26px;
+        position: static;
+      }
+      .hero-copy {
+        order: 1;
+        background: rgba(20,20,22,0.75);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 24px;
+      }
+      .cta-row {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+      }
+      .top-bar .bar-inner {
+        padding: 12px 16px;
+      }
+      .steps {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 40px; }
+      .trust-badges {
+        grid-template-columns: 1fr;
+        padding: 24px;
+      }
+      .brand-specialization {
+        gap: 12px;
+      }
+      .trust-visual {
+        display: none;
+      }
+    }
+
+    @media (max-width: 900px) {
+      h1 { font-size: 36px; }
+      .subheadline { font-size: 17px; }
+    }
+
+    @media (max-width: 1024px) {
+      .mobile-call {
+        display: block;
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 25;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 34px; }
+      .section-title { font-size: 30px; }
+      .section-lead { font-size: 15px; margin-bottom: 24px; }
+      .section { padding: 36px 14px; }
+      .hero-copy { 
+        padding: 20px; 
+        gap: 14px; 
+      }
+      .headline-group {
+        margin-bottom: 2px;
+      }
+      .appliance-line {
+        font-size: 13.5px;
+        line-height: 1.4;
+      }
+      .subheadline { font-size: 15px; }
+      .independence-line { display: none; }
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .form-section {
+        margin-bottom: 24px;
+        padding-bottom: 20px;
+      }
+      .chips-row .chip {
+        font-size: 12px;
+        padding: 7px 9px;
+      }
+      .service-areas {
+        padding: 10px 0;
+        font-size: 14px;
+      }
+      .trust {
+        padding: 10px 0;
+        font-size: 14px;
+        gap: 10px 14px;
+      }
+      .pricing-group {
+        padding: 10px 0;
+      }
+      .trust .trust-item:nth-child(n+4) { display: none; }
+      .fee-line {
+        font-size: 16px;
+      }
+      .cta-row {
+        padding: 12px 0 6px;
+        gap: 12px;
+      }
+      .cta-row::before { left: 0; right: 0; }
+      .cta-row .btn { min-width: 0; }
+      .cta-note { margin-top: 6px; line-height: 1.4; }
+      .cta-note + .cta-note { margin-top: 4px; }
+      .form-card { padding: 24px; }
+      .mobile-call {
+        display: block;
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 25;
+      }
+      .subheadline { font-size: 16px; }
+      .top-bar .bar-inner { padding: 12px 14px; }
+      .btn { padding: 13px 22px; font-size: 15px; }
+      .form-title { font-size: 22px; }
+      .trust-badges {
+        padding: 20px;
+        gap: 16px;
+      }
+      .brand-specialization {
+        padding: 20px;
+        gap: 10px;
+      }
+      .brand-item {
+        min-width: 100px;
+        padding: 12px;
+      }
+      .step {
+        padding: 18px 18px 18px 34px;
+      }
+      .step-number {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+        top: 16px;
+        left: 10px;
+      }
+      .form-urgency {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+      .scope-grid { gap: 12px; }
+      .scope-card { padding: 14px; }
+      .scope-header { flex-direction: column; align-items: flex-start; }
+      .scope-time { font-size: 11.5px; }
+      .chips-caption { font-size: 12px; }
+      .issue-chip { font-size: 11.5px; padding: 6px 9px; }
+      .form-group textarea { min-height: 78px; font-size: 14px; }
+      .issue-chips { gap: 6px; }
+      .social-chip-secondary { display: none; }
+      .hero-motivator { display: none; }
+      .hero-issues { display: none; }
+      .appliance-icons { display: none; }
+      .hint-address { display: none; }
+      .trust-badges .trust-badge:nth-child(n+3) { display: none; }
+      #trust .chips-row { display: none; }
+      #repair-scope .scope-list li:nth-child(n+4) { display: none; }
+      #repairs .repair-card:nth-child(n+4) { display: none; }
+      #repairs .repair-note { display: -webkit-box; line-clamp: 2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+      #repairs .repair-review { display: none; }
+      #faq .faq-item:nth-child(n+8) { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 32px; }
+      .section { padding: 28px 12px; }
+      .form-card { padding: 20px; }
+      .hero-copy { padding: 16px; }
+      .top-bar .bar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .top-bar .btn {
+        width: 100%;
+        padding: 12px 14px;
+        font-size: 15px;
+        justify-content: center;
+      }
+      .trust .trust-item:nth-child(n+4) { display: none; }
+      .brand { font-size: 12px; letter-spacing: 0.12em; }
+      .footer-call { display: none; }
+      .bar-note { display: none; }
+    }
+
+    @media (max-width: 360px) {
+      .appliance-line { display: none; }
+      .appliance-icons { margin-top: 6px; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 28px; }
+      .top-bar .bar-inner { padding: 10px 12px; }
+      .btn { padding: 12px 20px; font-size: 14px; }
+      .form-title { font-size: 20px; }
+      .form-group input, .form-group select { padding: 12px; font-size: 15px; }
+      .section { padding: 26px 12px; }
+      .brand { font-size: 11px; }
+      .subheadline { font-size: 15px; }
+    }
+
+    @media (max-width: 360px) {
+      h1 { font-size: 26px; }
+      .subheadline { font-size: 14px; }
+      .btn { padding: 11px 18px; font-size: 13px; }
+      .issue-chips { display: none; }
+    }
+
+    @media (min-width: 1920px) {
+      .container { max-width: 1400px; }
+      h1 { font-size: 56px; }
+    }
+
+    @media (max-height: 600px) and (orientation: landscape) {
+      .section { padding: 28px 18px; }
+      .hero { padding-top: 20px; gap: 24px; }
+      .form-card { padding: 22px; }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      .btn { padding: 15px 26px; min-height: 48px; }
+      .form-group input, .form-group select { padding: 15px; min-height: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="trust-visual"></div>
+    <header class="top-bar">
+      <div class="bar-inner">
+        <div class="brand">Sub-Zero &amp; Wolf Repair</div>
+        <div class="bar-note">Callback in 5–15 minutes</div>
+        <a class="btn btn-primary" href="tel:+18884457686">Call (888) 445-7686</a>
+      </div>
+    </header>
+
+    <section class="section" id="hero">
+      <div class="container hero">
+        <div class="hero-copy">
+          <!-- Main headline group -->
+          <div class="headline-group">
+            <div class="hero-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 5h10a2 2 0 0 1 2 2v11a1 1 0 0 1-1 1h-3v-5H9v5H6a1 1 0 0 1-1-1V7a2 2 0 0 1 2-2Z" stroke-width="1.5"/><path d="M9 3v3m6-3v3" stroke-width="1.5"/></svg>
+              Appliance Repair • Sub-Zero / Wolf
+            </div>
+            <h1>Sub-Zero &amp; Wolf Appliance Repair</h1>
+            <div class="subheadline">Licensed &amp; insured • OEM parts • Same/next-day • Clear quote after diagnosis</div>
+            <div class="subheadline independence-line">Independent service. Not affiliated with Sub-Zero or Wolf.</div>
+            <div class="appliance-line">We repair fridges, freezers, wine units, ice makers, ovens, and cooktops.</div>
+            <div class="appliance-icons" aria-hidden="true">
+              <span class="appliance-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="6.5" y="3" width="11" height="18" rx="2.5"/>
+                  <path d="M6.5 9.5h11"/>
+                  <circle cx="9" cy="7" r="0.9" fill="currentColor"/>
+                  <circle cx="14.5" cy="7" r="0.9" fill="currentColor"/>
+                </svg>
+              </span>
+              <span class="appliance-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="4.5" y="5.5" width="15" height="13" rx="1.8"/>
+                  <path d="M9 5.5v13m6-13v13"/>
+                  <path d="M8.5 9.5h7"/>
+                  <path d="M8.5 13.5h7"/>
+                </svg>
+              </span>
+              <span class="appliance-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="7" y="4.5" width="10" height="15" rx="2.2"/>
+                  <path d="M9.2 8h5.6"/>
+                  <path d="M9.2 11.5h5.6"/>
+                  <path d="M9.2 15h5.6"/>
+                </svg>
+              </span>
+              <span class="appliance-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="7" y="6" width="10" height="12" rx="1.6"/>
+                  <path d="M9 6V4.8h6V6"/>
+                  <path d="M9.5 11h5"/>
+                  <path d="M10 13.8h4"/>
+                  <path d="M10.6 8.5h2.8"/>
+                </svg>
+              </span>
+            </div>
+            <div class="badges-inline">
+              <div class="pill-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13.5 9.5 18 19 7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                180-day warranty
+              </div>
+            </div>
+          </div>
+
+          <!-- Service area -->
+          <div class="service-areas">
+            Serving <span class="location-dynamic" id="location-text">Bay Area, Los Angeles, San Diego, Seattle, Denver</span> and nearby areas
+          </div>
+
+          <!-- Trust benefits -->
+          <div class="trust">
+            <div class="trust-item"><span>Licensed &amp; insured in all service areas</span></div>
+            <div class="trust-item"><span>OEM/certified parts only</span></div>
+            <div class="trust-item"><span>180-day warranty on labor and parts</span></div>
+            <div class="trust-item"><span>Same/next-day dispatch</span></div>
+          </div>
+
+          <div class="social-proof">
+            <div class="social-chip">4.9/5 average • 2,000+ repairs/year</div>
+            <div class="social-chip social-chip-secondary">Since 2010 • 15+ years</div>
+          </div>
+
+          <!-- Pricing info -->
+          <div class="pricing-group">
+          <div class="fee-line">
+              $99 service call — credited toward repair*
+            </div>
+            <div class="fee-footnote">*If you approve the repair after diagnosis, $99 is applied to your bill.</div>
+          </div>
+          
+          <!-- Main CTAs - Enhanced -->
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:+18884457686">Call Now (888) 445-7686</a>
+            <button class="btn btn-outline" id="scroll-to-form" type="button">Book Service</button>
+          </div>
+          <div class="cta-note">No spam. We call in 5–15 minutes. Clear quote after diagnosis.</div>
+          <div class="cta-note">No pressure. You approve the quote before any repair.</div>
+          <div class="cta-trust">Licensed in all service regions • OEM parts • 180-day warranty • Same-day windows limited</div>
+          
+          <!-- Conversion motivator -->
+          <div class="conversion-motivator hero-motivator">
+            <span class="motivator-icon">⚡</span>
+            <span class="motivator-text">We call in 5–15 minutes. Pick a time window. $99 credited after diagnosis.</span>
+        </div>
+
+          <!-- Common issues we fix -->
+          <div class="chips-row hero-issues" style="margin-top:12px;">
+            <div class="chip">Not cooling / temp swings</div>
+            <div class="chip">Ice maker not working</div>
+            <div class="chip">Leaks / gaskets</div>
+            <div class="chip">Error codes / controls</div>
+          </div>
+
+          <!-- Availability status -->
+          <div class="availability-badge" id="availability-badge" style="display: none;">
+            <span class="availability-dot"></span>
+            <span id="availability-text"></span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="float-cta">
+      <a class="call" href="tel:+18884457686">Call (888) 445-7686</a>
+      <button class="book" id="scroll-to-form-floating" type="button">Book Service</button>
+    </div>
+
+    <!-- Service form (separate block for better ergonomics) -->
+    <section class="section" id="service-form" style="padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <div class="container" style="display: flex; justify-content: center;">
+        <div class="form-card" id="form-card">
+          <div class="form-title">Book Service</div>
+          <div class="callback-badge">We call in 5–15 minutes</div>
+          <div class="form-subtitle">Sub-Zero/Wolf specialists. We call in 5–15 minutes. Clear quote after diagnosis.</div>
+          <div class="form-urgency">
+            <span class="urgency-icon">⚡</span>
+            <span id="urgency-text">Same-day service available • Callback in 5–15 minutes</span>
+          </div>
+          <form id="lead-form" method="POST">
+            <input type="hidden" name="location" id="location-hidden" value="" />
+            <input type="hidden" name="utm_source" id="utm-source" value="" />
+            <input type="hidden" name="utm_medium" id="utm-medium" value="" />
+            <input type="hidden" name="utm_campaign" id="utm-campaign" value="" />
+            
+            <div class="form-section form-two-col">
+              <div class="form-section-title">Contact Information</div>
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="tel" required maxlength="17" />
+              <div class="error-msg" id="phone-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address (Optional)</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-section form-two-col">
+              <div class="form-section-title">Service Location</div>
+              <div class="form-group full">
+                <label for="address">Service Address (Optional)</label>
+                <input type="text" id="address" name="address" placeholder="Enter your address" autocomplete="street-address" />
+              </div>
+            <div class="form-group">
+              <label for="zip">ZIP Code (Optional)</label>
+                <input type="text" id="zip" name="zip" inputmode="numeric" maxlength="5" placeholder="ZIP code" />
+              </div>
+            </div>
+
+            <div class="form-section form-two-col">
+              <div class="form-section-title">Appliance Details</div>
+            <div class="form-group">
+              <label for="appliance">Appliance Type (Optional)</label>
+              <select id="appliance" name="appliance">
+                  <option value="">Select type</option>
+                <option value="refrigerator">Refrigerator</option>
+                <option value="freezer">Freezer</option>
+                <option value="wine storage">Wine Storage</option>
+                <option value="range">Range/Oven</option>
+                <option value="cooktop">Cooktop</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="appliance-age">Appliance Age (Optional)</label>
+                <select id="appliance-age" name="appliance-age">
+                  <option value="">Select age</option>
+                  <option value="less-than-3">Less than 3 years</option>
+                  <option value="more-than-3">More than 3 years</option>
+                </select>
+              </div>
+            <div class="form-group full">
+              <label for="issue">Issue (Optional)</label>
+              <textarea id="issue" name="issue" placeholder="Briefly describe the problem"></textarea>
+              <div class="issue-chips" aria-label="Common issues">
+                <button class="issue-chip" type="button" data-issue="Not cooling / temp swings">Not cooling</button>
+                <button class="issue-chip" type="button" data-issue="Ice maker not working">Ice maker</button>
+                <button class="issue-chip" type="button" data-issue="Ignition / weak flame">Ignition</button>
+                <button class="issue-chip" type="button" data-issue="Error code / control issue">Error code</button>
+              </div>
+              <div class="hint">Pick a quick option or add a short note so we bring the right parts.</div>
+            </div>
+            </div>
+
+            <div class="form-section form-two-col">
+              <div class="form-section-title">Scheduling</div>
+              <div class="form-group full">
+              <label for="time">Preferred Time Window (Optional)</label>
+              <select id="time" name="time">
+                <option value="">Select time window</option>
+                  <option value="8-11">8am - 11am</option>
+                  <option value="9-12">9am - 12pm</option>
+                  <option value="12-3">12pm - 3pm</option>
+                  <option value="3-6">3pm - 6pm</option>
+                  <option value="4-7">4pm – 7pm</option>
+              </select>
+                <div class="hint">Pick a window — we confirm the exact time on the call.</div>
+              </div>
+            </div>
+
+            <div class="form-section">
+            <div class="checkbox-row">
+                <input type="checkbox" id="fee" name="fee" required />
+              <label for="fee">I acknowledge the $99 service call fee — credited toward repair if I proceed.</label>
+            </div>
+            <div class="error-msg" id="fee-error"></div>
+            </div>
+
+            <button class="btn btn-primary form-submit" type="submit" style="width:100%; margin-top: 14px; padding: 16px; font-size: 17px; font-weight: 800;">
+              <span>Book Service</span>
+              <span class="cta-hint" style="font-size: 11px;">Avg response: 5–15 minutes</span>
+            </button>
+            <div class="hint" style="margin-top: 8px; font-size: 12px;">Expect a call within 5–15 minutes during business hours.</div>
+            <div class="success-msg" id="form-success"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust & Credibility Section -->
+    <section class="section" id="trust" style="background: rgba(20,20,22,0.3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <div class="trust-badge-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L4 6v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V6l-8-4z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 22V12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 12h8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="trust-badge-title">Licensed & Insured</div>
+            <div class="trust-badge-desc">Licensed and insured in all service areas</div>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-badge-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+            <div class="trust-badge-title">Expert Technicians</div>
+            <div class="trust-badge-desc">Sub-Zero & Wolf specialists</div>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-badge-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+            <div class="trust-badge-title">Work Guarantee</div>
+            <div class="trust-badge-desc">180-day warranty on labor and parts</div>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-badge-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7h13l5 5-5 5H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M11 11v2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 11v2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 11v2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="trust-badge-title">Parts On Hand</div>
+            <div class="trust-badge-desc">Common parts on hand for faster fixes</div>
+          </div>
+        </div>
+        <div class="chips-row" style="margin-top:14px;">
+          <div class="chip">Fan motors</div>
+          <div class="chip">Ice maker kits</div>
+          <div class="chip">Door gaskets</div>
+          <div class="chip">Control boards</div>
+          <div class="chip">Water valves</div>
+          <div class="chip">Igniters</div>
+          <div class="chip">Thermostats</div>
+          <div class="chip">Spark modules</div>
+        </div>
+        <div class="chips-caption">Common parts stocked for faster first-visit fixes.</div>
+        <div class="brand-specialization">
+          <div class="brand-item">
+            <div class="brand-item-name">Sub-Zero</div>
+            <div class="brand-item-label">Specialized</div>
+          </div>
+          <div class="brand-item">
+            <div class="brand-item-name">Wolf</div>
+            <div class="brand-item-label">Specialized</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="repair-scope">
+      <div class="container">
+        <h2 class="section-title">We Handle Common and Complex Repairs</h2>
+        <p class="section-lead">From cooling issues to ignition and control boards. We diagnose first and give a clear quote after.</p>
+        <div class="scope-grid">
+          <div class="scope-card common">
+            <div class="scope-header">
+              <div class="scope-pill">Common fixes</div>
+              <div class="scope-time">Often same-day</div>
+            </div>
+            <h3>Most Common Issues</h3>
+            <p>Fast fixes when parts are on the truck.</p>
+            <ul class="scope-list">
+              <li>Not cooling or temperature swings</li>
+              <li>Ice maker not producing or leaking</li>
+              <li>Door not sealing or gasket wear</li>
+              <li>Error codes, sensor faults, control resets</li>
+              <li>Ignition clicking or weak flame</li>
+            </ul>
+          </div>
+          <div class="scope-card complex">
+            <div class="scope-header">
+              <div class="scope-pill">Complex repairs</div>
+              <div class="scope-time">Experienced specialists</div>
+            </div>
+            <h3>Complex / Heavy Repairs</h3>
+            <p>Handled by experienced technicians with OEM-grade parts.</p>
+            <ul class="scope-list">
+              <li>Compressor and sealed system work</li>
+              <li>Gas valve and safety control diagnostics</li>
+              <li>Oven temperature calibration & heat loss</li>
+              <li>Electronic control boards and harnesses</li>
+              <li>Leak detection and sealed system recharge</li>
+            </ul>
+          </div>
+        </div>
+        <div class="chips-caption">Experienced specialists on every visit. Licensed in all service regions. OEM-grade parts. 180-day warranty.</div>
+        <div class="cta-row" style="margin-top: 16px;">
+          <a class="btn btn-primary" href="tel:+18884457686">Call Now (888) 445-7686</a>
+        </div>
+        <div class="cta-note">No pressure. You approve the quote before any repair. We call in 5–15 minutes.</div>
+        <div class="chips-caption">4.9/5 average rating • 2,000+ repairs/year</div>
+      </div>
+    </section>
+
+    <section class="section" id="next">
+      <div class="container">
+        <h2 class="section-title">What Happens Next</h2>
+        <p class="section-lead">Simple and clear process</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <strong>We call you</strong>
+            We confirm your address and a short arrival window.
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <strong>Confirm details</strong>
+            We confirm the appliance, symptoms, and time window.
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <strong>On-site & quote</strong>
+            We diagnose onsite and give a clear quote. Same-day in most areas.
+          </div>
+        </div>
+        <div class="cta-row" style="margin-top: 18px; justify-content: center;">
+          <a class="btn btn-primary" href="tel:+18884457686">Call Now (888) 445-7686</a>
+        </div>
+        <div class="cta-note" style="text-align:center;">We call in 5–15 minutes and confirm your window.</div>
+      </div>
+    </section>
+
+    <section class="section repairs" id="repairs">
+      <div class="container">
+        <div class="repairs-header">
+          <h2 class="section-title">Recent Repairs</h2>
+          <p class="section-lead">Real jobs each week. Same-day windows, OEM parts, 180-day warranty. $99 credited if you proceed.</p>
+        </div>
+        <div class="repairs-grid">
+          <div class="repair-card">
+            <div class="repair-media" data-src="https://drive.google.com/uc?export=view&id=1DPGsKTXfoQjNIYJW_M0K7bCeMY2LKqRi"
+                 data-srcset="https://drive.google.com/thumbnail?id=1DPGsKTXfoQjNIYJW_M0K7bCeMY2LKqRi&sz=w800 800w, https://drive.google.com/thumbnail?id=1DPGsKTXfoQjNIYJW_M0K7bCeMY2LKqRi&sz=w1200 1200w"
+                 data-sizes="(max-width: 768px) 100vw, 50vw">
+              <div class="repair-placeholder">Awaiting photo</div>
+              <img alt="Wolf gas range and oven repair" loading="lazy" src="https://drive.google.com/uc?export=view&id=1DPGsKTXfoQjNIYJW_M0K7bCeMY2LKqRi" srcset="https://drive.google.com/thumbnail?id=1DPGsKTXfoQjNIYJW_M0K7bCeMY2LKqRi&sz=w800 800w, https://drive.google.com/thumbnail?id=1DPGsKTXfoQjNIYJW_M0K7bCeMY2LKqRi&sz=w1200 1200w" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div class="repair-meta">
+              <div class="repair-title">Wolf gas range & oven — heavy wear</div>
+              <div class="repair-note">Issue: weak ignition and uneven flame. Fix: cleaned burners, replaced igniter, calibrated flame. Time: 1h 45m.</div>
+              <div class="repair-review">“On time and clear. Range lights perfectly now.”</div>
+            </div>
+          </div>
+          <div class="repair-card">
+            <div class="repair-media" data-src="https://drive.google.com/uc?export=view&id=1fWMGKgnGfOdyBf_vwqnKOcvyzdQQWZ00"
+                 data-srcset="https://drive.google.com/thumbnail?id=1fWMGKgnGfOdyBf_vwqnKOcvyzdQQWZ00&sz=w800 800w, https://drive.google.com/thumbnail?id=1fWMGKgnGfOdyBf_vwqnKOcvyzdQQWZ00&sz=w1200 1200w"
+                 data-sizes="(max-width: 768px) 100vw, 50vw">
+              <div class="repair-placeholder">Awaiting photo</div>
+              <img alt="Sub-Zero condenser coil cleaning" loading="lazy" src="https://drive.google.com/uc?export=view&id=1fWMGKgnGfOdyBf_vwqnKOcvyzdQQWZ00" srcset="https://drive.google.com/thumbnail?id=1fWMGKgnGfOdyBf_vwqnKOcvyzdQQWZ00&sz=w800 800w, https://drive.google.com/thumbnail?id=1fWMGKgnGfOdyBf_vwqnKOcvyzdQQWZ00&sz=w1200 1200w" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div class="repair-meta">
+              <div class="repair-title">Sub-Zero condenser — deep foam clean</div>
+              <div class="repair-note">Issue: poor airflow, rising temps. Fix: deep foam clean, coil rinse, airflow check. Time: 55m.</div>
+              <div class="repair-review">“Cooling is even and quiet again.”</div>
+            </div>
+          </div>
+          <div class="repair-card">
+            <div class="repair-media" data-src="https://drive.google.com/uc?export=view&id=1fgOSipB0pTLu-Nso9z9P9PrdgvNzkE41"
+                 data-srcset="https://drive.google.com/thumbnail?id=1fgOSipB0pTLu-Nso9z9P9PrdgvNzkE41&sz=w800 800w, https://drive.google.com/thumbnail?id=1fgOSipB0pTLu-Nso9z9P9PrdgvNzkE41&sz=w1200 1200w"
+                 data-sizes="(max-width: 768px) 100vw, 50vw">
+              <div class="repair-placeholder">Awaiting photo</div>
+              <img alt="Wolf gas burner assembly service" loading="lazy" src="https://drive.google.com/uc?export=view&id=1fgOSipB0pTLu-Nso9z9P9PrdgvNzkE41" srcset="https://drive.google.com/thumbnail?id=1fgOSipB0pTLu-Nso9z9P9PrdgvNzkE41&sz=w800 800w, https://drive.google.com/thumbnail?id=1fgOSipB0pTLu-Nso9z9P9PrdgvNzkE41&sz=w1200 1200w" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div class="repair-meta">
+              <div class="repair-title">Wolf cooktop — burner overhaul</div>
+              <div class="repair-note">Issue: rusted burner, uneven flame. Fix: cleaned ports, removed corrosion, reset flame. Time: 1h 20m.</div>
+              <div class="repair-review">“Flame is steady again.”</div>
+            </div>
+          </div>
+          <div class="repair-card">
+            <div class="repair-media" data-src="https://drive.google.com/uc?export=view&id=1gyMfc6voxUkAlH4oBlvJM3o0IyeicuvH"
+                 data-srcset="https://drive.google.com/thumbnail?id=1gyMfc6voxUkAlH4oBlvJM3o0IyeicuvH&sz=w800 800w, https://drive.google.com/thumbnail?id=1gyMfc6voxUkAlH4oBlvJM3o0IyeicuvH&sz=w1200 1200w"
+                 data-sizes="(max-width: 768px) 100vw, 50vw">
+              <div class="repair-placeholder">Awaiting photo</div>
+              <img alt="Wolf oven exterior restoration" loading="lazy" src="https://drive.google.com/uc?export=view&id=1gyMfc6voxUkAlH4oBlvJM3o0IyeicuvH" srcset="https://drive.google.com/thumbnail?id=1gyMfc6voxUkAlH4oBlvJM3o0IyeicuvH&sz=w800 800w, https://drive.google.com/thumbnail?id=1gyMfc6voxUkAlH4oBlvJM3o0IyeicuvH&sz=w1200 1200w" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div class="repair-meta">
+              <div class="repair-title">Wolf oven — exterior & heat recovery</div>
+              <div class="repair-note">Issue: heat loss, slow preheat. Fix: replaced seals, checked elements, calibrated temps. Time: 2h 10m.</div>
+              <div class="repair-review">“Preheats faster and holds temp.”</div>
+            </div>
+          </div>
+          <div class="repair-card">
+            <div class="repair-media" data-src="https://drive.google.com/uc?export=view&id=1ENCBYvS87-17rTvqGS2MogewKvgvsV3N"
+                 data-srcset="https://drive.google.com/thumbnail?id=1ENCBYvS87-17rTvqGS2MogewKvgvsV3N&sz=w800 800w, https://drive.google.com/thumbnail?id=1ENCBYvS87-17rTvqGS2MogewKvgvsV3N&sz=w1200 1200w"
+                 data-sizes="(max-width: 768px) 100vw, 50vw">
+              <div class="repair-placeholder">Awaiting photo</div>
+              <img alt="Gas valve and burner control service" loading="lazy" src="https://drive.google.com/uc?export=view&id=1ENCBYvS87-17rTvqGS2MogewKvgvsV3N" srcset="https://drive.google.com/thumbnail?id=1ENCBYvS87-17rTvqGS2MogewKvgvsV3N&sz=w800 800w, https://drive.google.com/thumbnail?id=1ENCBYvS87-17rTvqGS2MogewKvgvsV3N&sz=w1200 1200w" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div class="repair-meta">
+              <div class="repair-title">Gas valve & ignition control — safety tune</div>
+              <div class="repair-note">Issue: delayed ignition, uneven flame. Fix: serviced gas valve, cleaned contacts, verified pressure. Time: 1h 30m.</div>
+              <div class="repair-review">“Safe, smooth ignition now.”</div>
+            </div>
+          </div>
+        </div>
+        <div class="cta-row" style="margin-top: 18px;">
+          <a class="btn btn-primary" href="tel:+18884457686">Call Now (888) 445-7686</a>
+        </div>
+        <div class="cta-note">Tell us the issue — we confirm a window in 5–15 minutes.</div>
+      </div>
+    </section>
+
+    <section class="objection-section">
+      <div class="container" style="max-width: 1200px; margin: 0 auto;">
+        <h2 class="section-title">Quick Answers</h2>
+        <p class="section-lead" style="margin-bottom: 22px;">Clear info on price, timing, parts, and warranty.</p>
+        <div class="objection-grid">
+          <div class="objection-card">
+            <div class="objection-title">“How much will it cost?”</div>
+            <div class="objection-text">We give a clear quote after diagnosis. The $99 service call is credited if you proceed.</div>
+          </div>
+          <div class="objection-card">
+            <div class="objection-title">“Do you carry the parts?”</div>
+            <div class="objection-text">We carry common parts. Rare parts are ordered fast and we keep you updated.</div>
+          </div>
+          <div class="objection-card">
+            <div class="objection-title">“What’s the warranty?”</div>
+            <div class="objection-text">180-day warranty on labor and parts we install. If something isn’t right, we fix it.</div>
+          </div>
+          <div class="objection-card">
+            <div class="objection-title">“When can you come?”</div>
+            <div class="objection-text">Pick a window (8–11, 9–12, 12–3, 3–6, 4–7). We confirm the exact time within 5–15 minutes.</div>
+          </div>
+        </div>
+        <div class="cta-inline">
+          <a class="btn btn-primary" href="tel:+18884457686">Call (888) 445-7686</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="chips-caption" style="text-align:center; margin-bottom: 10px;">Licensed in all service regions • OEM parts • 180-day warranty • Callback in 5–15 minutes</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-lead">Short answers before you book</p>
+        <div class="faq">
+        <details class="faq-item" open>
+          <summary>How does the $99 service call fee work?</summary>
+          <div class="faq-body">
+            <p>$99 service call. If you approve the repair, we apply $99 to your total.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>When will I get the repair quote?</summary>
+          <div class="faq-body">
+            <p>We diagnose first, then give a clear quote. You decide before any repair.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Where do you provide service?</summary>
+          <div class="faq-body">
+            <p>We serve the Bay Area, Los Angeles, San Diego, Seattle, Denver, and nearby cities. Ask us about your ZIP.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>What appliances do you repair?</summary>
+          <div class="faq-body">
+            <p>Sub-Zero/Wolf refrigeration, freezers, wine units, ice makers, ranges/ovens, and cooktops.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Are you affiliated with Sub-Zero or Wolf?</summary>
+          <div class="faq-body">
+            <p>No. We are an independent, licensed service provider. We are not affiliated with Sub-Zero or Wolf. We use OEM/certified parts.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>How soon will you contact me?</summary>
+          <div class="faq-body">
+            <p>We call within 5–15 minutes during business hours. After hours, we call the next business day.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Do you use original parts?</summary>
+          <div class="faq-body">
+            <p>We use OEM or certified parts only.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I get a quote before diagnosis?</summary>
+          <div class="faq-body">
+            <p>We quote after on-site diagnosis. The $99 service call is credited if you proceed.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>What warranty do you provide?</summary>
+          <div class="faq-body">
+            <p>180-day warranty on labor and installed parts.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Do you bring parts with you?</summary>
+          <div class="faq-body">
+            <p>We carry common parts. Rare items are ordered quickly and we keep you updated.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Can you arrive within a specific time window?</summary>
+          <div class="faq-body">
+            <p>Yes. Choose a window (8–11, 9–12, 12–3, 3–6, 4–7). We confirm the exact time within 5–15 minutes.</p>
+          </div>
+        </details>
+        </div>
+        <div class="cta-inline" style="margin-top: 18px;">
+          <a class="btn btn-primary" href="tel:+18884457686">Call Now (888) 445-7686</a>
+        </div>
+        <div class="cta-note" style="text-align:center;">Still have questions? We call in 5–15 minutes.</div>
+      </div>
+    </section>
+
+    <!-- Privacy Policy -->
+    <div class="legal-modal-backdrop" id="legal-modal">
+      <div class="legal-modal">
+        <button class="close-legal" id="close-legal">✕ Close</button>
+        <h3>Privacy Policy</h3>
+        <div class="legal-subtitle">Last Updated: April 28, 2025</div>
+        <p><strong>Winline Technology LLC</strong> is a licensed independent service provider (License #19111730, Town of Los Gatos, CA). We repair Sub-Zero and Wolf appliances and are not affiliated with any brand.</p>
+        <h4>What We Collect</h4>
+        <p>Contact details (name, phone, email), service address/ZIP, appliance details, and basic site usage data (IP, browser, pages visited). Payment is handled by secure third parties.</p>
+        <h4>How We Use It</h4>
+        <p>To schedule service, provide support, send service updates, and improve the site. Marketing messages are optional.</p>
+        <h4>Sharing</h4>
+        <p>We share data only with service providers we use (e.g., payments, analytics) or when required by law. We do not sell personal data.</p>
+        <h4>Your Rights (CCPA)</h4>
+        <p>You can request access or deletion of your data. Call (888) 445-7686 and we respond within 45 days.</p>
+        <h4>Security</h4>
+        <p>We use reasonable security measures, but no system is 100% secure.</p>
+        <h4>Contact</h4>
+        <p>https://wolf-subzero-cove.com/contact | Phone: (888) 445-7686 | Address: 873 Castlewood Dr 3, Los Gatos, CA 95032-1332</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-call">Call Now (888) 445-7686</div>
+      <div>Independent repair service. Not affiliated with Sub-Zero Group, Inc., or Wolf Appliance, Inc.</div>
+      <div class="footer-note">180-day warranty on labor & OEM/certified parts installed.</div>
+      <div style="margin-top: 8px;">
+        <a href="#" id="open-legal" style="color: var(--accent-light); text-decoration: underline;">Privacy Policy</a>
+      </div>
+    </footer>
+
+    <div class="mobile-call">
+      <div class="bar">
+        <a class="call-btn" href="tel:+18884457686">Call Now</a>
+        <button class="book-btn" id="scroll-to-form-mobile" type="button">Book</button>
+      </div>
+      <div class="call-time">Callback in 5–15 minutes</div>
+    </div>
+
+    <!-- Cookie consent -->
+    <div class="cookie-banner" id="cookie-banner">
+      <div class="cookie-content">
+        <div class="cookie-title">Cookies & privacy</div>
+        <div class="cookie-copy">Essential cookies run the site; light analytics improve it. Adjust anytime in your browser.</div>
+      </div>
+      <div class="cookie-actions">
+        <button class="btn btn-outline" id="cookie-decline" type="button">Only essentials</button>
+        <button class="btn btn-primary" id="cookie-accept" type="button">Accept all</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Optimized location detection with caching
+    const locationData = {
+      default: "Bay Area, Los Angeles, San Diego, Seattle, Denver",
+      cities: {
+        "San Francisco": "San Francisco Bay Area",
+        "Oakland": "San Francisco Bay Area",
+        "San Jose": "San Francisco Bay Area",
+        "Los Angeles": "Los Angeles",
+        "San Diego": "San Diego",
+        "Seattle": "Seattle",
+        "Denver": "Denver",
+        "Portland": "Portland",
+        "Sacramento": "Sacramento"
+      }
+    };
+
+    function updateLocation(city, state) {
+      const locationText = document.getElementById("location-text");
+      const locationHidden = document.getElementById("location-hidden");
+      
+      if (city && locationData.cities[city]) {
+        locationText.textContent = locationData.cities[city];
+        locationHidden.value = `${city}, ${state || ""}`.trim();
+      } else if (city) {
+        locationText.textContent = city + (state ? `, ${state}` : "");
+        locationHidden.value = `${city}, ${state || ""}`.trim();
+      } else {
+        locationText.textContent = locationData.default;
+        locationHidden.value = "Unknown";
+      }
+    }
+
+    // Improved location detection with multiple fallbacks
+    async function detectLocation() {
+      const locationText = document.getElementById("location-text");
+      if (!locationText) return;
+
+      // Try ipapi.co first
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
+        
+        const response = await fetch("https://ipapi.co/json/", {
+          signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
+        
+        if (response.ok) {
+          const data = await response.json();
+          if (data.city && !data.error) {
+            updateLocation(data.city, data.region);
+            return;
+          }
+        }
+      } catch (e) {
+        console.log("ipapi.co failed, trying alternative");
+      }
+
+      // Fallback: try ip-api.com (HTTPS)
+      try {
+        const controller2 = new AbortController();
+        const timeoutId2 = setTimeout(() => controller2.abort(), 3000);
+        
+        const response = await fetch("https://ip-api.com/json/?fields=city,regionName", {
+          signal: controller2.signal
+        });
+        
+        clearTimeout(timeoutId2);
+        
+        if (response.ok) {
+          const data = await response.json();
+          if (data.city) {
+            updateLocation(data.city, data.regionName);
+            return;
+          }
+        }
+      } catch (e) {
+        console.log("ip-api.com failed");
+      }
+
+      // Final fallback: use default
+      updateLocation(null, null);
+    }
+
+    // Initialize location detection
+    function initLocation() {
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => {
+          setTimeout(detectLocation, 100);
+        });
+      } else {
+        setTimeout(detectLocation, 100);
+      }
+    }
+    initLocation();
+
+    // Capture UTM parameters
+    function captureUTM() {
+      const params = new URLSearchParams(window.location.search);
+      document.getElementById("utm-source").value = params.get("utm_source") || "";
+      document.getElementById("utm-medium").value = params.get("utm_medium") || "";
+      document.getElementById("utm-campaign").value = params.get("utm_campaign") || "";
+    }
+    captureUTM();
+
+    // Optimized phone formatting
+    function formatPhone(input) {
+      let value = input.value.replace(/\D/g, "");
+      if (value.length > 10) value = value.slice(0, 10);
+      if (value.length <= 3) input.value = value ? `(${value}` : "";
+      else if (value.length <= 6) input.value = `(${value.slice(0,3)}) ${value.slice(3)}`;
+      else input.value = `(${value.slice(0,3)}) ${value.slice(3,6)}-${value.slice(6)}`;
+    }
+
+    function setError(id, msg, field) {
+      const el = document.getElementById(id);
+      if (field) {
+        field.classList.toggle("input-error", !!msg);
+        if (msg) field.style.animation = "shake 0.4s";
+      }
+      if (!el) return;
+      el.textContent = msg || "";
+      el.style.display = msg ? "block" : "none";
+    }
+
+    function setSuccess(id, msg) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (msg) {
+        el.innerHTML = msg;
+        el.style.display = "block";
+        el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      } else {
+        el.innerHTML = "";
+        el.style.display = "none";
+      }
+    }
+
+    // Add shake animation
+    const style = document.createElement("style");
+    style.textContent = `@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}`;
+    document.head.appendChild(style);
+
+    // IMPORTANT: Replace with your actual email address to receive requests
+    const SERVICE_EMAIL = "your-email@example.com"; // Replace with your email
+
+    function validateAndSubmit(form, config) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const phoneInput = form.querySelector(config.phoneSel);
+        const feeInput = form.querySelector(config.feeSel);
+        const phoneDigits = phoneInput.value.replace(/\D/g, "");
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        setError(config.phoneErr, "", phoneInput);
+        setError(config.feeErr, "", feeInput);
+        setSuccess(config.successId, "");
+
+        let hasError = false;
+        if (phoneDigits.length < 10) {
+          setError(config.phoneErr, "Please enter a valid 10-digit phone number.", phoneInput);
+          phoneInput.focus();
+          hasError = true;
+        }
+        if (!feeInput.checked) {
+          setError(config.feeErr, "Please acknowledge the $99 service call fee to continue.", feeInput);
+          if (!hasError) feeInput.focus();
+          hasError = true;
+        }
+        if (hasError) return;
+
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = "Preparing...";
+        submitBtn.disabled = true;
+        form.classList.add("loading");
+
+        // Collect form data
+        const formData = {
+          phone: phoneInput.value,
+          email: form.querySelector('#email')?.value || '',
+          address: form.querySelector('#address')?.value || '',
+          zip: form.querySelector('#zip')?.value || '',
+          appliance: form.querySelector('#appliance')?.value || '',
+          applianceAge: form.querySelector('#appliance-age')?.value || '',
+          issue: form.querySelector('#issue')?.value || '',
+          time: form.querySelector('#time')?.value || '',
+          location: document.getElementById('location-hidden')?.value || 'Not detected'
+        };
+
+        // Build text for email and Instagram
+        const emailSubject = encodeURIComponent(`New Service Request - Sub-Zero & Wolf Repair`);
+        const emailBody = encodeURIComponent(`NEW SERVICE REQUEST
+
+Contact Information:
+📞 Phone: ${formData.phone}
+📧 Email: ${formData.email || 'Not provided'}
+
+Service Location:
+📍 Address: ${formData.address || 'Not provided'}
+📮 ZIP Code: ${formData.zip || 'Not provided'}
+🌍 Location: ${formData.location}
+
+Appliance Details:
+🔧 Type: ${formData.appliance || 'Not specified'}
+📅 Age: ${formData.applianceAge === 'less-than-3' ? 'Less than 3 years' : formData.applianceAge === 'more-than-3' ? 'More than 3 years' : 'Not specified'}
+🧩 Issue: ${formData.issue || 'Not specified'}
+
+Scheduling:
+⏰ Preferred Time: ${formData.time || 'Not specified'}
+
+---
+Request submitted from website
+Timestamp: ${new Date().toLocaleString()}
+`);
+
+        // Instagram text (for copying)
+        const instagramText = `🔧 New Sub-Zero & Wolf service request
+
+📞 Phone: ${formData.phone}
+📧 Email: ${formData.email || 'Not provided'}
+📍 Address: ${formData.address || 'Not provided'}
+📮 ZIP: ${formData.zip || 'Not provided'}
+
+🔧 Appliance: ${formData.appliance || 'Not provided'}
+📅 Age: ${formData.applianceAge === 'less-than-3' ? 'Less than 3 years' : formData.applianceAge === 'more-than-3' ? 'More than 3 years' : 'Not provided'}
+🧩 Issue: ${formData.issue || 'Not provided'}
+⏰ Time: ${formData.time || 'Not provided'}
+
+🌍 Location: ${formData.location}`;
+
+        try {
+          // Отправляем на email через mailto
+          const mailtoLink = `mailto:${SERVICE_EMAIL}?subject=${emailSubject}&body=${emailBody}`;
+          window.location.href = mailtoLink;
+
+          // Показываем успешное сообщение с текстом для Instagram
+          const successMessage = `✓ <strong>Request prepared successfully!</strong><br><br>
+          
+⏱️ We typically call within 5–15 minutes during business hours.<br><br>
+📧 Your email app should open. If it doesn’t, use the “Copy Text” button below.<br><br>
+<small style="opacity: 0.8;">The message has all the details and is ready to send.</small>`;
+
+          setSuccess(config.successId, successMessage.replace(/\n/g, '<br>'));
+          
+          // Добавляем кнопку копирования и текстовое поле
+          const successDiv = document.getElementById(config.successId);
+          if (successDiv) {
+            // Удаляем старую кнопку если есть
+            const oldBtn = successDiv.querySelector('button');
+            const oldTextarea = successDiv.querySelector('textarea');
+            if (oldBtn) oldBtn.remove();
+            if (oldTextarea) oldTextarea.remove();
+            
+            // Создаем текстовое поле с текстом
+            const textarea = document.createElement('textarea');
+            textarea.value = instagramText;
+            textarea.readOnly = true;
+            textarea.style.cssText = 'width: 100%; min-height: 150px; padding: 12px; margin-top: 12px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 12px; font-family: monospace; resize: vertical;';
+            textarea.onclick = function() { this.select(); };
+            
+            // Создаем кнопку копирования
+            const copyBtn = document.createElement('button');
+            copyBtn.textContent = '📋 Copy Text for Instagram/Email';
+            copyBtn.className = 'btn btn-outline';
+            copyBtn.style.cssText = 'margin-top: 12px; width: 100%; padding: 14px; font-size: 14px; font-weight: 700;';
+            copyBtn.onclick = function() {
+              textarea.select();
+              navigator.clipboard.writeText(instagramText).then(() => {
+                copyBtn.textContent = '✓ Copied to Clipboard!';
+                copyBtn.style.background = 'var(--success)';
+                copyBtn.style.borderColor = 'var(--success)';
+                copyBtn.style.color = 'var(--bg)';
+                setTimeout(() => {
+                  copyBtn.textContent = '📋 Copy Text for Instagram/Email';
+                  copyBtn.style.background = '';
+                  copyBtn.style.borderColor = '';
+                  copyBtn.style.color = '';
+                }, 3000);
+              }).catch(() => {
+                // Fallback для старых браузеров
+                textarea.select();
+                document.execCommand('copy');
+                copyBtn.textContent = '✓ Copied!';
+                copyBtn.style.background = 'var(--success)';
+                setTimeout(() => {
+                  copyBtn.textContent = '📋 Copy Text for Instagram/Email';
+                  copyBtn.style.background = '';
+                }, 2000);
+              });
+            };
+            
+            successDiv.appendChild(textarea);
+            successDiv.appendChild(copyBtn);
+          }
+
+            form.reset();
+            setError(config.phoneErr, "", phoneInput);
+            setError(config.feeErr, "", feeInput);
+          submitBtn.textContent = "✓ Submitted";
+          
+          // Track conversion
+          if (typeof gtag !== "undefined") {
+            gtag("event", "form_submit", {
+              "event_category": "engagement",
+              "event_label": "lead_form"
+            });
+          }
+          
+          setTimeout(() => { 
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            form.classList.remove("loading");
+          }, 3000);
+          
+        } catch (err) {
+          setError(config.phoneErr, "Error preparing request. Please call us directly at (888) 445-7686.", phoneInput);
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          form.classList.remove("loading");
+        }
+      });
+    }
+
+    // Setup phone formatting
+    const phoneInput = document.getElementById("phone");
+    if (phoneInput) {
+      phoneInput.addEventListener("input", () => formatPhone(phoneInput));
+      phoneInput.addEventListener("blur", () => formatPhone(phoneInput));
+      phoneInput.addEventListener("paste", () => setTimeout(() => formatPhone(phoneInput), 10));
+    }
+
+    // ZIP formatting
+    const zipInput = document.getElementById("zip");
+    if (zipInput) {
+      zipInput.addEventListener("input", (e) => {
+        e.target.value = e.target.value.replace(/\D/g, "").slice(0, 5);
+      });
+    }
+
+    // Form validation
+    validateAndSubmit(document.getElementById("lead-form"), {
+      phoneSel: "#phone",
+      feeSel: "#fee",
+      phoneErr: "phone-error",
+      feeErr: "fee-error",
+      successId: "form-success"
+    });
+
+    // Smooth scroll to form (multiple CTAs)
+    const scrollBtn = document.getElementById("scroll-to-form");
+    const scrollBtn2 = document.getElementById("scroll-to-form-2");
+    const scrollBtnMobile = document.getElementById("scroll-to-form-mobile");
+    const scrollBtnFloating = document.getElementById("scroll-to-form-floating");
+    const scrollBtnScope = document.getElementById("scroll-to-form-scope");
+    const scrollToForm = (label = "book_service_cta") => {
+      const card = document.getElementById("form-card");
+      const phone = document.getElementById("phone");
+      if (card) {
+        const cardTop = card.getBoundingClientRect().top + window.pageYOffset - 20;
+        window.scrollTo({ top: cardTop, behavior: "smooth" });
+        setTimeout(() => { if (phone) { phone.focus(); phone.select(); } }, 400);
+      }
+      if (typeof gtag !== "undefined") {
+        gtag("event", "click", {
+          "event_category": "engagement",
+          "event_label": label
+        });
+      }
+    };
+    const bindScroll = (btn, label) => {
+      if (btn) btn.addEventListener("click", () => scrollToForm(label));
+    };
+    bindScroll(scrollBtn, "book_service_hero");
+    bindScroll(scrollBtn2, "book_service_repairs");
+    bindScroll(scrollBtnMobile, "book_service_mobile_bar");
+    bindScroll(scrollBtnFloating, "book_service_floating");
+    bindScroll(scrollBtnScope, "book_service_scope");
+
+    // Track phone clicks
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+      link.addEventListener("click", () => {
+        if (typeof gtag !== "undefined") {
+          gtag("event", "phone_click", {
+            "event_category": "engagement",
+            "event_label": "call_cta"
+          });
+        }
+      });
+    });
+
+    // Track form start
+    let formStartTime = null;
+    const form = document.getElementById("lead-form");
+    if (form) {
+      form.addEventListener("focusin", (e) => {
+        if ((e.target.tagName === "INPUT" || e.target.tagName === "SELECT") && !formStartTime) {
+          formStartTime = Date.now();
+          if (typeof gtag !== "undefined") {
+            gtag("event", "form_start", {
+              "event_category": "engagement",
+              "event_label": "form_interaction"
+            });
+          }
+        }
+      }, true);
+    }
+
+    // Mobile CTA pulse (subtle)
+    if (window.innerWidth <= 768) {
+      const mobileCallBtn = document.querySelector(".mobile-call a");
+      if (mobileCallBtn) {
+        let pulseInterval = setInterval(() => {
+          mobileCallBtn.style.transform = "scale(1.02)";
+          setTimeout(() => { mobileCallBtn.style.transform = "scale(1)"; }, 200);
+        }, 4000);
+        mobileCallBtn.addEventListener("click", () => clearInterval(pulseInterval));
+      }
+    }
+
+    // ========== SIMPLIFIED DYNAMIC FEATURES ==========
+
+    // Time-based personalization
+    function updateTimeBasedContent() {
+      const now = new Date();
+      const hour = now.getHours();
+      const urgencyText = document.getElementById("urgency-text");
+      
+      if (urgencyText) {
+        if (hour >= 8 && hour < 20) {
+          urgencyText.textContent = "Same-day service available • Callback in 5–15 minutes";
+        } else {
+          urgencyText.textContent = "Next-day service available • Callback in 5–15 minutes";
+        }
+      }
+    }
+
+    // Availability badge (simplified)
+    function initAvailabilityBadge() {
+      const badge = document.getElementById("availability-badge");
+      const availabilityText = document.getElementById("availability-text");
+      if (!badge || !availabilityText) return;
+
+      const now = new Date();
+      const hour = now.getHours();
+      const day = now.getDay();
+
+      let message = "";
+      let show = false;
+
+      if (day >= 1 && day <= 5 && hour >= 8 && hour < 20) {
+        message = "Technicians available now";
+        show = true;
+      } else if (day === 6 && hour >= 9 && hour < 17) {
+        message = "Saturday service available";
+        show = true;
+      }
+
+      if (show) {
+        availabilityText.textContent = message;
+        badge.style.display = "flex";
+      } else {
+        badge.style.display = "none";
+      }
+    }
+
+    // Initialize dynamic features
+    function initDynamicFeatures() {
+      updateTimeBasedContent();
+      initAvailabilityBadge();
+      
+      // Update every 5 minutes
+      setInterval(() => {
+        updateTimeBasedContent();
+        initAvailabilityBadge();
+      }, 300000);
+    }
+
+    // Lazy-load repair images (supports srcset/sizes + Drive fallbacks)
+    function initLazyRepairs() {
+      const cards = document.querySelectorAll(".repair-media[data-src]");
+      if (!cards.length) return;
+      const getDriveId = (url) => {
+        const idMatch = url && url.match(/(?:id=|\/d\/)([a-zA-Z0-9_-]+)/);
+        return idMatch ? idMatch[1] : null;
+      };
+      const buildDriveVariants = (url) => {
+        const id = getDriveId(url);
+        if (!id) return [url].filter(Boolean);
+        return [
+          `https://drive.google.com/uc?export=view&id=${id}`,
+          `https://drive.google.com/thumbnail?id=${id}&sz=w1200`,
+          `https://lh3.googleusercontent.com/d/${id}=w1200`
+        ];
+      };
+      const loadImg = (media) => {
+        const url = media.getAttribute("data-src");
+        if (!url || media.dataset.loaded) return;
+        const img = media.querySelector("img");
+        if (!img) return;
+        img.referrerPolicy = "no-referrer";
+        img.crossOrigin = "anonymous";
+        const srcset = media.getAttribute("data-srcset");
+        const sizes = media.getAttribute("data-sizes");
+        if (srcset) img.setAttribute("srcset", srcset);
+        if (sizes) img.setAttribute("sizes", sizes);
+
+        const variants = buildDriveVariants(url);
+        let idx = 0;
+        const temp = new Image();
+        temp.referrerPolicy = "no-referrer";
+        temp.crossOrigin = "anonymous";
+        const setLoaded = (finalUrl) => {
+          img.src = finalUrl;
+          media.classList.add("loaded");
+          media.dataset.loaded = "1";
+          const ph = media.querySelector(".repair-placeholder");
+          if (ph) ph.style.display = "none";
+        };
+        const tryNext = () => {
+          if (idx >= variants.length) {
+            media.dataset.loaded = "error";
+            return;
+          }
+          temp.src = variants[idx++];
+        };
+        temp.onload = () => setLoaded(temp.src);
+        temp.onerror = () => tryNext();
+        tryNext();
+      };
+
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              loadImg(entry.target);
+              io.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: "200px 0px" });
+        cards.forEach((media) => io.observe(media));
+      } else {
+        cards.forEach(loadImg);
+      }
+    }
+
+    // Issue quick picker
+    function initIssueChips() {
+      const issueInput = document.getElementById("issue");
+      if (!issueInput) return;
+      const chips = document.querySelectorAll(".issue-chip");
+      chips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          chips.forEach((c) => c.classList.remove("active"));
+          chip.classList.add("active");
+          issueInput.value = chip.dataset.issue || chip.textContent.trim();
+          issueInput.focus();
+        });
+      });
+    }
+
+    // Accordion: manual control for smooth, repeatable animations (only one open)
+    function initFAQAccordion() {
+      const items = document.querySelectorAll(".faq-item");
+      if (!items.length) return;
+
+      const animateBody = (body, open) => {
+        if (!body) return;
+        const h = body.scrollHeight || body.offsetHeight || 0;
+        body.style.maxHeight = h + "px";
+        if (open) {
+          body.style.display = "block";
+          body.style.opacity = "1";
+          body.style.transform = "translateY(0)";
+          requestAnimationFrame(() => {
+            body.style.maxHeight = h + "px";
+          });
+        } else {
+          body.style.opacity = "0";
+          body.style.transform = "translateY(6px)";
+          requestAnimationFrame(() => {
+            body.style.maxHeight = "0px";
+          });
+        }
+      };
+
+      const closeItem = (item) => {
+        if (!item || !item.hasAttribute("open") || item.dataset.animating) return;
+        const body = item.querySelector(".faq-body");
+        item.dataset.animating = "1";
+        animateBody(body, false);
+        const onEnd = (e) => {
+          if (e.propertyName !== "max-height") return;
+          body.removeEventListener("transitionend", onEnd);
+          body.style.display = "none";
+          item.removeAttribute("open");
+          item.dataset.animating = "";
+        };
+        body.addEventListener("transitionend", onEnd);
+      };
+
+      const openItem = (item) => {
+        if (!item || item.dataset.animating) return;
+        const body = item.querySelector(".faq-body");
+        item.dataset.animating = "1";
+        body.style.display = "block";
+        body.style.maxHeight = "0px";
+        body.style.opacity = "0";
+        body.style.transform = "translateY(6px)";
+        void body.offsetHeight; // force reflow
+        item.setAttribute("open", "");
+        animateBody(body, true);
+        const onEnd = (e) => {
+          if (e.propertyName !== "max-height") return;
+          body.removeEventListener("transitionend", onEnd);
+          body.style.maxHeight = body.scrollHeight + "px";
+          item.dataset.animating = "";
+        };
+        body.addEventListener("transitionend", onEnd);
+      };
+
+      // Init current state
+      items.forEach((item) => {
+        const body = item.querySelector(".faq-body");
+        if (item.hasAttribute("open")) {
+          body.style.display = "block";
+          body.style.maxHeight = body.scrollHeight + "px";
+          body.style.opacity = "1";
+          body.style.transform = "translateY(0)";
+        } else {
+          body.style.display = "none";
+          body.style.maxHeight = "0px";
+          body.style.opacity = "0";
+        }
+      });
+
+      // Manual click control to avoid native instant toggle
+      items.forEach((item) => {
+        const summary = item.querySelector("summary");
+        if (!summary) return;
+        summary.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (item.dataset.animating === "1") return;
+          const isOpen = item.hasAttribute("open");
+          if (isOpen) {
+            closeItem(item);
+          } else {
+            items.forEach((other) => {
+              if (other !== item && other.hasAttribute("open")) {
+                closeItem(other);
+              }
+            });
+            openItem(item);
+          }
+        });
+      });
+    }
+
+    // Cookie consent (lightweight, non-intrusive)
+    function initCookieConsent() {
+      const banner = document.getElementById("cookie-banner");
+      if (!banner) return;
+      const accepted = localStorage.getItem("cookie_consent");
+      if (!accepted) {
+        banner.style.display = "grid";
+        setTimeout(() => {
+          if (!localStorage.getItem("cookie_consent")) {
+            localStorage.setItem("cookie_consent", "dismissed");
+            banner.style.display = "none";
+          }
+        }, 10000);
+      }
+      const acceptBtn = document.getElementById("cookie-accept");
+      const declineBtn = document.getElementById("cookie-decline");
+      const closeBanner = (value) => {
+        localStorage.setItem("cookie_consent", value);
+        banner.style.display = "none";
+      };
+      if (acceptBtn) acceptBtn.addEventListener("click", () => closeBanner("accepted"));
+      if (declineBtn) declineBtn.addEventListener("click", () => closeBanner("declined"));
+    }
+
+    // Legal modal handlers
+    function initLegalModal() {
+      const modal = document.getElementById("legal-modal");
+      const openBtn = document.getElementById("open-legal");
+      const closeBtn = document.getElementById("close-legal");
+      if (!modal || !openBtn || !closeBtn) return;
+      const close = () => { modal.style.display = "none"; document.body.style.overflow = ""; };
+      openBtn.addEventListener("click", (e) => { e.preventDefault(); modal.style.display = "flex"; document.body.style.overflow = "hidden"; });
+      closeBtn.addEventListener("click", close);
+      modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initDynamicFeatures);
+      document.addEventListener("DOMContentLoaded", initCookieConsent);
+      document.addEventListener("DOMContentLoaded", initLegalModal);
+      document.addEventListener("DOMContentLoaded", initFAQAccordion);
+      document.addEventListener("DOMContentLoaded", initLazyRepairs);
+      document.addEventListener("DOMContentLoaded", initIssueChips);
+    } else {
+      initDynamicFeatures();
+      initCookieConsent();
+      initLegalModal();
+      initFAQAccordion();
+      initLazyRepairs();
+    }
+  </script>
+</body>
+</html>
