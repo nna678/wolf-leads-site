@@ -2530,9 +2530,6 @@
     style.textContent = `@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}`;
     document.head.appendChild(style);
 
-    // IMPORTANT: Replace with your actual email address to receive requests
-    const SERVICE_EMAIL = "your-email@example.com"; // Replace with your email
-
     function validateAndSubmit(form, config) {
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -2563,6 +2560,8 @@
         submitBtn.disabled = true;
         form.classList.add("loading");
 
+        const params = new URLSearchParams(window.location.search);
+
         // Collect form data
         const formData = {
           phone: phoneInput.value,
@@ -2573,34 +2572,15 @@
           applianceAge: form.querySelector('#appliance-age')?.value || '',
           issue: form.querySelector('#issue')?.value || '',
           time: form.querySelector('#time')?.value || '',
-          location: document.getElementById('location-hidden')?.value || 'Not detected'
+          location: document.getElementById('location-hidden')?.value || 'Not detected',
+          page_url: window.location.href,
+          utm_source: document.getElementById("utm-source")?.value || params.get("utm_source") || "",
+          utm_medium: document.getElementById("utm-medium")?.value || params.get("utm_medium") || "",
+          utm_campaign: document.getElementById("utm-campaign")?.value || params.get("utm_campaign") || "",
+          utm_content: params.get("utm_content") || "",
+          utm_term: params.get("utm_term") || "",
+          gclid: params.get("gclid") || ""
         };
-
-        // Build text for email and Instagram
-        const emailSubject = encodeURIComponent(`New Service Request - Sub-Zero & Wolf Repair`);
-        const emailBody = encodeURIComponent(`NEW SERVICE REQUEST
-
-Contact Information:
-📞 Phone: ${formData.phone}
-📧 Email: ${formData.email || 'Not provided'}
-
-Service Location:
-📍 Address: ${formData.address || 'Not provided'}
-📮 ZIP Code: ${formData.zip || 'Not provided'}
-🌍 Location: ${formData.location}
-
-Appliance Details:
-🔧 Type: ${formData.appliance || 'Not specified'}
-📅 Age: ${formData.applianceAge === 'less-than-3' ? 'Less than 3 years' : formData.applianceAge === 'more-than-3' ? 'More than 3 years' : 'Not specified'}
-🧩 Issue: ${formData.issue || 'Not specified'}
-
-Scheduling:
-⏰ Preferred Time: ${formData.time || 'Not specified'}
-
----
-Request submitted from website
-Timestamp: ${new Date().toLocaleString()}
-`);
 
         // Instagram text (for copying)
         const instagramText = `🔧 New Sub-Zero & Wolf service request
@@ -2618,16 +2598,21 @@ Timestamp: ${new Date().toLocaleString()}
 🌍 Location: ${formData.location}`;
 
         try {
-          // Отправляем на email через mailto
-          const mailtoLink = `mailto:${SERVICE_EMAIL}?subject=${emailSubject}&body=${emailBody}`;
-          window.location.href = mailtoLink;
+          const resp = await fetch("/.netlify/functions/lead", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+          });
+          const out = await resp.json().catch(() => ({}));
+          if (!resp.ok || !out.ok) {
+            throw new Error(out.error || "Lead send failed");
+          }
 
           // Показываем успешное сообщение с текстом для Instagram
-          const successMessage = `✓ <strong>Request prepared successfully!</strong><br><br>
+          const successMessage = `✓ <strong>Request sent successfully!</strong><br><br>
           
 ⏱️ We typically call within 5–15 minutes during business hours.<br><br>
-📧 Your email app should open. If it doesn’t, use the “Copy Text” button below.<br><br>
-<small style="opacity: 0.8;">The message has all the details and is ready to send.</small>`;
+Use “Copy Text” if needed.`;
 
           setSuccess(config.successId, successMessage.replace(/\n/g, '<br>'));
           
