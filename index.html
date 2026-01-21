@@ -1909,6 +1909,10 @@
             <div class="form-section form-two-col">
               <div class="form-section-title">Contact Information</div>
             <div class="form-group">
+                <label for="name">Full Name (Optional)</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" autocomplete="name" />
+              </div>
+            <div class="form-group">
                 <label for="phone">Phone Number *</label>
               <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="tel" required maxlength="17" />
               <div class="error-msg" id="phone-error"></div>
@@ -1927,7 +1931,7 @@
               </div>
             <div class="form-group">
               <label for="zip">ZIP Code (Optional)</label>
-                <input type="text" id="zip" name="zip" inputmode="numeric" maxlength="5" placeholder="ZIP code" />
+                <input type="text" id="zip" name="zip" inputmode="numeric" maxlength="10" placeholder="ZIP code" />
               </div>
             </div>
 
@@ -1972,6 +1976,7 @@
               <label for="time">Preferred Time Window (Optional)</label>
               <select id="time" name="time">
                 <option value="">Select time window</option>
+                  <option value="asap">ASAP (urgent)</option>
                   <option value="8-11">8am - 11am</option>
                   <option value="9-12">9am - 12pm</option>
                   <option value="12-3">12pm - 3pm</option>
@@ -2563,7 +2568,20 @@
         const params = new URLSearchParams(window.location.search);
 
         // Collect form data
+        const timeSelect = form.querySelector('#time');
+        const timeValue = timeSelect?.value || '';
+        const timeLabel = timeSelect?.selectedOptions?.[0]?.textContent?.trim() || '';
+        const nowLocal = new Date();
+        const day = nowLocal.getDay();
+        const hour = nowLocal.getHours();
+        const isWeekend = day === 0 || day === 6;
+        const isOffHours = hour < 8 || hour >= 20;
+        const priority = timeValue === 'asap' || isWeekend || isOffHours ? 'High' : 'Normal';
+        const localTimestamp = nowLocal.toLocaleString();
+        const utcTimestamp = nowLocal.toISOString();
+
         const formData = {
+          name: form.querySelector('#name')?.value || '',
           phone: phoneInput.value,
           email: form.querySelector('#email')?.value || '',
           address: form.querySelector('#address')?.value || '',
@@ -2571,8 +2589,13 @@
           appliance: form.querySelector('#appliance')?.value || '',
           applianceAge: form.querySelector('#appliance-age')?.value || '',
           issue: form.querySelector('#issue')?.value || '',
-          time: form.querySelector('#time')?.value || '',
+          time: timeValue,
+          time_label: timeLabel,
           location: document.getElementById('location-hidden')?.value || 'Not detected',
+          fee_acknowledged: !!feeInput.checked,
+          priority,
+          timestamp_local: localTimestamp,
+          timestamp_utc: utcTimestamp,
           page_url: window.location.href,
           utm_source: document.getElementById("utm-source")?.value || params.get("utm_source") || "",
           utm_medium: document.getElementById("utm-medium")?.value || params.get("utm_medium") || "",
@@ -2582,32 +2605,49 @@
           gclid: params.get("gclid") || ""
         };
 
-        // Instagram text (for copying)
-        const instagramText = `🔧 New Sub-Zero & Wolf service request
+        // Copy text (for operator)
+        const leadSourceLine = `${formData.utm_source || '-'} / ${formData.utm_medium || '-'} / ${formData.utm_campaign || '-'} • ${formData.page_url}`;
+        const leadDomainLine = `${window.location.hostname || '-'} • ${formData.utm_source || '-'} / ${formData.utm_medium || '-'} / ${formData.utm_campaign || '-'}`;
+        const timeDisplay = formData.time_label || formData.time || 'Not provided';
+        const instagramText = `NEW SERVICE REQUEST
+Summary: ${formData.phone} • ${formData.zip || '-'} • ${formData.appliance || '-'}
+Time: ${formData.timestamp_local} (local) • ${formData.timestamp_utc} (UTC)
+Priority: ${formData.priority}
+Lead source: ${leadSourceLine}
+Lead source (domain + UTM): ${leadDomainLine}
 
-📞 Phone: ${formData.phone}
-📧 Email: ${formData.email || 'Not provided'}
-📍 Address: ${formData.address || 'Not provided'}
-📮 ZIP: ${formData.zip || 'Not provided'}
+Contact:
+Name: ${formData.name || 'Not provided'}
+Phone: ${formData.phone}
+Email: ${formData.email || 'Not provided'}
 
-🔧 Appliance: ${formData.appliance || 'Not provided'}
-📅 Age: ${formData.applianceAge === 'less-than-3' ? 'Less than 3 years' : formData.applianceAge === 'more-than-3' ? 'More than 3 years' : 'Not provided'}
-🧩 Issue: ${formData.issue || 'Not provided'}
-⏰ Time: ${formData.time || 'Not provided'}
+Service Location:
+Address: ${formData.address || 'Not provided'}
+ZIP: ${formData.zip || 'Not provided'}
+Geo: ${formData.location}
 
-🌍 Location: ${formData.location}`;
+Appliance:
+Type: ${formData.appliance || 'Not provided'}
+Age: ${formData.applianceAge === 'less-than-3' ? 'Less than 3 years' : formData.applianceAge === 'more-than-3' ? 'More than 3 years' : 'Not provided'}
 
-        try {
-          const resp = await fetch("/.netlify/functions/lead", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
-          });
-          const out = await resp.json().catch(() => ({}));
-          if (!resp.ok || !out.ok) {
-            throw new Error(out.error || "Lead send failed");
-          }
+Problem / Issue:
+${formData.issue || 'Not provided'}
 
+Scheduling:
+Preferred time: ${timeDisplay}
+Service fee acknowledged: ${formData.fee_acknowledged ? 'Yes' : 'No'}
+
+Page: ${formData.page_url}
+
+UTM:
+utm_source: ${formData.utm_source || '-'}
+utm_medium: ${formData.utm_medium || '-'}
+utm_campaign: ${formData.utm_campaign || '-'}
+utm_content: ${formData.utm_content || '-'}
+utm_term: ${formData.utm_term || '-'}
+gclid: ${formData.gclid || '-'}`;
+
+        const showSuccessUI = () => {
           // Показываем успешное сообщение с текстом для Instagram
           const successMessage = `✓ <strong>Request sent successfully!</strong><br><br>
           
@@ -2666,32 +2706,48 @@ Use “Copy Text” if needed.`;
             successDiv.appendChild(textarea);
             successDiv.appendChild(copyBtn);
           }
+        };
 
-            form.reset();
-            setError(config.phoneErr, "", phoneInput);
-            setError(config.feeErr, "", feeInput);
-          submitBtn.textContent = "✓ Submitted";
-          
-          // Track conversion
-          if (typeof gtag !== "undefined") {
-            gtag("event", "form_submit", {
-              "event_category": "engagement",
-              "event_label": "lead_form"
-            });
-          }
-          
-          setTimeout(() => { 
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            form.classList.remove("loading");
-          }, 3000);
-          
-        } catch (err) {
-          setError(config.phoneErr, "Error preparing request. Please call us directly at (888) 445-7686.", phoneInput);
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-          form.classList.remove("loading");
+        // Мгновенно показываем успех и даем запасной копируемый текст
+        form.reset();
+        showSuccessUI();
+        setError(config.phoneErr, "", phoneInput);
+        setError(config.feeErr, "", feeInput);
+        submitBtn.textContent = "✓ Submitted";
+        submitBtn.disabled = false;
+        form.classList.remove("loading");
+
+        // Track conversion
+        if (typeof gtag !== "undefined") {
+          gtag("event", "form_submit", {
+            "event_category": "engagement",
+            "event_label": "lead_form"
+          });
         }
+
+        setTimeout(() => { 
+          submitBtn.textContent = originalText;
+        }, 3000);
+
+        // Отправляем лид асинхронно, без ожидания UI
+        (async () => {
+          try {
+            const resp = await fetch("/.netlify/functions/lead", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(formData)
+            });
+            const out = await resp.json().catch(() => ({}));
+            if (!resp.ok || !out.ok) {
+              throw new Error(out.error || "Lead send failed");
+            }
+          } catch (err) {
+            setSuccess(config.successId, "");
+            const errMsg = err?.message ? `Error: ${err.message}` : "Error sending request.";
+            setError(config.phoneErr, `${errMsg} Please call us directly at (888) 445-7686.`, phoneInput);
+            submitBtn.textContent = originalText;
+          }
+        })();
       });
     }
 
@@ -2707,7 +2763,12 @@ Use “Copy Text” if needed.`;
     const zipInput = document.getElementById("zip");
     if (zipInput) {
       zipInput.addEventListener("input", (e) => {
-        e.target.value = e.target.value.replace(/\D/g, "").slice(0, 5);
+        const digits = e.target.value.replace(/\D/g, "").slice(0, 9);
+        if (digits.length > 5) {
+          e.target.value = `${digits.slice(0, 5)}-${digits.slice(5)}`;
+        } else {
+          e.target.value = digits;
+        }
       });
     }
 
