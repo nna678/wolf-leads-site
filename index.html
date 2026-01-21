@@ -2577,7 +2577,10 @@
         const isWeekend = day === 0 || day === 6;
         const isOffHours = hour < 8 || hour >= 20;
         const priority = timeValue === 'asap' || isWeekend || isOffHours ? 'High' : 'Normal';
-        const localTimestamp = nowLocal.toLocaleString();
+        const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        const localTimestamp = userTimeZone
+          ? nowLocal.toLocaleString('en-US', { timeZone: userTimeZone })
+          : nowLocal.toLocaleString();
         const utcTimestamp = nowLocal.toISOString();
 
         const formData = {
@@ -2596,48 +2599,33 @@
           priority,
           timestamp_local: localTimestamp,
           timestamp_utc: utcTimestamp,
+          timezone: userTimeZone,
           page_url: window.location.href,
           utm_source: document.getElementById("utm-source")?.value || params.get("utm_source") || "",
           utm_medium: document.getElementById("utm-medium")?.value || params.get("utm_medium") || "",
           utm_campaign: document.getElementById("utm-campaign")?.value || params.get("utm_campaign") || "",
           utm_content: params.get("utm_content") || "",
           utm_term: params.get("utm_term") || "",
-          gclid: params.get("gclid") || ""
+          gclid: params.get("gclid") || "",
+          kw: params.get("kw") || params.get("keyword") || ""
         };
 
         // Copy text (for operator)
-        const leadSourceLine = `${formData.utm_source || '-'} / ${formData.utm_medium || '-'} / ${formData.utm_campaign || '-'} • ${formData.page_url}`;
-        const leadDomainLine = `${window.location.hostname || '-'} • ${formData.utm_source || '-'} / ${formData.utm_medium || '-'} / ${formData.utm_campaign || '-'}`;
+        const leadSourceLine = `${formData.utm_source || '-'} / ${formData.utm_medium || '-'} / ${formData.utm_campaign || '-'}`;
         const timeDisplay = formData.time_label || formData.time || 'Not provided';
         const instagramText = `NEW SERVICE REQUEST
-Summary: ${formData.phone} • ${formData.zip || '-'} • ${formData.appliance || '-'}
-Time: ${formData.timestamp_local} (local) • ${formData.timestamp_utc} (UTC)
-Priority: ${formData.priority}
-Lead source: ${leadSourceLine}
-Lead source (domain + UTM): ${leadDomainLine}
-
-Contact:
 Name: ${formData.name || 'Not provided'}
 Phone: ${formData.phone}
 Email: ${formData.email || 'Not provided'}
-
-Service Location:
 Address: ${formData.address || 'Not provided'}
 ZIP: ${formData.zip || 'Not provided'}
 Geo: ${formData.location}
-
-Appliance:
-Type: ${formData.appliance || 'Not provided'}
-Age: ${formData.applianceAge === 'less-than-3' ? 'Less than 3 years' : formData.applianceAge === 'more-than-3' ? 'More than 3 years' : 'Not provided'}
-
-Problem / Issue:
-${formData.issue || 'Not provided'}
-
-Scheduling:
+Appliance: ${formData.appliance || 'Not provided'}
+Appliance age: ${formData.applianceAge === 'less-than-3' ? 'Less than 3 years' : formData.applianceAge === 'more-than-3' ? 'More than 3 years' : 'Not provided'}
+Issue: ${formData.issue || 'Not provided'}
 Preferred time: ${timeDisplay}
 Service fee acknowledged: ${formData.fee_acknowledged ? 'Yes' : 'No'}
-
-Page: ${formData.page_url}
+Priority: ${formData.priority}
 
 UTM:
 utm_source: ${formData.utm_source || '-'}
@@ -2645,7 +2633,11 @@ utm_medium: ${formData.utm_medium || '-'}
 utm_campaign: ${formData.utm_campaign || '-'}
 utm_content: ${formData.utm_content || '-'}
 utm_term: ${formData.utm_term || '-'}
-gclid: ${formData.gclid || '-'}`;
+gclid: ${formData.gclid || '-'}
+kw: ${formData.kw || '-'}
+
+Local time: ${formData.timestamp_local}${formData.timezone ? ` (${formData.timezone})` : ''}
+Page: ${formData.page_url}`;
 
         const showSuccessUI = () => {
           // Показываем успешное сообщение с текстом для Instagram

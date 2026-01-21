@@ -85,50 +85,26 @@ function buildText(p) {
   const utm_content = safeString(p.utm_content || "");
   const utm_term = safeString(p.utm_term || "");
   const gclid = safeString(p.gclid || "");
+  const kw = safeString(p.kw || p.keyword || "");
   const priority = safeString(p.priority || (String(p.time || "") === "asap" ? "High" : "Normal"));
-  const leadSource = `${utm_source || "-"} / ${utm_medium || "-"} / ${utm_campaign || "-"} • ${pageUrl || "-"}`;
-  const leadDomain = (() => {
-    if (!pageUrl) return "-";
-    try {
-      return new URL(pageUrl).hostname;
-    } catch {
-      return "-";
-    }
-  })();
-  const leadSourceDomain = `${leadDomain} • ${utm_source || "-"} / ${utm_medium || "-"} / ${utm_campaign || "-"}`;
-  const timestampLocal = new Date().toLocaleString("en-US", { timeZone: "America/Los_Angeles" });
-  const timestampUtc = new Date().toISOString();
+  const leadSource = `${utm_source || "-"} / ${utm_medium || "-"} / ${utm_campaign || "-"}`;
+  const timestampLocal = safeString(p.timestamp_local || "") || new Date().toLocaleString("en-US", { timeZone: "America/Los_Angeles" });
+  const timeZone = safeString(p.timezone || "");
 
   const lines = [];
   lines.push("NEW SERVICE REQUEST");
-  lines.push(`Summary: ${phone || "-"} • ${zip || "-"} • ${appliance || "-"}`);
-  lines.push(`Time: ${timestampLocal} (local) • ${timestampUtc} (UTC)`);
-  lines.push(`Priority: ${priority || "-"}`);
-  lines.push(`Lead source: ${leadSource}`);
-  lines.push(`Lead source (domain + UTM): ${leadSourceDomain}`);
-  lines.push("");
-  lines.push("Contact:");
   lines.push(`Name: ${name || "-"}`);
   lines.push(`Phone: ${phone || "-"}`);
   lines.push(`Email: ${email || "-"}`);
-  lines.push("");
-  lines.push("Service Location:");
   lines.push(`Address: ${address || "-"}`);
   lines.push(`ZIP: ${zip || "-"}`);
   lines.push(`Geo: ${location || "-"}`);
-  lines.push("");
-  lines.push("Appliance:");
-  lines.push(`Type: ${appliance || "-"}`);
-  lines.push(`Age: ${applianceAge || "-"}`);
-  lines.push("");
-  lines.push("Problem / Issue:");
-  lines.push(issue || "-");
-  lines.push("");
-  lines.push("Scheduling:");
+  lines.push(`Appliance: ${appliance || "-"}`);
+  lines.push(`Appliance age: ${applianceAge || "-"}`);
+  lines.push(`Issue: ${issue || "-"}`);
   lines.push(`Preferred time: ${time || "-"}`);
   lines.push(`Service fee acknowledged: ${feeAck ? "Yes" : "No"}`);
-  lines.push("");
-  lines.push(`Page: ${pageUrl || "-"}`);
+  lines.push(`Priority: ${priority || "-"}`);
   lines.push("");
   lines.push("UTM:");
   lines.push(`utm_source: ${utm_source || "-"}`);
@@ -137,6 +113,10 @@ function buildText(p) {
   lines.push(`utm_content: ${utm_content || "-"}`);
   lines.push(`utm_term: ${utm_term || "-"}`);
   lines.push(`gclid: ${gclid || "-"}`);
+  lines.push(`kw: ${kw || "-"}`);
+  lines.push("");
+  lines.push(`Local time: ${timestampLocal}${timeZone ? ` (${timeZone})` : ""}`);
+  lines.push(`Page: ${pageUrl || "-"}`);
 
   return lines.join("\n");
 }
@@ -253,12 +233,23 @@ exports.handler = async (event) => {
       zip: safeString(payload.zip || ""),
       appliance: safeString(payload.appliance || ""),
       time: safeString(payload.time_label || payload.time || ""),
-      priority,
-      utm_source,
-      utm_medium,
-      utm_campaign,
+      priority: safeString(payload.priority || (String(payload.time || "") === "asap" ? "High" : "Normal")),
+      utm_source: safeString(payload.utm_source || ""),
+      utm_medium: safeString(payload.utm_medium || ""),
+      utm_campaign: safeString(payload.utm_campaign || ""),
+      kw: safeString(payload.kw || payload.keyword || ""),
     };
     console.info("Lead summary", summary);
+
+    const errorDetails = [];
+    if (!tgRes.ok) {
+      const reason = tgRes.reason || tgRes.error || tgRes.telegram?.description || "Telegram failed";
+      errorDetails.push(`telegram: ${reason}`);
+    }
+    if (!mailRes.ok) {
+      const reason = mailRes.reason || mailRes.error || "Email failed";
+      errorDetails.push(`email: ${reason}`);
+    }
 
     if (!bothOk) {
       console.error("Lead send failed", { telegram: tgRes, email: mailRes });
@@ -268,7 +259,7 @@ exports.handler = async (event) => {
       ok: bothOk,
       telegram: tgRes,
       email: mailRes,
-      error: bothOk ? undefined : "Lead send failed in one or more channels",
+      error: bothOk ? undefined : `Lead send failed: ${errorDetails.join(" | ")}`,
     });
   } catch (e) {
     console.error("Lead handler error", e);
