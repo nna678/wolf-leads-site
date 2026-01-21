@@ -192,11 +192,11 @@ exports.handler = async (event) => {
     const tgRes = tg.status === "fulfilled" ? tg.value : { ok: false, error: String(tg.reason) };
     const mailRes = mail.status === "fulfilled" ? mail.value : { ok: false, error: String(mail.reason) };
 
-    // Успех если хоть куда-то улетело
-    const anyOk = !!(tgRes.ok || mailRes.ok);
+    // Успех только если улетело и в Telegram, и на email
+    const bothOk = !!(tgRes.ok && mailRes.ok);
 
-    return json(anyOk ? 200 : 502, {
-      ok: anyOk,
+    return json(bothOk ? 200 : 502, {
+      ok: bothOk,
       telegram: tgRes,
       email: mailRes,
     });
