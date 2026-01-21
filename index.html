@@ -2835,9 +2835,9 @@
         const id = getDriveId(url);
         if (!id) return [url].filter(Boolean);
         return [
-          `https://drive.google.com/uc?export=view&id=${id}`,
           `https://drive.google.com/thumbnail?id=${id}&sz=w1200`,
-          `https://lh3.googleusercontent.com/d/${id}=w1200`
+          `https://lh3.googleusercontent.com/d/${id}=w1200`,
+          `https://drive.google.com/uc?export=view&id=${id}`
         ];
       };
       const loadImg = (media) => {
@@ -2847,10 +2847,13 @@
         if (!img) return;
         img.referrerPolicy = "no-referrer";
         img.crossOrigin = "anonymous";
-        const srcset = media.getAttribute("data-srcset");
-        const sizes = media.getAttribute("data-sizes");
-        if (srcset) img.setAttribute("srcset", srcset);
-        if (sizes) img.setAttribute("sizes", sizes);
+        if (img.hasAttribute("srcset")) img.removeAttribute("srcset");
+        if (img.hasAttribute("sizes")) img.removeAttribute("sizes");
+        img.onerror = () => {
+          img.style.display = "none";
+          const ph = media.querySelector(".repair-placeholder");
+          if (ph) ph.style.display = "flex";
+        };
 
         const variants = buildDriveVariants(url);
         let idx = 0;
