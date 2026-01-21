@@ -1,2 +1,21 @@
+# macOS
 .DS_Store
+
+# Cursor / VSCode
 .cursor/
+.vscode/
+
+# env / secrets
+.env
+.env.*
+*.env
+
+# Netlify local folder
+.netlify/
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
