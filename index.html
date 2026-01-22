@@ -1775,7 +1775,7 @@
     <header class="top-bar">
       <div class="bar-inner">
         <div class="brand">Sub-Zero &amp; Wolf Repair</div>
-        <div class="bar-note">Callback in 5–15 minutes</div>
+        <div class="bar-note">SMS confirmation in 5–15 minutes</div>
         <a class="btn btn-primary" href="tel:+18884457686">Call (888) 445-7686</a>
       </div>
     </header>
@@ -1790,9 +1790,9 @@
               Appliance Repair • Sub-Zero / Wolf
             </div>
             <h1>Sub-Zero &amp; Wolf Appliance Repair</h1>
-            <div class="subheadline">Licensed &amp; insured • OEM parts • Same/next-day • Clear quote after diagnosis</div>
+            <div class="subheadline">Licensed &amp; insured • OEM parts • Same- or next-day service • Clear estimate after we check the unit</div>
             <div class="subheadline independence-line">Independent service. Not affiliated with Sub-Zero or Wolf.</div>
-            <div class="appliance-line">We repair fridges, freezers, wine units, ice makers, ovens, and cooktops.</div>
+            <div class="appliance-line">We repair Sub-Zero and Wolf fridges, freezers, wine units, ice makers, ovens, and cooktops.</div>
             <div class="appliance-icons" aria-hidden="true">
               <span class="appliance-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -1843,10 +1843,10 @@
 
           <!-- Trust benefits -->
           <div class="trust">
-            <div class="trust-item"><span>Licensed &amp; insured in all service areas</span></div>
-            <div class="trust-item"><span>OEM/certified parts only</span></div>
+            <div class="trust-item"><span>Licensed &amp; insured in your area</span></div>
+            <div class="trust-item"><span>OEM or certified parts only</span></div>
             <div class="trust-item"><span>180-day warranty on labor and parts</span></div>
-            <div class="trust-item"><span>Same/next-day dispatch</span></div>
+            <div class="trust-item"><span>Same- or next-day dispatch</span></div>
           </div>
 
           <div class="social-proof">
@@ -1857,9 +1857,9 @@
           <!-- Pricing info -->
           <div class="pricing-group">
           <div class="fee-line">
-              $99 service call — credited toward repair*
+              $99 service call — credited if you proceed*
             </div>
-            <div class="fee-footnote">*If you approve the repair after diagnosis, $99 is applied to your bill.</div>
+            <div class="fee-footnote">*If you approve the repair after we check the unit, $99 is applied to your bill.</div>
           </div>
           
           <!-- Main CTAs - Enhanced -->
@@ -1867,14 +1867,14 @@
             <a class="btn btn-primary" href="tel:+18884457686">Call Now (888) 445-7686</a>
             <button class="btn btn-outline" id="scroll-to-form" type="button">Book Service</button>
           </div>
-          <div class="cta-note">No spam. We call in 5–15 minutes. Clear quote after diagnosis.</div>
-          <div class="cta-note">No pressure. You approve the quote before any repair.</div>
-          <div class="cta-trust">Licensed in all service regions • OEM parts • 180-day warranty • Same-day windows limited</div>
+          <div class="cta-note">No spam. SMS confirmation in 5–15 minutes. Clear estimate after we check the unit.</div>
+          <div class="cta-note">No pressure. You approve the estimate before any work.</div>
+          <div class="cta-trust">Licensed &amp; insured • OEM parts • 180-day warranty • Limited same-day slots</div>
           
           <!-- Conversion motivator -->
           <div class="conversion-motivator hero-motivator">
             <span class="motivator-icon">⚡</span>
-            <span class="motivator-text">We call in 5–15 minutes. Pick a time window. $99 credited after diagnosis.</span>
+            <span class="motivator-text">SMS confirmation in 5–15 minutes. Pick a time window. $99 credited if you proceed.</span>
         </div>
 
           <!-- Common issues we fix -->
@@ -1905,11 +1905,11 @@
       <div class="container" style="display: flex; justify-content: center;">
         <div class="form-card" id="form-card">
           <div class="form-title">Book Service</div>
-          <div class="callback-badge">We call in 5–15 minutes</div>
-          <div class="form-subtitle">Sub-Zero/Wolf specialists. We call in 5–15 minutes. Clear quote after diagnosis.</div>
+          <div class="callback-badge">SMS confirmation in 5–15 minutes</div>
+          <div class="form-subtitle">Sub-Zero/Wolf specialists. SMS confirmation in 5–15 minutes. Clear estimate after we check the unit.</div>
           <div class="form-urgency">
             <span class="urgency-icon">⚡</span>
-            <span id="urgency-text">Same-day service available • Callback in 5–15 minutes</span>
+            <span id="urgency-text">Same-day service available • SMS confirmation in 5–15 minutes</span>
           </div>
           <form id="lead-form" method="POST">
             <input type="hidden" name="location" id="location-hidden" value="" />
@@ -1927,6 +1927,7 @@
                 <label for="phone">Phone Number *</label>
               <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="tel" required maxlength="17" />
               <div class="error-msg" id="phone-error"></div>
+              <div class="hint">US number • SMS confirmation in 5–15 minutes</div>
               </div>
               <div class="form-group">
                 <label for="email">Email Address (Optional)</label>
@@ -2009,15 +2010,22 @@
             <div class="form-section">
             <div class="checkbox-row">
                 <input type="checkbox" id="consent" name="consent" checked required />
-              <label for="consent">I consent to the processing of my personal data and SMS confirmation.</label>
+              <label for="consent">I agree to personal data processing and SMS confirmation.</label>
+            </div>
+            </div>
+
+            <div class="form-section">
+            <div class="checkbox-row">
+                <input type="checkbox" id="request-call" name="request-call" />
+              <label for="request-call">Please call me instead of SMS.</label>
             </div>
             </div>
 
             <button class="btn btn-primary form-submit" type="submit" style="width:100%; margin-top: 14px; padding: 16px; font-size: 17px; font-weight: 800;">
               <span>Book Service</span>
-              <span class="cta-hint" style="font-size: 11px;">Avg response: 5–15 minutes</span>
+              <span class="cta-hint" style="font-size: 11px;">SMS in 5–15 minutes</span>
             </button>
-            <div class="hint" style="margin-top: 8px; font-size: 12px;">Expect a call within 5–15 minutes during business hours.</div>
+            <div class="hint" style="margin-top: 8px; font-size: 12px;">SMS confirmation in 5–15 minutes during business hours.</div>
             <div class="success-msg" id="form-success"></div>
           </form>
         </div>
@@ -2098,7 +2106,7 @@
     <section class="section" id="repair-scope">
       <div class="container">
         <h2 class="section-title">We Handle Common and Complex Repairs</h2>
-        <p class="section-lead">From cooling issues to ignition and control boards. We diagnose first and give a clear quote after.</p>
+        <p class="section-lead">From cooling issues to ignition and control boards. We check the unit and then give a clear estimate.</p>
         <div class="scope-grid">
           <div class="scope-card common">
             <div class="scope-header">
@@ -2135,7 +2143,7 @@
         <div class="cta-row" style="margin-top: 16px;">
           <a class="btn btn-primary" href="tel:+18884457686">Call Now (888) 445-7686</a>
         </div>
-        <div class="cta-note">No pressure. You approve the quote before any repair. We call in 5–15 minutes.</div>
+        <div class="cta-note">No pressure. You approve the estimate before any work. SMS confirmation in 5–15 minutes.</div>
         <div class="chips-caption">4.9/5 average rating • 2,000+ repairs/year</div>
       </div>
     </section>
@@ -2147,24 +2155,24 @@
         <div class="steps">
           <div class="step">
             <div class="step-number">1</div>
-            <strong>We call you</strong>
-            We confirm your address and a short arrival window.
+            <strong>SMS confirmation</strong>
+            We confirm your request and time window by SMS.
           </div>
           <div class="step">
             <div class="step-number">2</div>
-            <strong>Confirm details</strong>
-            We confirm the appliance, symptoms, and time window.
+            <strong>Call only if needed</strong>
+            We call only if we need more details or to adjust the time.
           </div>
           <div class="step">
             <div class="step-number">3</div>
-            <strong>On-site & quote</strong>
-            We diagnose onsite and give a clear quote. Same-day in most areas.
+            <strong>On-site check & estimate</strong>
+            We check on site and give a clear estimate. Same-day in most areas.
           </div>
         </div>
         <div class="cta-row" style="margin-top: 18px; justify-content: center;">
           <a class="btn btn-primary" href="tel:+18884457686">Call Now (888) 445-7686</a>
         </div>
-        <div class="cta-note" style="text-align:center;">We call in 5–15 minutes and confirm your window.</div>
+        <div class="cta-note" style="text-align:center;">We confirm your window by SMS in 5–15 minutes.</div>
       </div>
     </section>
 
@@ -2172,7 +2180,7 @@
       <div class="container">
         <div class="repairs-header">
           <h2 class="section-title">Recent Repairs</h2>
-          <p class="section-lead">Real jobs each week. Same-day windows, OEM parts, 180-day warranty. $99 credited if you proceed.</p>
+        <p class="section-lead">Real jobs each week. Same-day windows, OEM parts, 180-day warranty. $99 credited if you proceed.</p>
         </div>
         <div class="repairs-grid">
           <div class="repair-card">
@@ -2244,7 +2252,7 @@
         <div class="cta-row" style="margin-top: 18px;">
           <a class="btn btn-primary" href="tel:+18884457686">Call Now (888) 445-7686</a>
         </div>
-        <div class="cta-note">Tell us the issue — we confirm a window in 5–15 minutes.</div>
+        <div class="cta-note">Tell us the issue — we confirm a window by SMS in 5–15 minutes.</div>
       </div>
     </section>
 
@@ -2255,7 +2263,7 @@
         <div class="objection-grid">
           <div class="objection-card">
             <div class="objection-title">“How much will it cost?”</div>
-            <div class="objection-text">We give a clear quote after diagnosis. The $99 service call is credited if you proceed.</div>
+            <div class="objection-text">We give a clear estimate after we check the unit. The $99 service call is credited if you proceed.</div>
           </div>
           <div class="objection-card">
             <div class="objection-title">“Do you carry the parts?”</div>
@@ -2267,7 +2275,7 @@
           </div>
           <div class="objection-card">
             <div class="objection-title">“When can you come?”</div>
-            <div class="objection-text">Pick a window (8–11, 9–12, 12–3, 3–6, 4–7). We confirm the exact time within 5–15 minutes.</div>
+            <div class="objection-text">Pick a window (8–11, 9–12, 12–3, 3–6, 4–7). We confirm the exact time by SMS in 5–15 minutes.</div>
           </div>
         </div>
         <div class="cta-inline">
@@ -2278,9 +2286,9 @@
 
     <section class="section" id="faq">
       <div class="container">
-        <div class="chips-caption" style="text-align:center; margin-bottom: 10px;">Licensed in all service regions • OEM parts • 180-day warranty • Callback in 5–15 minutes</div>
+        <div class="chips-caption" style="text-align:center; margin-bottom: 10px;">Licensed in all service regions • OEM parts • 180-day warranty • SMS in 5–15 minutes</div>
         <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-lead">Short answers before you book</p>
+        <p class="section-lead">Clear answers before you book</p>
         <div class="faq">
         <details class="faq-item" open>
           <summary>How does the $99 service call fee work?</summary>
@@ -2289,9 +2297,9 @@
           </div>
         </details>
         <details class="faq-item">
-          <summary>When will I get the repair quote?</summary>
+          <summary>When will I get the estimate?</summary>
           <div class="faq-body">
-            <p>We diagnose first, then give a clear quote. You decide before any repair.</p>
+            <p>We check the unit first, then give a clear estimate. You decide before any work.</p>
           </div>
         </details>
         <details class="faq-item">
@@ -2315,7 +2323,7 @@
         <details class="faq-item">
           <summary>How soon will you contact me?</summary>
           <div class="faq-body">
-            <p>We call within 5–15 minutes during business hours. After hours, we call the next business day.</p>
+            <p>We send SMS confirmation within 5–15 minutes during business hours. After hours, SMS goes out the next business day.</p>
           </div>
         </details>
         <details class="faq-item">
@@ -2325,9 +2333,9 @@
           </div>
         </details>
         <details class="faq-item">
-          <summary>Can I get a quote before diagnosis?</summary>
+          <summary>Can I get an estimate before we check the unit?</summary>
           <div class="faq-body">
-            <p>We quote after on-site diagnosis. The $99 service call is credited if you proceed.</p>
+            <p>We estimate after the on-site check. The $99 service call is credited if you proceed.</p>
           </div>
         </details>
         <details class="faq-item">
@@ -2345,14 +2353,14 @@
         <details class="faq-item">
           <summary>Can you arrive within a specific time window?</summary>
           <div class="faq-body">
-            <p>Yes. Choose a window (8–11, 9–12, 12–3, 3–6, 4–7). We confirm the exact time within 5–15 minutes.</p>
+            <p>Yes. Choose a window (8–11, 9–12, 12–3, 3–6, 4–7). We confirm the exact time by SMS in 5–15 minutes.</p>
           </div>
         </details>
         </div>
         <div class="cta-inline" style="margin-top: 18px;">
           <a class="btn btn-primary" href="tel:+18884457686">Call Now (888) 445-7686</a>
         </div>
-        <div class="cta-note" style="text-align:center;">Still have questions? We call in 5–15 minutes.</div>
+        <div class="cta-note" style="text-align:center;">Still have questions? SMS confirmation in 5–15 minutes.</div>
       </div>
     </section>
 
@@ -2392,7 +2400,7 @@
         <a class="call-btn" href="tel:+18884457686">Call Now</a>
         <button class="book-btn" id="scroll-to-form-mobile" type="button">Book</button>
       </div>
-      <div class="call-time">Callback in 5–15 minutes</div>
+      <div class="call-time">SMS confirmation in 5–15 minutes</div>
     </div>
 
     <!-- Cookie consent -->
@@ -2627,6 +2635,7 @@
           location: document.getElementById('location-hidden')?.value || 'Not detected',
           fee_acknowledged: !!feeInput.checked,
           consent_accepted: !!consentInput?.checked,
+          request_call: !!form.querySelector('#request-call')?.checked,
           priority,
           timestamp_local: localTimestamp,
           timestamp_utc: utcTimestamp,
@@ -2645,9 +2654,9 @@
           // Показываем успешное сообщение
           const successMessage = `✓ <strong>Request sent successfully!</strong><br><br>
           
-📲 You will receive an SMS confirmation shortly.<br>
+📲 You will receive an SMS confirmation in about 5–15 minutes.<br>
 📞 We will only call if we need more details or to adjust the time window.<br><br>
-✅ Licensed & insured technicians • Clear estimates before repair • No obligation to proceed`;
+✅ Licensed & insured technicians • Clear estimate before any work • No obligation to proceed`;
 
           setSuccess(config.successId, successMessage.replace(/\n/g, '<br>'));
         };
@@ -2814,9 +2823,9 @@
       
       if (urgencyText) {
         if (hour >= 8 && hour < 20) {
-          urgencyText.textContent = "Same-day service available • Callback in 5–15 minutes";
+          urgencyText.textContent = "Same-day service available • SMS confirmation in 5–15 minutes";
         } else {
-          urgencyText.textContent = "Next-day service available • Callback in 5–15 minutes";
+          urgencyText.textContent = "Next-day service available • SMS confirmation in 5–15 minutes";
         }
       }
     }

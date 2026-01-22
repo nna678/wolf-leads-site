@@ -79,6 +79,7 @@ function buildText(p) {
   const location = safeString(p.location || "");
   const feeAck = p.fee_acknowledged === true || p.fee_acknowledged === "true" || p.fee_acknowledged === "1";
   const consent = p.consent_accepted === true || p.consent_accepted === "true" || p.consent_accepted === "1";
+  const requestCall = p.request_call === true || p.request_call === "true" || p.request_call === "1";
   const pageUrl = safeString(p.page_url || p.pageUrl || p.url || "");
   const utm_source = safeString(p.utm_source || "");
   const utm_medium = safeString(p.utm_medium || "");
@@ -106,6 +107,7 @@ function buildText(p) {
   lines.push(`Preferred time: ${time || "-"}`);
   lines.push(`Service fee acknowledged: ${feeAck ? "Yes" : "No"}`);
   lines.push(`Consent accepted: ${consent ? "Yes" : "No"}`);
+  lines.push(`Prefers call: ${requestCall ? "Yes" : "No"}`);
   lines.push(`Priority: ${priority || "-"}`);
   lines.push("");
   lines.push("UTM:");
