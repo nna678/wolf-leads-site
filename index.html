@@ -3182,12 +3182,13 @@
       };
       window.addEventListener("scroll", showAfterScroll, { passive: true });
       if (!("IntersectionObserver" in window)) return;
+      const submitBtn = formCard.querySelector(".form-submit");
       const io = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           bar.classList.toggle("is-hidden", entry.isIntersecting);
         });
-      }, { rootMargin: "0px 0px -40% 0px", threshold: 0.1 });
-      io.observe(formCard);
+      }, { rootMargin: "0px 0px -20% 0px", threshold: 0.2 });
+      io.observe(submitBtn || formCard);
 
       // Hide the bar while the user fills the form on mobile
       formCard.addEventListener("focusin", () => bar.classList.add("is-hidden"));
