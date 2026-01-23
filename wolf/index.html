@@ -3165,7 +3165,7 @@
       if (!bar || !formCard || window.innerWidth > 1024) return;
       bar.classList.add("is-hidden");
       const showAfterScroll = () => {
-        if (window.scrollY > 140) {
+        if (window.scrollY > 80) {
           bar.classList.remove("is-hidden");
           window.removeEventListener("scroll", showAfterScroll);
         }
@@ -3177,7 +3177,7 @@
         entries.forEach((entry) => {
           bar.classList.toggle("is-hidden", entry.isIntersecting);
         });
-      }, { rootMargin: "0px 0px -10% 0px", threshold: 0.15 });
+      }, { rootMargin: "0px 0px -6% 0px", threshold: 0.12 });
       io.observe(submitBtn || formCard);
 
       // Hide the bar while the user fills the form on mobile
