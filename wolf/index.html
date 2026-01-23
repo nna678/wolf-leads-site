@@ -3174,22 +3174,17 @@
       if (!bar || !formCard || window.innerWidth > 1024) return;
       bar.classList.add("is-hidden");
       const submitBtn = formCard.querySelector(".form-submit");
-      const updateVisibility = () => {
-        const formBottom = formCard.getBoundingClientRect().bottom + window.pageYOffset;
-        const triggerOffset = Math.min(window.innerHeight * 0.25, 180);
-        if (window.scrollY >= formBottom - triggerOffset) {
+      const showAfterScroll = () => {
+        if (window.scrollY > 5) {
           bar.classList.remove("is-hidden");
-        } else {
-          bar.classList.add("is-hidden");
+          window.removeEventListener("scroll", showAfterScroll);
         }
       };
-      window.addEventListener("scroll", updateVisibility, { passive: true });
-      window.addEventListener("resize", updateVisibility);
-      updateVisibility();
+      window.addEventListener("scroll", showAfterScroll, { passive: true });
       if ("IntersectionObserver" in window && submitBtn) {
         const hideIo = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting) bar.classList.add("is-hidden");
+            bar.classList.toggle("is-hidden", entry.isIntersecting);
           });
         }, { threshold: 0.2 });
         hideIo.observe(submitBtn);
