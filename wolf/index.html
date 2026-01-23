@@ -2013,8 +2013,8 @@
               <div class="form-section-title">Scheduling</div>
               <div class="form-group full">
               <label for="service-date">Preferred Service Date (Optional)</label>
-              <input type="date" id="service-date" name="service-date" />
-              <div class="hint">Use the calendar. Format: MM/DD/YYYY.</div>
+              <input type="text" id="service-date" name="service-date" inputmode="numeric" maxlength="10" placeholder="MM/DD/YYYY" />
+              <div class="hint">Enter a date (MM/DD/YYYY) or pick one.</div>
               </div>
               <div class="form-group full">
               <label for="time">Preferred Time Window (Optional)</label>
@@ -2771,11 +2771,20 @@
 
     const dateInput = document.getElementById("service-date");
     if (dateInput) {
-      const today = new Date();
-      const yyyy = today.getFullYear();
-      const mm = String(today.getMonth() + 1).padStart(2, "0");
-      const dd = String(today.getDate()).padStart(2, "0");
-      dateInput.min = `${yyyy}-${mm}-${dd}`;
+      const formatDateInput = (value) => {
+        const digits = value.replace(/\D/g, "").slice(0, 8);
+        const mm = digits.slice(0, 2);
+        const dd = digits.slice(2, 4);
+        const yyyy = digits.slice(4, 8);
+        let out = mm;
+        if (dd) out += `/${dd}`;
+        if (yyyy) out += `/${yyyy}`;
+        return out;
+      };
+      dateInput.addEventListener("input", (e) => {
+        e.target.value = formatDateInput(e.target.value);
+      });
+      dateInput.addEventListener("focus", () => dateInput.select());
     }
 
     // Form validation
@@ -3164,21 +3173,18 @@
       const formCard = document.getElementById("form-card");
       if (!bar || !formCard || window.innerWidth > 1024) return;
       bar.classList.add("is-hidden");
-      const showAfterScroll = () => {
-        if (window.scrollY > 5) {
+      const updateVisibility = () => {
+        const formBottom = formCard.getBoundingClientRect().bottom + window.pageYOffset;
+        const triggerOffset = Math.min(window.innerHeight * 0.25, 180);
+        if (window.scrollY >= formBottom - triggerOffset) {
           bar.classList.remove("is-hidden");
-          window.removeEventListener("scroll", showAfterScroll);
+        } else {
+          bar.classList.add("is-hidden");
         }
       };
-      window.addEventListener("scroll", showAfterScroll, { passive: true });
-      if (!("IntersectionObserver" in window)) return;
-      const submitBtn = formCard.querySelector(".form-submit");
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          bar.classList.toggle("is-hidden", entry.isIntersecting);
-        });
-      }, { rootMargin: "0px 0px -6% 0px", threshold: 0.12 });
-      io.observe(submitBtn || formCard);
+      window.addEventListener("scroll", updateVisibility, { passive: true });
+      window.addEventListener("resize", updateVisibility);
+      updateVisibility();
 
       // Hide the bar while the user fills the form on mobile
       formCard.addEventListener("focusin", () => bar.classList.add("is-hidden"));
