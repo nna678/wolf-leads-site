@@ -3165,7 +3165,7 @@
       if (!bar || !formCard || window.innerWidth > 1024) return;
       bar.classList.add("is-hidden");
       const showAfterScroll = () => {
-        if (window.scrollY > 40) {
+        if (window.scrollY > 10) {
           bar.classList.remove("is-hidden");
           window.removeEventListener("scroll", showAfterScroll);
         }
