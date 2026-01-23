@@ -3183,6 +3183,7 @@
       const formCard = document.getElementById("form-card");
       if (!bar || !formCard || window.innerWidth > 1024) return;
       bar.classList.add("is-hidden");
+      const submitBtn = formCard.querySelector(".form-submit");
       const updateVisibility = () => {
         const formBottom = formCard.getBoundingClientRect().bottom + window.pageYOffset;
         const triggerOffset = Math.min(window.innerHeight * 0.25, 180);
@@ -3195,6 +3196,14 @@
       window.addEventListener("scroll", updateVisibility, { passive: true });
       window.addEventListener("resize", updateVisibility);
       updateVisibility();
+      if ("IntersectionObserver" in window && submitBtn) {
+        const hideIo = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) bar.classList.add("is-hidden");
+          });
+        }, { threshold: 0.2 });
+        hideIo.observe(submitBtn);
+      }
 
       // Hide the bar while the user fills the form on mobile
       formCard.addEventListener("focusin", () => bar.classList.add("is-hidden"));
