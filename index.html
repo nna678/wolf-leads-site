@@ -3186,9 +3186,17 @@
       const submitBtn = formCard.querySelector(".form-submit");
       const updateVisibility = () => {
         if (!submitBtn) return;
-        const submitBottom = submitBtn.getBoundingClientRect().bottom + window.pageYOffset;
-        const showAt = submitBottom + 15;
-        bar.classList.toggle("is-hidden", window.scrollY < showAt);
+        const rect = submitBtn.getBoundingClientRect();
+        const submitBottom = rect.bottom + window.pageYOffset;
+        const submitVisible = rect.top < window.innerHeight - 10 && rect.bottom > 10;
+        const pastSubmit = window.scrollY > submitBottom + 1;
+        if (pastSubmit) {
+          bar.classList.remove("is-hidden");
+        } else if (submitVisible) {
+          bar.classList.add("is-hidden");
+        } else {
+          bar.classList.remove("is-hidden");
+        }
       };
       window.addEventListener("scroll", updateVisibility, { passive: true });
       window.addEventListener("resize", updateVisibility);
