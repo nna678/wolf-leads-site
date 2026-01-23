@@ -75,6 +75,7 @@ function buildText(p) {
   const appliance = safeString(p.appliance || "");
   const applianceAge = safeString(p.applianceAge || p["appliance-age"] || "");
   const issue = safeString(p.issue || p.problem || "");
+  const serviceDate = safeString(p.service_date || "");
   const time = safeString(p.time_label || p.time || "");
   const location = safeString(p.location || "");
   const feeAck = p.fee_acknowledged === true || p.fee_acknowledged === "true" || p.fee_acknowledged === "1";
@@ -104,6 +105,7 @@ function buildText(p) {
   lines.push(`Appliance: ${appliance || "-"}`);
   lines.push(`Appliance age: ${applianceAge || "-"}`);
   lines.push(`Issue: ${issue || "-"}`);
+  lines.push(`Preferred date: ${serviceDate || "-"}`);
   lines.push(`Preferred time: ${time || "-"}`);
   lines.push(`Service fee acknowledged: ${feeAck ? "Yes" : "No"}`);
   lines.push(`Consent accepted: ${consent ? "Yes" : "No"}`);
@@ -236,6 +238,7 @@ exports.handler = async (event) => {
     const summary = {
       zip: safeString(payload.zip || ""),
       appliance: safeString(payload.appliance || ""),
+      service_date: safeString(payload.service_date || ""),
       time: safeString(payload.time_label || payload.time || ""),
       priority: safeString(payload.priority || (String(payload.time || "") === "asap" ? "High" : "Normal")),
       utm_source: safeString(payload.utm_source || ""),

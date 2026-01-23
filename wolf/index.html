@@ -1774,7 +1774,7 @@
     <div class="trust-visual"></div>
     <header class="top-bar">
       <div class="bar-inner">
-        <div class="brand">Sub-Zero &amp; Wolf Repair</div>
+        <div class="brand">Wolf Repair</div>
         <div class="bar-note">Fast response</div>
         <a class="btn btn-primary" href="tel:+18884457686">Call (888) 445-7686</a>
       </div>
@@ -1787,12 +1787,12 @@
           <div class="headline-group">
             <div class="hero-tag">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 5h10a2 2 0 0 1 2 2v11a1 1 0 0 1-1 1h-3v-5H9v5H6a1 1 0 0 1-1-1V7a2 2 0 0 1 2-2Z" stroke-width="1.5"/><path d="M9 3v3m6-3v3" stroke-width="1.5"/></svg>
-              Appliance Repair • Sub-Zero / Wolf
+              Appliance Repair • Wolf
             </div>
-            <h1>Sub-Zero &amp; Wolf Appliance Repair</h1>
+            <h1>Wolf Appliance Repair</h1>
             <div class="subheadline">Licensed &amp; insured • OEM parts • Same- or next-day service • Clear estimate after we check the unit</div>
             <div class="subheadline independence-line">Independent service. Not affiliated with Sub-Zero or Wolf.</div>
-            <div class="appliance-line">We repair Sub-Zero and Wolf fridges, freezers, wine units, ice makers, ovens, and cooktops.</div>
+            <div class="appliance-line">We repair Wolf ranges, ovens, cooktops, and ventilation hoods.</div>
             <div class="appliance-icons" aria-hidden="true">
               <span class="appliance-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -1879,10 +1879,10 @@
 
           <!-- Common issues we fix -->
           <div class="chips-row hero-issues" style="margin-top:12px;">
-            <div class="chip">Not cooling / temp swings</div>
-            <div class="chip">Ice maker not working</div>
-            <div class="chip">Leaks / gaskets</div>
-            <div class="chip">Error codes / controls</div>
+            <div class="chip">Not heating</div>
+            <div class="chip">Burner issue</div>
+            <div class="chip">Ignition</div>
+            <div class="chip">Error codes</div>
           </div>
 
           <!-- Availability status -->
@@ -1904,9 +1904,9 @@
     <section class="section" id="service-form" style="padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.08);">
       <div class="container" style="display: flex; justify-content: center;">
         <div class="form-card" id="form-card">
-          <div class="form-title">Book Service</div>
+          <div class="form-title">Book Wolf Service</div>
           <div class="callback-badge">SMS confirmation in 5–15 minutes</div>
-          <div class="form-subtitle">Sub-Zero/Wolf specialists. Clear estimate after we check the unit.</div>
+          <div class="form-subtitle">Wolf specialists. Clear estimate after we check the unit.</div>
           <div class="form-urgency">
             <span class="urgency-icon">⚡</span>
             <span id="urgency-text">Same-day service available • Limited slots</span>
@@ -1953,11 +1953,10 @@
               <label for="appliance">Appliance Type (Optional)</label>
               <select id="appliance" name="appliance">
                   <option value="">Select type</option>
-                <option value="refrigerator">Refrigerator</option>
-                <option value="freezer">Freezer</option>
-                <option value="wine storage">Wine Storage</option>
-                <option value="range">Range/Oven</option>
+                <option value="range">Range</option>
+                <option value="oven">Oven</option>
                 <option value="cooktop">Cooktop</option>
+                <option value="vent hood">Vent Hood</option>
                 <option value="other">Other</option>
               </select>
             </div>
@@ -1973,8 +1972,8 @@
               <label for="issue">Issue (Optional)</label>
               <textarea id="issue" name="issue" placeholder="Briefly describe the problem"></textarea>
               <div class="issue-chips" aria-label="Common issues">
-                <button class="issue-chip" type="button" data-issue="Not cooling / temp swings">Not cooling</button>
-                <button class="issue-chip" type="button" data-issue="Ice maker not working">Ice maker</button>
+                <button class="issue-chip" type="button" data-issue="Not heating / uneven heat">Not heating</button>
+                <button class="issue-chip" type="button" data-issue="Burner not working">Burner issue</button>
                 <button class="issue-chip" type="button" data-issue="Ignition / weak flame">Ignition</button>
                 <button class="issue-chip" type="button" data-issue="Error code / control issue">Error code</button>
               </div>
@@ -2111,7 +2110,7 @@
     <section class="section" id="repair-scope">
       <div class="container">
         <h2 class="section-title">We Handle Common and Complex Repairs</h2>
-        <p class="section-lead">From cooling issues to ignition and control boards. We check the unit and then give a clear estimate.</p>
+        <p class="section-lead">From burners to oven temps and control boards. We check the unit and then give a clear estimate.</p>
         <div class="scope-grid">
           <div class="scope-card common">
             <div class="scope-header">
@@ -2121,11 +2120,11 @@
             <h3>Most Common Issues</h3>
             <p>Fast fixes when parts are on the truck.</p>
             <ul class="scope-list">
-              <li>Not cooling or temperature swings</li>
-              <li>Ice maker not producing or leaking</li>
-              <li>Door not sealing or gasket wear</li>
+              <li>Burner not lighting or weak flame</li>
+              <li>Oven not heating or uneven heat</li>
+              <li>Ignition clicking or gas smell</li>
               <li>Error codes, sensor faults, control resets</li>
-              <li>Ignition clicking or weak flame</li>
+              <li>Vent hood not working</li>
             </ul>
           </div>
           <div class="scope-card complex">
@@ -2136,20 +2135,20 @@
             <h3>Complex / Heavy Repairs</h3>
             <p>Handled by experienced technicians with OEM-grade parts.</p>
             <ul class="scope-list">
-              <li>Compressor and sealed system work</li>
               <li>Gas valve and safety control diagnostics</li>
               <li>Oven temperature calibration & heat loss</li>
               <li>Electronic control boards and harnesses</li>
-              <li>Leak detection and sealed system recharge</li>
+              <li>Fan, motor, or blower issues</li>
+              <li>Power and ignition system faults</li>
             </ul>
           </div>
         </div>
-        <div class="chips-caption">Experienced specialists on every visit. Licensed in all service regions. OEM-grade parts. 180-day warranty.</div>
+        <div class="chips-caption">Experienced specialists on every visit. Licensed &amp; insured. OEM parts. 180-day warranty.</div>
         <div class="cta-row" style="margin-top: 16px;">
           <a class="btn btn-primary" href="tel:+18884457686">Call Now (888) 445-7686</a>
         </div>
         <div class="cta-note">No pressure. You approve the estimate before any work.</div>
-        <div class="chips-caption">4.9/5 average rating • 2,000+ repairs/year</div>
+        <div class="chips-caption">Trusted local service</div>
       </div>
     </section>
 
@@ -2316,13 +2315,13 @@
         <details class="faq-item">
           <summary>What appliances do you repair?</summary>
           <div class="faq-body">
-            <p>Sub-Zero/Wolf refrigeration, freezers, wine units, ice makers, ranges/ovens, and cooktops.</p>
+            <p>Wolf ranges, ovens, cooktops, and vent hoods.</p>
           </div>
         </details>
         <details class="faq-item">
           <summary>Are you affiliated with Sub-Zero or Wolf?</summary>
           <div class="faq-body">
-            <p>No. We are an independent, licensed service provider. We are not affiliated with Sub-Zero or Wolf. We use OEM/certified parts.</p>
+            <p>No. We are an independent, licensed service provider. We are not affiliated with Wolf. We use OEM/certified parts.</p>
           </div>
         </details>
         <details class="faq-item">
