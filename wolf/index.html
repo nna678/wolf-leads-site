@@ -3179,7 +3179,7 @@
         const rect = submitBtn.getBoundingClientRect();
         const submitBottom = rect.bottom + window.pageYOffset;
         const submitVisible = rect.top < window.innerHeight - 10 && rect.bottom > 10;
-        const pastSubmit = window.scrollY > submitBottom + 1;
+        const pastSubmit = window.scrollY >= submitBottom;
         if (pastSubmit) {
           bar.classList.remove("is-hidden");
         } else if (submitVisible) {
