@@ -43,6 +43,7 @@
       overflow-x: hidden;
       font-size: 16px;
     }
+    body.modal-open { overflow: hidden; }
 
     body::before {
       content: "";
@@ -1544,6 +1545,124 @@
     .repair-title { font-weight: 700; font-size: 15px; color: var(--text); }
     .repair-note { color: var(--muted); font-size: 13.5px; line-height: 1.5; }
     .repair-review { color: var(--muted); font-size: 12.5px; line-height: 1.5; font-weight: 600; }
+    .repairs-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 12px 0 8px;
+    }
+    .repairs-tabs .tab-btn {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+    }
+    .repairs-tabs .tab-btn.is-active {
+      background: var(--accent);
+      color: #0b0b0c;
+      border-color: transparent;
+      box-shadow: 0 6px 20px var(--accent-glow);
+    }
+    .repairs-panel { display: none; }
+    .repairs-panel.is-active { display: block; }
+    .repair-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .view-details {
+      padding: 9px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+    .view-details:hover {
+      border-color: var(--accent-light);
+      color: var(--accent-light);
+      transform: translateY(-1px);
+    }
+    .gallery-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(8,8,10,0.7);
+      backdrop-filter: blur(6px);
+      z-index: 70;
+      padding: 18px;
+    }
+    .gallery-modal.is-open { display: flex; }
+    .gallery-card {
+      width: min(920px, 92vw);
+      background: rgba(18,20,26,0.98);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .gallery-media {
+      position: relative;
+      width: 100%;
+      padding-top: 58%;
+      background: rgba(12,12,16,0.8);
+    }
+    .gallery-media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .gallery-body {
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+    }
+    .gallery-title {
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .gallery-line {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .gallery-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .gallery-close {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--muted);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-weight: 700;
+    }
+    .gallery-cta {
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 800;
+    }
+    @media (max-width: 640px) {
+      .gallery-body { padding: 14px; }
+      .gallery-title { font-size: 16px; }
+      .gallery-line { font-size: 13px; }
+    }
 
     /* Responsive - Enhanced for all devices */
     @media (max-width: 1400px) {
@@ -2211,73 +2330,106 @@
     <section class="section repairs" id="repairs">
       <div class="container">
         <div class="repairs-header">
-          <h2 class="section-title">Recent Repairs</h2>
-        <p class="section-lead">Real jobs in your area each week.</p>
+          <h2 class="section-title">Sub-Zero Case Studies</h2>
+          <p class="section-lead">Premium refrigerator, freezer, and wine cooler repairs.</p>
         </div>
-        <div class="repairs-grid">
-          <div class="repair-card">
-            <div class="repair-media" data-src="https://drive.google.com/uc?export=view&id=1DPGsKTXfoQjNIYJW_M0K7bCeMY2LKqRi"
-                 data-srcset="https://drive.google.com/thumbnail?id=1DPGsKTXfoQjNIYJW_M0K7bCeMY2LKqRi&sz=w800 800w, https://drive.google.com/thumbnail?id=1DPGsKTXfoQjNIYJW_M0K7bCeMY2LKqRi&sz=w1200 1200w"
-                 data-sizes="(max-width: 768px) 100vw, 50vw">
-              <div class="repair-placeholder">Awaiting photo</div>
-              <img alt="Wolf gas range and oven repair" loading="lazy" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+        <div class="repairs-panel is-active" data-panel="subzero">
+          <div class="repairs-grid">
+            <div class="repair-card" data-title="Sub-Zero 01 — Compressor replacement" data-problem="No cooling, warm zones." data-fix="Replaced compressor, nitrogen purge, deep vacuum, recharge to spec." data-result="Temps stabilized same day." data-review="Quiet, cold, and steady again." data-image="assets/images/repairs/subzero/subzero-01-compressor.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-01-compressor.webp">
+                <div class="repair-placeholder">Sub-Zero 01</div>
+                <img alt="Compressor replacement service" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 01 — Compressor replacement</div>
+                <div class="repair-note"><strong>Problem:</strong> No cooling, warm zones.</div>
+                <div class="repair-note"><strong>Fix:</strong> Compressor + purge + vacuum + recharge.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
             </div>
-            <div class="repair-meta">
-              <div class="repair-title">Wolf gas range & oven — heavy wear</div>
-              <div class="repair-note">Issue: weak ignition and uneven flame. Fix: cleaned burners, replaced igniter, calibrated flame. Time: 1h 45m.</div>
-              <div class="repair-review">“On time and clear. Range lights perfectly now.”</div>
+            <div class="repair-card" data-title="Sub-Zero 02 — Leak detection & repair" data-problem="Temps drifting, slow recovery." data-fix="Leak located, sealed, nitrogen pressure test, vacuum, recharge." data-result="Cooling normalized." data-review="Temps hold steady again." data-image="assets/images/repairs/subzero/subzero-02-leak-detection.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-02-leak-detection.webp">
+                <div class="repair-placeholder">Sub-Zero 02</div>
+                <img alt="Sealed-system leak detection" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 02 — Leak detection & repair</div>
+                <div class="repair-note"><strong>Problem:</strong> Temps drifting.</div>
+                <div class="repair-note"><strong>Fix:</strong> Sealed repair + pressure test.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
             </div>
-          </div>
-          <div class="repair-card">
-            <div class="repair-media" data-src="https://drive.google.com/uc?export=view&id=1fWMGKgnGfOdyBf_vwqnKOcvyzdQQWZ00"
-                 data-srcset="https://drive.google.com/thumbnail?id=1fWMGKgnGfOdyBf_vwqnKOcvyzdQQWZ00&sz=w800 800w, https://drive.google.com/thumbnail?id=1fWMGKgnGfOdyBf_vwqnKOcvyzdQQWZ00&sz=w1200 1200w"
-                 data-sizes="(max-width: 768px) 100vw, 50vw">
-              <div class="repair-placeholder">Awaiting photo</div>
-              <img alt="Sub-Zero condenser coil cleaning" loading="lazy" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+            <div class="repair-card" data-title="Sub-Zero 03 — Evaporator replacement" data-problem="Weak freezing, uneven temps." data-fix="Evaporator replaced, brazed, pressure tested, recharged." data-result="Even freezing restored." data-review="Freezer holds temp again." data-image="assets/images/repairs/subzero/subzero-03-evaporator.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-03-evaporator.webp">
+                <div class="repair-placeholder">Sub-Zero 03</div>
+                <img alt="Evaporator replacement service" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 03 — Evaporator replacement</div>
+                <div class="repair-note"><strong>Problem:</strong> Weak freezing.</div>
+                <div class="repair-note"><strong>Fix:</strong> Evaporator swap + recharge.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
             </div>
-            <div class="repair-meta">
-              <div class="repair-title">Sub-Zero condenser — deep foam clean</div>
-              <div class="repair-note">Issue: poor airflow, rising temps. Fix: deep foam clean, coil rinse, airflow check. Time: 55m.</div>
-              <div class="repair-review">“Cooling is even and quiet again.”</div>
+            <div class="repair-card" data-title="Sub-Zero 04 — Defrost system repair" data-problem="Ice buildup, weak airflow." data-fix="Defrost circuit diagnosed, heater/thermistor serviced." data-result="Frost stopped returning." data-review="Airflow restored." data-image="assets/images/repairs/subzero/subzero-04-defrost.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-04-defrost.webp">
+                <div class="repair-placeholder">Sub-Zero 04</div>
+                <img alt="Defrost system diagnostics" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 04 — Defrost system repair</div>
+                <div class="repair-note"><strong>Problem:</strong> Ice buildup.</div>
+                <div class="repair-note"><strong>Fix:</strong> Defrost circuit repair.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
             </div>
-          </div>
-          <div class="repair-card">
-            <div class="repair-media" data-src="https://drive.google.com/uc?export=view&id=1fgOSipB0pTLu-Nso9z9P9PrdgvNzkE41"
-                 data-srcset="https://drive.google.com/thumbnail?id=1fgOSipB0pTLu-Nso9z9P9PrdgvNzkE41&sz=w800 800w, https://drive.google.com/thumbnail?id=1fgOSipB0pTLu-Nso9z9P9PrdgvNzkE41&sz=w1200 1200w"
-                 data-sizes="(max-width: 768px) 100vw, 50vw">
-              <div class="repair-placeholder">Awaiting photo</div>
-              <img alt="Wolf gas burner assembly service" loading="lazy" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+            <div class="repair-card" data-title="Sub-Zero 05 — Wine cooler fan" data-problem="Warm zones, loud fan." data-fix="Fan replaced, airflow cleaned, temps verified." data-result="Stable cellar temps." data-review="Quiet and consistent." data-image="assets/images/repairs/subzero/subzero-05-wine-fan.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-05-wine-fan.webp">
+                <div class="repair-placeholder">Sub-Zero 05</div>
+                <img alt="Wine cooler fan replacement" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 05 — Wine cooler fan</div>
+                <div class="repair-note"><strong>Problem:</strong> Warm zones, noise.</div>
+                <div class="repair-note"><strong>Fix:</strong> Fan + airflow clean.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
             </div>
-            <div class="repair-meta">
-              <div class="repair-title">Wolf cooktop — burner overhaul</div>
-              <div class="repair-note">Issue: rusted burner, uneven flame. Fix: cleaned ports, removed corrosion, reset flame. Time: 1h 20m.</div>
-              <div class="repair-review">“Flame is steady again.”</div>
+            <div class="repair-card" data-title="Sub-Zero 06 — Wine control diagnostics" data-problem="Temp drifting." data-fix="Sensors/control diagnosed, module serviced." data-result="Precise control restored." data-review="Temps stable again." data-image="assets/images/repairs/subzero/subzero-06-wine-control.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-06-wine-control.webp">
+                <div class="repair-placeholder">Sub-Zero 06</div>
+                <img alt="Wine cooler control diagnostics" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 06 — Wine control diagnostics</div>
+                <div class="repair-note"><strong>Problem:</strong> Temp drifting.</div>
+                <div class="repair-note"><strong>Fix:</strong> Sensor/control service.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
             </div>
-          </div>
-          <div class="repair-card">
-            <div class="repair-media" data-src="https://drive.google.com/uc?export=view&id=1gyMfc6voxUkAlH4oBlvJM3o0IyeicuvH"
-                 data-srcset="https://drive.google.com/thumbnail?id=1gyMfc6voxUkAlH4oBlvJM3o0IyeicuvH&sz=w800 800w, https://drive.google.com/thumbnail?id=1gyMfc6voxUkAlH4oBlvJM3o0IyeicuvH&sz=w1200 1200w"
-                 data-sizes="(max-width: 768px) 100vw, 50vw">
-              <div class="repair-placeholder">Awaiting photo</div>
-              <img alt="Wolf oven exterior restoration" loading="lazy" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+            <div class="repair-card" data-title="Sub-Zero 07 — Ice maker & valve" data-problem="No ice, leak risk." data-fix="Valve/module replaced, water line flushed." data-result="Ice restored, leaks eliminated." data-review="Reliable ice again." data-image="assets/images/repairs/subzero/subzero-07-ice-maker.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-07-ice-maker.webp">
+                <div class="repair-placeholder">Sub-Zero 07</div>
+                <img alt="Ice maker and valve repair" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 07 — Ice maker & valve</div>
+                <div class="repair-note"><strong>Problem:</strong> No ice, leak risk.</div>
+                <div class="repair-note"><strong>Fix:</strong> Valve + module swap.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
             </div>
-            <div class="repair-meta">
-              <div class="repair-title">Wolf oven — exterior & heat recovery</div>
-              <div class="repair-note">Issue: heat loss, slow preheat. Fix: replaced seals, checked elements, calibrated temps. Time: 2h 10m.</div>
-              <div class="repair-review">“Preheats faster and holds temp.”</div>
-            </div>
-          </div>
-          <div class="repair-card">
-            <div class="repair-media" data-src="https://drive.google.com/uc?export=view&id=1ENCBYvS87-17rTvqGS2MogewKvgvsV3N"
-                 data-srcset="https://drive.google.com/thumbnail?id=1ENCBYvS87-17rTvqGS2MogewKvgvsV3N&sz=w800 800w, https://drive.google.com/thumbnail?id=1ENCBYvS87-17rTvqGS2MogewKvgvsV3N&sz=w1200 1200w"
-                 data-sizes="(max-width: 768px) 100vw, 50vw">
-              <div class="repair-placeholder">Awaiting photo</div>
-              <img alt="Gas valve and burner control service" loading="lazy" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
-            </div>
-            <div class="repair-meta">
-              <div class="repair-title">Gas valve & ignition control — safety tune</div>
-              <div class="repair-note">Issue: delayed ignition, uneven flame. Fix: serviced gas valve, cleaned contacts, verified pressure. Time: 1h 30m.</div>
-              <div class="repair-review">“Safe, smooth ignition now.”</div>
+            <div class="repair-card" data-title="Sub-Zero 08 — Door alignment & seal" data-problem="Condensation, warm spots." data-fix="Alignment + gasket verification." data-result="Proper seal restored." data-review="No more warm edge." data-image="assets/images/repairs/subzero/subzero-08-alignment.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-08-alignment.webp">
+                <div class="repair-placeholder">Sub-Zero 08</div>
+                <img alt="Door alignment and seal service" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 08 — Door alignment & seal</div>
+                <div class="repair-note"><strong>Problem:</strong> Condensation.</div>
+                <div class="repair-note"><strong>Fix:</strong> Alignment + seal check.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
             </div>
           </div>
         </div>
@@ -2427,6 +2579,25 @@
         <a href="#" id="open-legal" style="color: var(--accent-light); text-decoration: underline;">Privacy Policy</a>
       </div>
     </footer>
+
+    <div class="gallery-modal" id="gallery-modal" aria-hidden="true">
+      <div class="gallery-card" role="dialog" aria-modal="true">
+        <div class="gallery-media">
+          <img alt="Repair case" src="" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-body">
+          <div class="gallery-title" data-field="title"></div>
+          <div class="gallery-line"><strong>Problem:</strong> <span data-field="problem"></span></div>
+          <div class="gallery-line"><strong>Fix:</strong> <span data-field="fix"></span></div>
+          <div class="gallery-line"><strong>Result:</strong> <span data-field="result"></span></div>
+          <div class="gallery-line"><strong>Review:</strong> <span data-field="review"></span></div>
+          <div class="gallery-actions">
+            <button class="btn btn-primary gallery-cta" type="button">Get estimate</button>
+            <button class="gallery-close" type="button">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="mobile-call">
       <div class="bar">
@@ -3122,6 +3293,68 @@
       }
     }
 
+    function initRepairsGallery() {
+      const tabs = document.querySelectorAll(".repairs-tabs .tab-btn");
+      const panels = document.querySelectorAll(".repairs-panel");
+      if (tabs.length && panels.length) {
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((t) => t.classList.remove("is-active"));
+            tab.classList.add("is-active");
+            const key = tab.dataset.tab;
+            panels.forEach((p) => p.classList.toggle("is-active", p.dataset.panel === key));
+          });
+        });
+      }
+
+      const modal = document.getElementById("gallery-modal");
+      if (!modal) return;
+      const modalImg = modal.querySelector(".gallery-media img");
+      const closeBtn = modal.querySelector(".gallery-close");
+      const ctaBtn = modal.querySelector(".gallery-cta");
+      const fill = (field, value) => {
+        const el = modal.querySelector(`[data-field="${field}"]`);
+        if (el) el.textContent = value || "";
+      };
+      const openModal = (card) => {
+        fill("title", card.dataset.title);
+        fill("problem", card.dataset.problem);
+        fill("fix", card.dataset.fix);
+        fill("result", card.dataset.result);
+        fill("review", card.dataset.review);
+        if (modalImg) modalImg.src = card.dataset.image || "";
+        modal.classList.add("is-open");
+        document.body.classList.add("modal-open");
+      };
+      const closeModal = () => {
+        modal.classList.remove("is-open");
+        document.body.classList.remove("modal-open");
+      };
+      document.querySelectorAll(".repair-card .view-details").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const card = e.target.closest(".repair-card");
+          if (card) openModal(card);
+        });
+      });
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+      if (closeBtn) closeBtn.addEventListener("click", closeModal);
+      if (ctaBtn) {
+        ctaBtn.addEventListener("click", () => {
+          closeModal();
+          if (typeof scrollToForm === "function") {
+            scrollToForm("book_service_gallery");
+          } else {
+            document.getElementById("scroll-to-form")?.click();
+          }
+        });
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+    }
+
     // Cookie consent (lightweight, non-intrusive)
     function initCookieConsent() {
       const banner = document.getElementById("cookie-banner");
@@ -3220,6 +3453,7 @@
       document.addEventListener("DOMContentLoaded", initCookieConsent);
       document.addEventListener("DOMContentLoaded", initLegalModal);
       document.addEventListener("DOMContentLoaded", initFAQAccordion);
+      document.addEventListener("DOMContentLoaded", initRepairsGallery);
       document.addEventListener("DOMContentLoaded", initLazyRepairs);
       document.addEventListener("DOMContentLoaded", initIssueChips);
       document.addEventListener("DOMContentLoaded", initMobileCallVisibility);
@@ -3228,6 +3462,7 @@
       initCookieConsent();
       initLegalModal();
       initFAQAccordion();
+      initRepairsGallery();
       initLazyRepairs();
       initMobileCallVisibility();
     }
