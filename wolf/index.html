@@ -3223,6 +3223,7 @@
         temp.onerror = () => tryNext();
         tryNext();
       };
+      window.__loadRepairMedia = loadImg;
 
       if ("IntersectionObserver" in window) {
         const io = new IntersectionObserver((entries) => {
@@ -3386,7 +3387,17 @@
         tabs.forEach((tab) => {
           tab.addEventListener("click", () => {
             setActive(tab.dataset.tab);
+            if (window.__loadRepairMedia) {
+              document.querySelectorAll(".repairs-panel.is-active .repair-media[data-src]").forEach((media) => {
+                window.__loadRepairMedia(media);
+              });
+            }
           });
+        });
+      }
+      if (window.__loadRepairMedia) {
+        document.querySelectorAll(".repairs-panel.is-active .repair-media[data-src]").forEach((media) => {
+          window.__loadRepairMedia(media);
         });
       }
 

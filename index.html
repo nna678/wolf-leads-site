@@ -2273,9 +2273,9 @@
         </div>
         <div class="repairs-tabs-label">Choose your brand</div>
         <div class="repairs-tabs" role="tablist">
-          <button class="tab-btn is-active" type="button" data-tab="subzero" aria-selected="true" aria-controls="repairs-panel-subzero">Sub-Zero (8)</button>
+          <button class="tab-btn" type="button" data-tab="subzero" aria-selected="false" aria-controls="repairs-panel-subzero">Sub-Zero (8)</button>
           <button class="tab-btn" type="button" data-tab="wolf" aria-selected="false" aria-controls="repairs-panel-wolf">Wolf (8)</button>
-          <button class="tab-btn" type="button" data-tab="all" aria-selected="false">All (16)</button>
+          <button class="tab-btn is-active" type="button" data-tab="all" aria-selected="true">All (16)</button>
         </div>
         <p class="repairs-tabs-hint">Not sure? Select “All” to browse both brands.</p>
         <div class="repairs-panel is-active" data-panel="subzero" id="repairs-panel-subzero">
@@ -2378,7 +2378,7 @@
             </div>
           </div>
         </div>
-        <div class="repairs-panel" data-panel="wolf" id="repairs-panel-wolf">
+        <div class="repairs-panel is-active" data-panel="wolf" id="repairs-panel-wolf">
           <div class="repairs-grid">
             <div class="repair-card" data-title="Wolf 01 — Gas leak test + manometer" data-problem="Gas odor, unstable flame." data-fix="Leak test, pressure verification, calibration." data-result="Safe, steady blue flame." data-review="Confident and safe." data-image="assets/images/repairs/wolf/wolf-01-gas-leak.webp">
               <div class="repair-media" data-src="assets/images/repairs/wolf/wolf-01-gas-leak.webp">
@@ -3352,6 +3352,7 @@
         temp.onerror = () => tryNext();
         tryNext();
       };
+      window.__loadRepairMedia = loadImg;
 
       if ("IntersectionObserver" in window) {
         const io = new IntersectionObserver((entries) => {
@@ -3515,7 +3516,17 @@
         tabs.forEach((tab) => {
           tab.addEventListener("click", () => {
             setActive(tab.dataset.tab);
+            if (window.__loadRepairMedia) {
+              document.querySelectorAll(".repairs-panel.is-active .repair-media[data-src]").forEach((media) => {
+                window.__loadRepairMedia(media);
+              });
+            }
           });
+        });
+      }
+      if (window.__loadRepairMedia) {
+        document.querySelectorAll(".repairs-panel.is-active .repair-media[data-src]").forEach((media) => {
+          window.__loadRepairMedia(media);
         });
       }
 
