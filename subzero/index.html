@@ -1473,7 +1473,21 @@
     }
     .repairs-header {
       text-align: center;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
+    }
+    .repairs-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      font-size: 12px;
+      letter-spacing: 0.2px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
     .repairs-header h2 {
       font-size: 32px;
@@ -1485,7 +1499,28 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .repairs-header p { color: var(--muted); font-size: 15px; max-width: 720px; margin: 0 auto; }
+    .repairs-header p { color: var(--muted); font-size: 15px; max-width: 760px; margin: 0 auto; }
+    .repairs-proof {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .repairs-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 12px 0 6px;
+    }
+    .repairs-badge {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 12px;
+      color: var(--text);
+      letter-spacing: 0.2px;
+    }
     .repairs-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -1519,6 +1554,11 @@
       overflow: hidden;
       background: radial-gradient(circle at 30% 30%, rgba(205,133,63,0.14), rgba(20,20,24,0.9));
       border: 1px solid rgba(255,255,255,0.05);
+      cursor: pointer;
+    }
+    .repair-media:focus-visible {
+      outline: 2px solid var(--accent-light);
+      outline-offset: 3px;
     }
     .repair-media img {
       position: absolute;
@@ -1589,6 +1629,19 @@
       border-color: var(--accent-light);
       color: var(--accent-light);
       transform: translateY(-1px);
+    }
+    .repairs-cta-row {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .repairs-cta-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 6px;
     }
     .gallery-modal {
       position: fixed;
@@ -2183,6 +2236,127 @@
       </div>
     </section>
 
+    <section class="section repairs" id="repairs">
+      <div class="container">
+        <div class="repairs-header">
+          <div class="repairs-kicker">Verified Sub-Zero Repairs</div>
+          <h2 class="section-title">Real Sub-Zero Case Studies</h2>
+          <p class="section-lead">Actual Sub-Zero service visits with technician-verified notes. Tap any photo to view the full case.</p>
+          <div class="repairs-proof">No stock photos • Refrigeration specialists • Clean-home protection</div>
+        </div>
+        <div class="repairs-badges">
+          <div class="repairs-badge">Licensed &amp; insured</div>
+          <div class="repairs-badge">OEM-grade parts</div>
+          <div class="repairs-badge">Protective mats &amp; shoe covers</div>
+        </div>
+        <div class="repairs-panel is-active" data-panel="subzero">
+          <div class="repairs-grid">
+            <div class="repair-card" data-title="Sub-Zero 01 — Compressor replacement" data-problem="No cooling, warm zones." data-fix="Replaced compressor, nitrogen purge, deep vacuum, recharge to spec." data-result="Temps stabilized same day." data-review="Quiet, cold, and steady again." data-image="assets/images/repairs/subzero/subzero-01-compressor.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-01-compressor.webp">
+                <div class="repair-placeholder">Sub-Zero 01</div>
+                <img alt="Compressor replacement service" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 01 — Compressor replacement</div>
+                <div class="repair-note"><strong>Problem:</strong> No cooling, warm zones.</div>
+                <div class="repair-note"><strong>Fix:</strong> Compressor + purge + vacuum + recharge.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
+            </div>
+            <div class="repair-card" data-title="Sub-Zero 02 — Leak detection & repair" data-problem="Temps drifting, slow recovery." data-fix="Leak located, sealed, nitrogen pressure test, vacuum, recharge." data-result="Cooling normalized." data-review="Temps hold steady again." data-image="assets/images/repairs/subzero/subzero-02-leak-detection.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-02-leak-detection.webp">
+                <div class="repair-placeholder">Sub-Zero 02</div>
+                <img alt="Sealed-system leak detection" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 02 — Leak detection & repair</div>
+                <div class="repair-note"><strong>Problem:</strong> Temps drifting.</div>
+                <div class="repair-note"><strong>Fix:</strong> Sealed repair + pressure test.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
+            </div>
+            <div class="repair-card" data-title="Sub-Zero 03 — Evaporator replacement" data-problem="Weak freezing, uneven temps." data-fix="Evaporator replaced, brazed, pressure tested, recharged." data-result="Even freezing restored." data-review="Freezer holds temp again." data-image="assets/images/repairs/subzero/subzero-03-evaporator.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-03-evaporator.webp">
+                <div class="repair-placeholder">Sub-Zero 03</div>
+                <img alt="Evaporator replacement service" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 03 — Evaporator replacement</div>
+                <div class="repair-note"><strong>Problem:</strong> Weak freezing.</div>
+                <div class="repair-note"><strong>Fix:</strong> Evaporator swap + recharge.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
+            </div>
+            <div class="repair-card" data-title="Sub-Zero 04 — Defrost system repair" data-problem="Ice buildup, weak airflow." data-fix="Defrost circuit diagnosed, heater/thermistor serviced." data-result="Frost stopped returning." data-review="Airflow restored." data-image="assets/images/repairs/subzero/subzero-04-defrost.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-04-defrost.webp">
+                <div class="repair-placeholder">Sub-Zero 04</div>
+                <img alt="Defrost system diagnostics" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 04 — Defrost system repair</div>
+                <div class="repair-note"><strong>Problem:</strong> Ice buildup.</div>
+                <div class="repair-note"><strong>Fix:</strong> Defrost circuit repair.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
+            </div>
+            <div class="repair-card" data-title="Sub-Zero 05 — Wine cooler fan" data-problem="Warm zones, loud fan." data-fix="Fan replaced, airflow cleaned, temps verified." data-result="Stable cellar temps." data-review="Quiet and consistent." data-image="assets/images/repairs/subzero/subzero-05-wine-fan.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-05-wine-fan.webp">
+                <div class="repair-placeholder">Sub-Zero 05</div>
+                <img alt="Wine cooler fan replacement" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 05 — Wine cooler fan</div>
+                <div class="repair-note"><strong>Problem:</strong> Warm zones, noise.</div>
+                <div class="repair-note"><strong>Fix:</strong> Fan + airflow clean.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
+            </div>
+            <div class="repair-card" data-title="Sub-Zero 06 — Wine control diagnostics" data-problem="Temp drifting." data-fix="Sensors/control diagnosed, module serviced." data-result="Precise control restored." data-review="Temps stable again." data-image="assets/images/repairs/subzero/subzero-06-wine-control.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-06-wine-control.webp">
+                <div class="repair-placeholder">Sub-Zero 06</div>
+                <img alt="Wine cooler control diagnostics" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 06 — Wine control diagnostics</div>
+                <div class="repair-note"><strong>Problem:</strong> Temp drifting.</div>
+                <div class="repair-note"><strong>Fix:</strong> Sensor/control service.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
+            </div>
+            <div class="repair-card" data-title="Sub-Zero 07 — Ice maker & valve" data-problem="No ice, leak risk." data-fix="Valve/module replaced, water line flushed." data-result="Ice restored, leaks eliminated." data-review="Reliable ice again." data-image="assets/images/repairs/subzero/subzero-07-ice-maker.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-07-ice-maker.webp">
+                <div class="repair-placeholder">Sub-Zero 07</div>
+                <img alt="Ice maker and valve repair" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 07 — Ice maker & valve</div>
+                <div class="repair-note"><strong>Problem:</strong> No ice, leak risk.</div>
+                <div class="repair-note"><strong>Fix:</strong> Valve + module swap.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
+            </div>
+            <div class="repair-card" data-title="Sub-Zero 08 — Door alignment & seal" data-problem="Condensation, warm spots." data-fix="Alignment + gasket verification." data-result="Proper seal restored." data-review="No more warm edge." data-image="assets/images/repairs/subzero/subzero-08-alignment.webp">
+              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-08-alignment.webp">
+                <div class="repair-placeholder">Sub-Zero 08</div>
+                <img alt="Door alignment and seal service" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+              </div>
+              <div class="repair-meta">
+                <div class="repair-title">Sub-Zero 08 — Door alignment & seal</div>
+                <div class="repair-note"><strong>Problem:</strong> Condensation.</div>
+                <div class="repair-note"><strong>Fix:</strong> Alignment + seal check.</div>
+                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="repairs-cta-row">
+          <button class="btn btn-primary" id="scroll-to-form-2" type="button">Get a fast estimate</button>
+          <a class="btn btn-outline" href="tel:+18884457686">Call (888) 445-7686</a>
+        </div>
+        <div class="repairs-cta-note">We confirm by SMS and call only if needed.</div>
+      </div>
+    </section>
+
     <!-- Trust & Credibility Section -->
     <section class="section" id="trust" style="background: rgba(20,20,22,0.3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
       <div class="container">
@@ -2324,119 +2498,6 @@
           <a class="btn btn-primary" href="tel:+18884457686">Call Now (888) 445-7686</a>
         </div>
         <div class="cta-note" style="text-align:center;">We confirm your window shortly.</div>
-      </div>
-    </section>
-
-    <section class="section repairs" id="repairs">
-      <div class="container">
-        <div class="repairs-header">
-          <h2 class="section-title">Sub-Zero Case Studies</h2>
-          <p class="section-lead">Premium refrigerator, freezer, and wine cooler repairs.</p>
-        </div>
-        <div class="repairs-panel is-active" data-panel="subzero">
-          <div class="repairs-grid">
-            <div class="repair-card" data-title="Sub-Zero 01 — Compressor replacement" data-problem="No cooling, warm zones." data-fix="Replaced compressor, nitrogen purge, deep vacuum, recharge to spec." data-result="Temps stabilized same day." data-review="Quiet, cold, and steady again." data-image="assets/images/repairs/subzero/subzero-01-compressor.webp">
-              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-01-compressor.webp">
-                <div class="repair-placeholder">Sub-Zero 01</div>
-                <img alt="Compressor replacement service" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
-              </div>
-              <div class="repair-meta">
-                <div class="repair-title">Sub-Zero 01 — Compressor replacement</div>
-                <div class="repair-note"><strong>Problem:</strong> No cooling, warm zones.</div>
-                <div class="repair-note"><strong>Fix:</strong> Compressor + purge + vacuum + recharge.</div>
-                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
-              </div>
-            </div>
-            <div class="repair-card" data-title="Sub-Zero 02 — Leak detection & repair" data-problem="Temps drifting, slow recovery." data-fix="Leak located, sealed, nitrogen pressure test, vacuum, recharge." data-result="Cooling normalized." data-review="Temps hold steady again." data-image="assets/images/repairs/subzero/subzero-02-leak-detection.webp">
-              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-02-leak-detection.webp">
-                <div class="repair-placeholder">Sub-Zero 02</div>
-                <img alt="Sealed-system leak detection" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
-              </div>
-              <div class="repair-meta">
-                <div class="repair-title">Sub-Zero 02 — Leak detection & repair</div>
-                <div class="repair-note"><strong>Problem:</strong> Temps drifting.</div>
-                <div class="repair-note"><strong>Fix:</strong> Sealed repair + pressure test.</div>
-                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
-              </div>
-            </div>
-            <div class="repair-card" data-title="Sub-Zero 03 — Evaporator replacement" data-problem="Weak freezing, uneven temps." data-fix="Evaporator replaced, brazed, pressure tested, recharged." data-result="Even freezing restored." data-review="Freezer holds temp again." data-image="assets/images/repairs/subzero/subzero-03-evaporator.webp">
-              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-03-evaporator.webp">
-                <div class="repair-placeholder">Sub-Zero 03</div>
-                <img alt="Evaporator replacement service" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
-              </div>
-              <div class="repair-meta">
-                <div class="repair-title">Sub-Zero 03 — Evaporator replacement</div>
-                <div class="repair-note"><strong>Problem:</strong> Weak freezing.</div>
-                <div class="repair-note"><strong>Fix:</strong> Evaporator swap + recharge.</div>
-                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
-              </div>
-            </div>
-            <div class="repair-card" data-title="Sub-Zero 04 — Defrost system repair" data-problem="Ice buildup, weak airflow." data-fix="Defrost circuit diagnosed, heater/thermistor serviced." data-result="Frost stopped returning." data-review="Airflow restored." data-image="assets/images/repairs/subzero/subzero-04-defrost.webp">
-              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-04-defrost.webp">
-                <div class="repair-placeholder">Sub-Zero 04</div>
-                <img alt="Defrost system diagnostics" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
-              </div>
-              <div class="repair-meta">
-                <div class="repair-title">Sub-Zero 04 — Defrost system repair</div>
-                <div class="repair-note"><strong>Problem:</strong> Ice buildup.</div>
-                <div class="repair-note"><strong>Fix:</strong> Defrost circuit repair.</div>
-                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
-              </div>
-            </div>
-            <div class="repair-card" data-title="Sub-Zero 05 — Wine cooler fan" data-problem="Warm zones, loud fan." data-fix="Fan replaced, airflow cleaned, temps verified." data-result="Stable cellar temps." data-review="Quiet and consistent." data-image="assets/images/repairs/subzero/subzero-05-wine-fan.webp">
-              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-05-wine-fan.webp">
-                <div class="repair-placeholder">Sub-Zero 05</div>
-                <img alt="Wine cooler fan replacement" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
-              </div>
-              <div class="repair-meta">
-                <div class="repair-title">Sub-Zero 05 — Wine cooler fan</div>
-                <div class="repair-note"><strong>Problem:</strong> Warm zones, noise.</div>
-                <div class="repair-note"><strong>Fix:</strong> Fan + airflow clean.</div>
-                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
-              </div>
-            </div>
-            <div class="repair-card" data-title="Sub-Zero 06 — Wine control diagnostics" data-problem="Temp drifting." data-fix="Sensors/control diagnosed, module serviced." data-result="Precise control restored." data-review="Temps stable again." data-image="assets/images/repairs/subzero/subzero-06-wine-control.webp">
-              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-06-wine-control.webp">
-                <div class="repair-placeholder">Sub-Zero 06</div>
-                <img alt="Wine cooler control diagnostics" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
-              </div>
-              <div class="repair-meta">
-                <div class="repair-title">Sub-Zero 06 — Wine control diagnostics</div>
-                <div class="repair-note"><strong>Problem:</strong> Temp drifting.</div>
-                <div class="repair-note"><strong>Fix:</strong> Sensor/control service.</div>
-                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
-              </div>
-            </div>
-            <div class="repair-card" data-title="Sub-Zero 07 — Ice maker & valve" data-problem="No ice, leak risk." data-fix="Valve/module replaced, water line flushed." data-result="Ice restored, leaks eliminated." data-review="Reliable ice again." data-image="assets/images/repairs/subzero/subzero-07-ice-maker.webp">
-              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-07-ice-maker.webp">
-                <div class="repair-placeholder">Sub-Zero 07</div>
-                <img alt="Ice maker and valve repair" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
-              </div>
-              <div class="repair-meta">
-                <div class="repair-title">Sub-Zero 07 — Ice maker & valve</div>
-                <div class="repair-note"><strong>Problem:</strong> No ice, leak risk.</div>
-                <div class="repair-note"><strong>Fix:</strong> Valve + module swap.</div>
-                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
-              </div>
-            </div>
-            <div class="repair-card" data-title="Sub-Zero 08 — Door alignment & seal" data-problem="Condensation, warm spots." data-fix="Alignment + gasket verification." data-result="Proper seal restored." data-review="No more warm edge." data-image="assets/images/repairs/subzero/subzero-08-alignment.webp">
-              <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-08-alignment.webp">
-                <div class="repair-placeholder">Sub-Zero 08</div>
-                <img alt="Door alignment and seal service" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
-              </div>
-              <div class="repair-meta">
-                <div class="repair-title">Sub-Zero 08 — Door alignment & seal</div>
-                <div class="repair-note"><strong>Problem:</strong> Condensation.</div>
-                <div class="repair-note"><strong>Fix:</strong> Alignment + seal check.</div>
-                <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cta-row" style="margin-top: 18px;">
-          <a class="btn btn-primary" href="tel:+18884457686">Call Now (888) 445-7686</a>
-        </div>
-        <div class="cta-note">Tell us the issue — we confirm a window shortly.</div>
       </div>
     </section>
 
@@ -3100,6 +3161,7 @@
     function initLazyRepairs() {
       const cards = document.querySelectorAll(".repair-media[data-src]");
       if (!cards.length) return;
+      const CDN_BASE = ""; // e.g. "https://cdn.jsdelivr.net/gh/USERNAME/REPO@main/"
       const getDriveId = (url) => {
         const idMatch = url && url.match(/(?:id=|\/d\/)([a-zA-Z0-9_-]+)/);
         return idMatch ? idMatch[1] : null;
@@ -3112,6 +3174,16 @@
           `https://lh3.googleusercontent.com/d/${id}=w1200`,
           `https://drive.google.com/uc?export=view&id=${id}`
         ];
+      };
+      const buildVariants = (url) => {
+        if (!url) return [];
+        const driveId = getDriveId(url);
+        if (driveId) return buildDriveVariants(url);
+        const list = [url];
+        if (CDN_BASE && url.startsWith("assets/")) {
+          list.push(`${CDN_BASE}${url}`);
+        }
+        return list;
       };
       const loadImg = (media) => {
         const url = media.getAttribute("data-src");
@@ -3128,7 +3200,7 @@
           if (ph) ph.style.display = "flex";
         };
 
-        const variants = buildDriveVariants(url);
+        const variants = buildVariants(url);
         let idx = 0;
         const temp = new Image();
         temp.referrerPolicy = "no-referrer";
@@ -3297,12 +3369,23 @@
       const tabs = document.querySelectorAll(".repairs-tabs .tab-btn");
       const panels = document.querySelectorAll(".repairs-panel");
       if (tabs.length && panels.length) {
+        const setActive = (key) => {
+          tabs.forEach((t) => {
+            const isActive = t.dataset.tab === key;
+            t.classList.toggle("is-active", isActive);
+            t.setAttribute("aria-selected", isActive ? "true" : "false");
+          });
+          if (key === "all") {
+            panels.forEach((p) => p.classList.add("is-active"));
+          } else {
+            panels.forEach((p) => p.classList.toggle("is-active", p.dataset.panel === key));
+          }
+        };
+        const initial = document.querySelector(".repairs-tabs .tab-btn.is-active")?.dataset.tab || tabs[0]?.dataset.tab;
+        if (initial) setActive(initial);
         tabs.forEach((tab) => {
           tab.addEventListener("click", () => {
-            tabs.forEach((t) => t.classList.remove("is-active"));
-            tab.classList.add("is-active");
-            const key = tab.dataset.tab;
-            panels.forEach((p) => p.classList.toggle("is-active", p.dataset.panel === key));
+            setActive(tab.dataset.tab);
           });
         });
       }
@@ -3334,6 +3417,20 @@
         btn.addEventListener("click", (e) => {
           const card = e.target.closest(".repair-card");
           if (card) openModal(card);
+        });
+      });
+      document.querySelectorAll(".repair-card .repair-media").forEach((media) => {
+        const card = media.closest(".repair-card");
+        if (!card) return;
+        media.setAttribute("role", "button");
+        media.setAttribute("tabindex", "0");
+        media.setAttribute("aria-label", `Open ${card.dataset.title || "repair"} details`);
+        media.addEventListener("click", () => openModal(card));
+        media.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openModal(card);
+          }
         });
       });
       modal.addEventListener("click", (e) => {
