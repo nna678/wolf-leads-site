@@ -3157,6 +3157,12 @@
       }, 300000);
     }
 
+    const normalizeAssetUrl = (url) => {
+      if (!url) return "";
+      if (url.startsWith("assets/")) return `/${url}`;
+      return url;
+    };
+
     // Lazy-load repair images (supports srcset/sizes + Drive fallbacks)
     function initLazyRepairs() {
       const cards = document.querySelectorAll(".repair-media[data-src]");
@@ -3177,16 +3183,18 @@
       };
       const buildVariants = (url) => {
         if (!url) return [];
-        const driveId = getDriveId(url);
-        if (driveId) return buildDriveVariants(url);
-        const list = [url];
-        if (CDN_BASE && url.startsWith("assets/")) {
-          list.push(`${CDN_BASE}${url}`);
+        const baseUrl = normalizeAssetUrl(url);
+        const driveId = getDriveId(baseUrl);
+        if (driveId) return buildDriveVariants(baseUrl);
+        const list = [baseUrl];
+        if (CDN_BASE && (baseUrl.startsWith("/assets/") || baseUrl.startsWith("assets/"))) {
+          const cdnPath = baseUrl.replace(/^\/+/, "");
+          list.push(`${CDN_BASE}${cdnPath}`);
         }
         return list;
       };
       const loadImg = (media) => {
-        const url = media.getAttribute("data-src");
+        const url = normalizeAssetUrl(media.getAttribute("data-src"));
         if (!url || media.dataset.loaded) return;
         const img = media.querySelector("img");
         if (!img) return;
@@ -3416,7 +3424,7 @@
         fill("fix", card.dataset.fix);
         fill("result", card.dataset.result);
         fill("review", card.dataset.review);
-        if (modalImg) modalImg.src = card.dataset.image || "";
+        if (modalImg) modalImg.src = normalizeAssetUrl(card.dataset.image || "");
         modal.classList.add("is-open");
         document.body.classList.add("modal-open");
       };
