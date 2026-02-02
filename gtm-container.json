@@ -1,0 +1,80 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-01-21 12:00:00",
+  "containerVersion": {
+    "accountId": "0",
+    "containerId": "0",
+    "containerVersionId": "1",
+    "container": {
+      "accountId": "0",
+      "containerId": "0",
+      "name": "wolf-subzero-cove",
+      "publicId": "GTM-M79LGWTV",
+      "usageContext": [
+        "WEB"
+      ],
+      "fingerprint": "0",
+      "tagManagerUrl": "https://tagmanager.google.com/"
+    },
+    "tag": [
+      {
+        "tagId": "1",
+        "name": "GA4 Base + Lead Submit",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>(function(){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=window.gtag||gtag;if(!window.__ga4Init){window.__ga4Init=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-K723BVNTLE';document.head.appendChild(s);gtag('js', new Date());gtag('config','G-K723BVNTLE',{send_page_view:true});}var successEl=document.getElementById('form-success');var formEl=document.getElementById('lead-form');var sent=false;var markSent=function(){if(sent)return;sent=true;gtag('event','lead_submit',{lead_type:'form'});};if(formEl&&successEl){formEl.addEventListener('submit',function(){sent=false;});var obs=new MutationObserver(function(){var text=(successEl.textContent||'').trim();if(text)markSent();});obs.observe(successEl,{childList:true,subtree:true,characterData:true});}})();</script>"
+          }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": [
+          "2147479553"
+        ]
+      },
+      {
+        "tagId": "2",
+        "name": "Yandex Metrika 106539905",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script type=\"text/javascript\">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106539905','ym');ym(106539905,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:\"dataLayer\",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});</script><noscript><div><img src=\"https://mc.yandex.ru/watch/106539905\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>"
+          }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": [
+          "2147479553"
+        ]
+      },
+      {
+        "tagId": "3",
+        "name": "Zadarma Call Tracking",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>(function(w,c){(w[c]=w[c]||[]).push(function(){new zTracker({\"id\":\"d69ccd1772be4cadd51856decfab40d214042\",\"metrics\":{\"metrika\":\"106539905\",\"ga\":\"G-K723BVNTLE\"}});});})(window,\"zTrackerCallbacks\");</script><script async src=\"https://my.zadarma.com/js/ct_phone.min.js\"></script>"
+          }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": [
+          "2147479553"
+        ]
+      }
+    ],
+    "trigger": [
+      {
+        "triggerId": "2147479553",
+        "name": "All Pages",
+        "type": "PAGEVIEW",
+        "filter": [],
+        "fingerprint": "0"
+      }
+    ],
+    "variable": []
+  }
+}

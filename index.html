@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M79LGWTV');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
   <meta name="description" content="Sub-Zero & Wolf Repair Specialists. Same-day service available. Transparent pricing." />
@@ -1994,6 +2001,10 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M79LGWTV"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <div class="page">
     <div class="trust-visual"></div>
     <header class="top-bar">
@@ -2974,6 +2985,16 @@
       return value.replace(/\D/g, "");
     }
 
+    function trackEvent(name, params = {}) {
+      if (typeof gtag !== "undefined") {
+        gtag("event", name, params);
+        return;
+      }
+      if (window.dataLayer && typeof window.dataLayer.push === "function") {
+        window.dataLayer.push({ event: name, ...params });
+      }
+    }
+
     function validateAndSubmit(form, config) {
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -3078,13 +3099,11 @@
         submitBtn.disabled = false;
         form.classList.remove("loading");
 
-        // Track conversion
-        if (typeof gtag !== "undefined") {
-          gtag("event", "form_submit", {
-            "event_category": "engagement",
-            "event_label": "lead_form"
-          });
-        }
+        // Track submit attempt
+        trackEvent("form_submit_attempt", {
+          event_category: "engagement",
+          event_label: "lead_form"
+        });
 
         setTimeout(() => { 
           submitBtn.textContent = originalText;
@@ -3102,11 +3121,20 @@
             if (!resp.ok || !out.ok) {
               throw new Error(out.error || "Lead send failed");
             }
+            trackEvent("form_submit", {
+              event_category: "engagement",
+              event_label: "lead_form",
+              form_time_ms: formStartTime ? Date.now() - formStartTime : undefined
+            });
           } catch (err) {
             setSuccess(config.successId, "");
             const errMsg = err?.message ? `Error: ${err.message}` : "Error sending request.";
             setError(config.phoneErr, `${errMsg} Please call us directly at (888) 445-7686.`, phoneInput);
             submitBtn.textContent = originalText;
+            trackEvent("form_submit_error", {
+              event_category: "engagement",
+              event_label: "lead_form"
+            });
           }
         })();
       });
@@ -3182,12 +3210,10 @@
         window.scrollTo({ top: cardTop, behavior: "smooth" });
         setTimeout(() => { if (phone) { phone.focus(); phone.select(); } }, 400);
       }
-      if (typeof gtag !== "undefined") {
-        gtag("event", "click", {
-          "event_category": "engagement",
-          "event_label": label
-        });
-      }
+      trackEvent("click", {
+        event_category: "engagement",
+        event_label: label
+      });
     };
     const bindScroll = (btn, label) => {
       if (btn) btn.addEventListener("click", () => scrollToForm(label));
@@ -3201,12 +3227,10 @@
     // Track phone clicks
     document.querySelectorAll('a[href^="tel:"]').forEach(link => {
       link.addEventListener("click", () => {
-        if (typeof gtag !== "undefined") {
-          gtag("event", "phone_click", {
-            "event_category": "engagement",
-            "event_label": "call_cta"
-          });
-        }
+        trackEvent("phone_click", {
+          event_category: "engagement",
+          event_label: "call_cta"
+        });
       });
     });
 
@@ -3217,12 +3241,10 @@
       form.addEventListener("focusin", (e) => {
         if ((e.target.tagName === "INPUT" || e.target.tagName === "SELECT") && !formStartTime) {
           formStartTime = Date.now();
-          if (typeof gtag !== "undefined") {
-            gtag("event", "form_start", {
-              "event_category": "engagement",
-              "event_label": "form_interaction"
-            });
-          }
+          trackEvent("form_start", {
+            event_category: "engagement",
+            event_label: "form_interaction"
+          });
         }
       }, true);
     }
