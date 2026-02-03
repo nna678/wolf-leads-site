@@ -77,6 +77,7 @@ function buildText(p) {
   const issue = safeString(p.issue || p.problem || "");
   const serviceDate = safeString(p.service_date || "");
   const time = safeString(p.time_label || p.time || "");
+  const leadId = safeString(p.lead_id || "");
   const location = safeString(p.location || "");
   const feeAck = p.fee_acknowledged === true || p.fee_acknowledged === "true" || p.fee_acknowledged === "1";
   const consent = p.consent_accepted === true || p.consent_accepted === "true" || p.consent_accepted === "1";
@@ -96,6 +97,7 @@ function buildText(p) {
 
   const lines = [];
   lines.push("NEW SERVICE REQUEST");
+  lines.push(`Lead ID: ${leadId || "-"}`);
   lines.push(`Name: ${name || "-"}`);
   lines.push(`Phone: ${phone || "-"}`);
   lines.push(`Email: ${email || "-"}`);
@@ -236,6 +238,7 @@ exports.handler = async (event) => {
     const bothOk = !!(tgRes.ok && mailRes.ok);
 
     const summary = {
+      lead_id: safeString(payload.lead_id || ""),
       zip: safeString(payload.zip || ""),
       appliance: safeString(payload.appliance || ""),
       service_date: safeString(payload.service_date || ""),

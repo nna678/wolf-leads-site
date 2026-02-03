@@ -2986,13 +2986,12 @@
     }
 
     function trackEvent(name, params = {}) {
-      if (typeof gtag !== "undefined") {
-        gtag("event", name, params);
-        return;
-      }
-      if (window.dataLayer && typeof window.dataLayer.push === "function") {
-        window.dataLayer.push({ event: name, ...params });
-      }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: name, ...params });
+    }
+
+    function generateLeadId() {
+      return `lead_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
     }
 
     function validateAndSubmit(form, config) {
@@ -3048,8 +3047,12 @@
           ? nowLocal.toLocaleString('en-US', { timeZone: userTimeZone })
           : nowLocal.toLocaleString();
         const utcTimestamp = nowLocal.toISOString();
+        const leadId = generateLeadId();
+        const leadValue = 0;
+        const leadCurrency = "USD";
 
         const formData = {
+          lead_id: leadId,
           name: form.querySelector('#name')?.value || '',
           phone: phoneInput.value,
           email: form.querySelector('#email')?.value || '',
@@ -3102,7 +3105,8 @@
         // Track submit attempt
         trackEvent("form_submit_attempt", {
           event_category: "engagement",
-          event_label: "lead_form"
+          event_label: "lead_form",
+          lead_id: leadId
         });
 
         setTimeout(() => { 
@@ -3124,7 +3128,10 @@
             trackEvent("form_submit", {
               event_category: "engagement",
               event_label: "lead_form",
-              form_time_ms: formStartTime ? Date.now() - formStartTime : undefined
+              form_time_ms: formStartTime ? Date.now() - formStartTime : undefined,
+              lead_id: leadId,
+              value: leadValue,
+              currency: leadCurrency
             });
           } catch (err) {
             setSuccess(config.successId, "");
@@ -3133,7 +3140,8 @@
             submitBtn.textContent = originalText;
             trackEvent("form_submit_error", {
               event_category: "engagement",
-              event_label: "lead_form"
+              event_label: "lead_form",
+              lead_id: leadId
             });
           }
         })();
@@ -3248,6 +3256,42 @@
         }
       }, true);
     }
+
+    // Scroll depth tracking (25/50/75)
+    const scrollDepths = [25, 50, 75];
+    const firedScrollDepths = new Set();
+    let scrollTicking = false;
+    const handleScrollDepth = () => {
+      const docHeight = Math.max(
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight
+      );
+      const winHeight = window.innerHeight || document.documentElement.clientHeight;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      const totalScrollable = docHeight - winHeight;
+      if (totalScrollable <= 0) return;
+      const percent = Math.round((scrollTop / totalScrollable) * 100);
+      scrollDepths.forEach((depth) => {
+        if (!firedScrollDepths.has(depth) && percent >= depth) {
+          firedScrollDepths.add(depth);
+          trackEvent("scroll_depth", {
+            event_category: "engagement",
+            event_label: "scroll",
+            percent: depth
+          });
+        }
+      });
+    };
+    window.addEventListener("scroll", () => {
+      if (!scrollTicking) {
+        scrollTicking = true;
+        window.requestAnimationFrame(() => {
+          handleScrollDepth();
+          scrollTicking = false;
+        });
+      }
+    }, { passive: true });
+    window.addEventListener("load", handleScrollDepth);
 
     // Mobile CTA pulse (subtle)
     if (window.innerWidth <= 768) {
