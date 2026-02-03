@@ -2985,9 +2985,13 @@
       return value.replace(/\D/g, "");
     }
 
+    const METRIKA_ID = 106539905;
     function trackEvent(name, params = {}) {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: name, ...params });
+      if (typeof ym === "function") {
+        try { ym(METRIKA_ID, "reachGoal", name); } catch (e) {}
+      }
     }
 
     function generateLeadId() {
