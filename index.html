@@ -3213,7 +3213,6 @@
     const scrollBtn2 = document.getElementById("scroll-to-form-2");
     const scrollBtnMobile = document.getElementById("scroll-to-form-mobile");
     const scrollBtnFloating = document.getElementById("scroll-to-form-floating");
-    const scrollBtnScope = document.getElementById("scroll-to-form-scope");
     const scrollToForm = (label = "book_service_cta") => {
       const card = document.getElementById("form-card");
       const phone = document.getElementById("phone");
@@ -3234,7 +3233,6 @@
     bindScroll(scrollBtn2, "book_service_repairs");
     bindScroll(scrollBtnMobile, "book_service_mobile_bar");
     bindScroll(scrollBtnFloating, "book_service_floating");
-    bindScroll(scrollBtnScope, "book_service_scope");
 
     // Track phone clicks
     document.querySelectorAll('a[href^="tel:"]').forEach(link => {
