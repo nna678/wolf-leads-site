@@ -3000,7 +3000,7 @@
             if (!resp.ok || !out.ok) {
               throw new Error(out.error || "Lead send failed");
             }
-            trackEvent("form_submit", {
+            trackEvent("dl_form_submit", {
               event_category: "engagement",
               event_label: "lead_form",
               form_time_ms: formStartTime ? Date.now() - formStartTime : undefined,
@@ -3108,7 +3108,7 @@
     // Track phone clicks
     document.querySelectorAll('a[href^="tel:"]').forEach(link => {
       link.addEventListener("click", () => {
-        trackEvent("phone_click", {
+        trackEvent("dl_phone_click", {
           event_category: "engagement",
           event_label: "call_cta"
         });
@@ -3147,7 +3147,7 @@
       scrollDepths.forEach((depth) => {
         if (!firedScrollDepths.has(depth) && percent >= depth) {
           firedScrollDepths.add(depth);
-          trackEvent("scroll_depth", {
+          trackEvent("dl_scroll_depth", {
             event_category: "engagement",
             event_label: "scroll",
             percent: depth
