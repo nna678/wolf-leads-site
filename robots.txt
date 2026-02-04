@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wolf-subzero-repair.netlify.app/sitemap.xml
