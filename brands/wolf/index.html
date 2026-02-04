@@ -9,7 +9,7 @@
   })(window,document,'script','dataLayer','GTM-M79LGWTV');</script>
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
   <meta name="google-site-verification" content="yY-7hkEIO0wFiLu2_MfJPVSGRfiigoEctnIORnFddkY" />
   <meta name="description" content="Wolf range and oven repair. Ignition issues, temperature errors, or burner problems? We can help." />
   <title>Wolf Repair Service | Ranges & Ovens</title>
@@ -31,51 +31,193 @@
   <meta name="twitter:description" content="Wolf range and oven repair. Ignition issues, temperature errors, or burner problems? We can help." />
   <meta name="twitter:image" content="https://wolf-subzero-repair.netlify.app/assets/images/repairs/wolf/wolf-03-ignition.webp" />
   <style>
-    :root { color-scheme: dark; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, sans-serif; background: #0a0d12; color: #fbfbf9; line-height: 1.65; }
-    a { color: inherit; }
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 36px 20px 90px; }
-    header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-    nav a { color: #f0b873; text-decoration: none; margin-right: 14px; font-weight: 600; }
-    nav a:last-child { margin-right: 0; }
-    h1 { font-size: 36px; margin: 20px 0 10px; }
-    h2 { margin: 26px 0 10px; font-size: 24px; }
-    h3 { margin: 18px 0 8px; font-size: 18px; }
-    p { margin: 0 0 12px; color: #dcdcd4; }
-    .hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; align-items: center; margin-top: 18px; }
-    .hero .badge { display: inline-flex; gap: 8px; align-items: center; padding: 6px 10px; border-radius: 999px; background: rgba(205,133,63,0.2); color: #f0b873; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
-    .hero-media { background: rgba(22,24,32,0.98); border: 1px solid #424656; border-radius: 16px; overflow: hidden; }
-    .hero-media img { width: 100%; display: block; height: 100%; object-fit: cover; }
-    .cta-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
-    .cta { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; background: #cd853f; color: #0a0d12; border-radius: 10px; text-decoration: none; font-weight: 700; }
-    .cta.secondary { background: transparent; color: #f0b873; border: 1px solid #f0b873; }
-    .trustbar { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 18px 0 6px; }
-    .trust-item { padding: 12px; border: 1px solid #424656; border-radius: 10px; background: rgba(22,24,32,0.98); text-align: center; font-weight: 600; font-size: 14px; }
-    .section { margin-top: 30px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 16px; margin-top: 14px; }
-    .card { background: rgba(22,24,32,0.98); border: 1px solid #424656; padding: 16px; border-radius: 12px; }
-    .card img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
-    .steps { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 14px; margin-top: 12px; }
-    .step { padding: 16px; border-radius: 12px; border: 1px solid #424656; background: rgba(22,24,32,0.98); }
-    .testimonials { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 14px; margin-top: 14px; }
-    .testimonial { border: 1px solid #424656; border-radius: 12px; padding: 16px; background: rgba(22,24,32,0.98); }
-    .callout { margin-top: 26px; padding: 18px; border-radius: 14px; background: rgba(205,133,63,0.12); border: 1px solid rgba(205,133,63,0.5); }
-    footer { margin-top: 40px; opacity: 0.85; font-size: 14px; }
-    /* FAQ — same style as main landing */
-    .faq { margin-top: 32px; display: grid; gap: 16px; }
-    .faq-item { position: relative; background: rgba(18,18,20,0.92); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 20px; transition: border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease; box-shadow: 0 6px 18px rgba(0,0,0,0.2); overflow: hidden; }
-    .faq-item::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, rgba(205,133,63,0.7), rgba(205,133,63,0.4)); opacity: 0; transition: opacity 0.25s ease; }
-    .faq-item:hover { border-color: rgba(205,133,63,0.35); box-shadow: 0 10px 24px rgba(0,0,0,0.24); background: rgba(20,20,22,0.95); }
-    .faq-item[open] { border-color: #cd853f; background: rgba(22,22,26,0.96); box-shadow: 0 12px 28px rgba(0,0,0,0.28); }
+    :root {
+      color-scheme: dark;
+      --bg: #0a0d12;
+      --panel: rgba(22,24,32,0.98);
+      --border: #424656;
+      --text: #fbfbf9;
+      --text-bright: #ffffff;
+      --muted: #dcdcd4;
+      --accent: #cd853f;
+      --accent-light: #f0b873;
+      --accent-glow: rgba(205,133,63,0.28);
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.18);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.28);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      font-size: 16px;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(205,133,63,0.06), transparent 45%), radial-gradient(circle at 80% 80%, rgba(205,133,63,0.05), transparent 45%), linear-gradient(180deg, #0a0d12 0%, #0e1016 100%);
+      pointer-events: none; z-index: 0;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: 24px 20px 120px; }
+    @media (min-width: 900px) { .wrap { padding: 40px 28px 140px; } }
+
+    /* Header */
+    header {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+      padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    header > div { font-size: 15px; font-weight: 700; letter-spacing: 0.02em; color: var(--text-bright); }
+    nav { display: flex; gap: 8px; flex-wrap: wrap; }
+    nav a { color: var(--accent-light); font-weight: 600; font-size: 14px; padding: 8px 12px; border-radius: 8px; transition: background 0.2s, color 0.2s; }
+    nav a:hover { background: rgba(205,133,63,0.15); color: #fff; }
+
+    /* Typography */
+    h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+    h1 { font-size: clamp(28px, 5vw, 42px); margin: 12px 0 10px; color: var(--text-bright); }
+    .section-title { font-size: clamp(22px, 3.5vw, 28px); margin: 0 0 8px; color: var(--text-bright); }
+    h2.section-title { margin-top: 40px; margin-bottom: 12px; }
+    h2.section-title:first-of-type { margin-top: 0; }
+    h3 { font-size: 17px; margin: 0 0 6px; color: #e8e8e3; }
+    p { margin: 0 0 12px; color: var(--muted); font-size: 15px; line-height: 1.65; }
+    .lead { font-size: 17px; color: #e0e0db; line-height: 1.55; }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; margin-top: 8px; }
+    @media (min-width: 768px) { .hero { grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 16px; } }
+    .hero .badge {
+      display: inline-flex; align-items: center; padding: 8px 14px; border-radius: 999px;
+      background: rgba(205,133,63,0.18); color: var(--accent-light); font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .hero-media {
+      background: var(--panel); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .hero-media img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; }
+    .cta-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    .cta {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 14px 22px;
+      background: linear-gradient(135deg, #e8a855 0%, #c97838 100%); color: #0a0d12; border-radius: 10px;
+      text-decoration: none; font-weight: 700; font-size: 15px; transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 6px 24px var(--accent-glow); }
+    .cta.secondary {
+      background: transparent; color: var(--accent-light); border: 2px solid rgba(240,184,115,0.5);
+    }
+    .cta.secondary:hover { background: rgba(205,133,63,0.12); border-color: var(--accent-light); }
+    .trustbar { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px; }
+    @media (min-width: 480px) { .trustbar { grid-template-columns: repeat(4, 1fr); } }
+    .trust-item {
+      padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--panel);
+      text-align: center; font-weight: 600; font-size: 13px; color: var(--text);
+    }
+
+    /* Sections */
+    .section { margin-top: 44px; }
+    @media (min-width: 900px) { .section { margin-top: 56px; } }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
+    @media (min-width: 520px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 900px) { .grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+    .card {
+      background: var(--panel); border: 1px solid var(--border); padding: 20px; border-radius: 14px;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .card:hover { border-color: rgba(205,133,63,0.35); box-shadow: var(--shadow-md); }
+    .card img { width: 100%; border-radius: 10px; margin-bottom: 12px; aspect-ratio: 16/10; object-fit: cover; }
+    .card h3 { margin-bottom: 8px; }
+    .card p { margin: 0; font-size: 14px; }
+    .steps { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 16px; }
+    @media (min-width: 600px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .step {
+      padding: 20px; border-radius: 14px; border: 1px solid var(--border); background: var(--panel);
+    }
+    .step h3 { margin-bottom: 8px; }
+    .testimonials { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
+    @media (min-width: 600px) { .testimonials { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 900px) { .testimonials { grid-template-columns: repeat(3, 1fr); } }
+    .testimonial { border: 1px solid var(--border); border-radius: 14px; padding: 20px; background: var(--panel); }
+    .testimonial p:last-child { margin-bottom: 0; font-size: 13px; color: var(--accent-light); }
+
+    /* Mid CTA */
+    .cta-mid {
+      margin-top: 40px; padding: 28px 24px; border-radius: 16px;
+      background: linear-gradient(135deg, rgba(205,133,63,0.14) 0%, rgba(205,133,63,0.06) 100%);
+      border: 1px solid rgba(205,133,63,0.35); text-align: center;
+    }
+    .cta-mid .section-title { margin-top: 0; }
+    .cta-mid p { margin-bottom: 16px; }
+    .cta-mid .cta-group { justify-content: center; margin-top: 16px; }
+
+    /* FAQ */
+    .faq { margin-top: 20px; display: grid; gap: 14px; }
+    .faq-item {
+      position: relative; background: rgba(18,18,20,0.92); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px; padding: 20px; transition: border-color 0.28s, box-shadow 0.28s;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    }
+    .faq-item:hover { border-color: rgba(205,133,63,0.35); }
+    .faq-item[open] { border-color: var(--accent); }
+    .faq-item::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, rgba(205,133,63,0.7), rgba(205,133,63,0.4)); opacity: 0; transition: opacity 0.25s; border-radius: 12px 0 0 12px; }
     .faq-item[open]::before { opacity: 1; }
-    .faq-item summary { cursor: pointer; list-style: none; font-weight: 800; font-size: 17px; padding-right: 32px; position: relative; color: #ffffff; letter-spacing: -0.01em; line-height: 1.4; transition: color 0.25s ease; }
-    .faq-item summary::after { content: "›"; position: absolute; right: 0; top: 50%; transform: translateY(-50%) rotate(90deg); width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; font-size: 20px; color: #cd853f; transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease; font-weight: 700; opacity: 0.9; }
-    .faq-item[open] summary::after { content: "›"; transform: translateY(-50%) rotate(-90deg); color: #f2f2ec; opacity: 1; }
+    .faq-item summary { cursor: pointer; list-style: none; font-weight: 700; font-size: 16px; padding-right: 32px; position: relative; color: var(--text-bright); }
+    .faq-item summary::after { content: "›"; position: absolute; right: 0; top: 50%; transform: translateY(-50%) rotate(90deg); font-size: 20px; color: var(--accent); transition: transform 0.25s; }
+    .faq-item[open] summary::after { transform: translateY(-50%) rotate(-90deg); color: var(--accent-light); }
     .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-body { overflow: hidden; max-height: 0; opacity: 0; transform: translateY(6px); transition: max-height 0.42s ease-in-out, opacity 0.32s ease, transform 0.32s ease; }
-    .faq-item[open] .faq-body { max-height: 80vh; opacity: 1; transform: translateY(0); }
-    .faq-body p { margin-top: 12px; color: #d8d8d3; font-size: 15px; line-height: 1.8; padding-left: 4px; }
+    .faq-body { overflow: hidden; max-height: 0; opacity: 0; transition: max-height 0.4s ease, opacity 0.3s; }
+    .faq-item[open] .faq-body { max-height: 80vh; opacity: 1; }
+    .faq-body p { margin-top: 12px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+
+    /* Service Areas — compact accordion */
+    .geo-section { margin-top: 44px; }
+    .geo-intro { margin-bottom: 16px; font-size: 15px; color: var(--muted); }
+    .geo-regions { display: flex; flex-direction: column; gap: 8px; }
+    .geo-region {
+      background: var(--panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+    }
+    .geo-region summary {
+      list-style: none; cursor: pointer; padding: 16px 20px; font-weight: 700; font-size: 15px; color: var(--text-bright);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .geo-region summary::-webkit-details-marker { display: none; }
+    .geo-region summary::after { content: "›"; font-size: 18px; color: var(--accent); transform: rotate(90deg); transition: transform 0.25s; }
+    .geo-region[open] summary::after { transform: rotate(-90deg); }
+    .geo-tags { padding: 12px 20px 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .geo-tag {
+      display: inline-block; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: var(--muted);
+    }
+    .cta-final {
+      margin-top: 40px; padding: 32px 24px; border-radius: 16px; text-align: center;
+      background: linear-gradient(135deg, rgba(205,133,63,0.18) 0%, rgba(205,133,63,0.08) 100%);
+      border: 1px solid rgba(205,133,63,0.4);
+    }
+    .cta-final .section-title { margin-top: 0; margin-bottom: 10px; }
+    .cta-final p { margin-bottom: 20px; }
+    .cta-final .cta-group { justify-content: center; margin-top: 8px; }
+    .callout { margin-top: 32px; padding: 24px; border-radius: 16px; background: rgba(205,133,63,0.1); border: 1px solid rgba(205,133,63,0.35); }
+    .callout .section-title { margin-top: 0; }
+    footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 14px; color: var(--muted); }
+    footer a { color: var(--accent-light); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Sticky CTA bar — mobile & tablet */
+    .sticky-cta {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 30;
+      display: flex; gap: 10px; padding: 12px 16px;
+      background: rgba(10,13,18,0.98); backdrop-filter: blur(12px); border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    }
+    .sticky-cta .cta { flex: 1; min-height: 48px; justify-content: center; }
+    .sticky-cta .cta.secondary { flex: 0; min-width: 52px; padding: 14px; }
+    @media (min-width: 1025px) { .sticky-cta { display: none; } }
+    .wrap { padding-bottom: 88px; }
+    @media (min-width: 1025px) { .wrap { padding-bottom: 140px; } }
   </style>
 </head>
 <body>
@@ -97,7 +239,7 @@
       <div>
         <div class="badge">Wolf Specialists</div>
         <h1>Wolf Range & Oven Repair</h1>
-        <p>From ignition issues to temperature errors, we diagnose Wolf ranges, ovens, and cooktops fast and provide a clear estimate before repair.</p>
+        <p class="lead">From ignition issues to temperature errors, we diagnose Wolf ranges, ovens, and cooktops fast and provide a clear estimate before repair.</p>
         <div class="cta-group">
           <a class="cta" href="/#form-card">Book Wolf Service</a>
           <a class="cta secondary" href="tel:+18883997974">Call +1 (888) 399-7974</a>
@@ -110,12 +252,12 @@
         </div>
       </div>
       <div class="hero-media">
-        <img src="/assets/images/repairs/wolf/wolf-03-ignition.webp" alt="Wolf ignition repair" loading="lazy" />
+        <img src="/assets/images/repairs/wolf/wolf-03-ignition.webp" alt="Wolf ignition repair" width="560" height="420" loading="eager" />
       </div>
     </section>
 
     <section class="section">
-      <h2>Common Wolf Issues We Fix</h2>
+      <h2 class="section-title">Common Wolf Issues We Fix</h2>
       <div class="grid">
         <div class="card">
           <img src="/assets/images/repairs/wolf/wolf-04-igniter.webp" alt="Wolf igniter repair" loading="lazy" />
@@ -136,7 +278,7 @@
     </section>
 
     <section class="section">
-      <h2>Before the Technician Arrives</h2>
+      <h2 class="section-title">Before the Technician Arrives</h2>
       <div class="steps">
         <div class="step">
           <h3>Model Details</h3>
@@ -154,7 +296,7 @@
     </section>
 
     <section class="section">
-      <h2>Customer Feedback</h2>
+      <h2 class="section-title">Customer Feedback</h2>
       <div class="testimonials">
         <div class="testimonial">
           <p>"Ignition issue fixed fast. Tech explained everything and tested the burners."</p>
@@ -167,8 +309,17 @@
       </div>
     </section>
 
+    <div class="cta-mid">
+      <h2 class="section-title">Ready to schedule?</h2>
+      <p>Book Wolf service or call now. We’ll confirm your window and next steps.</p>
+      <div class="cta-group">
+        <a class="cta" href="/#form-card">Book Wolf Service</a>
+        <a class="cta secondary" href="tel:+18883997974">Call +1 (888) 399-7974</a>
+      </div>
+    </div>
+
     <section class="section">
-      <h2>FAQ</h2>
+      <h2 class="section-title">FAQ</h2>
       <div class="faq">
         <details class="faq-item">
           <summary>Do you service Wolf ranges and ovens?</summary>
@@ -185,134 +336,51 @@
       </div>
     </section>
 
-    <section class="section">
-      <h2>Service Areas</h2>
-      <p>Wolf repair across the San Francisco Bay Area, Los Angeles, San Diego, and Seattle metro areas. We have multiple technicians throughout the Bay Area and surrounding regions for fast same-day or next-day service.</p>
-      <h3>San Francisco Bay Area</h3>
-      <p>Full coverage from the Peninsula to the South Bay, East Bay, North Bay, and San Francisco.</p>
-      <div class="grid">
-        <div class="card">San Francisco</div>
-        <div class="card">San Jose</div>
-        <div class="card">Oakland</div>
-        <div class="card">Berkeley</div>
-        <div class="card">Palo Alto</div>
-        <div class="card">Sunnyvale</div>
-        <div class="card">Mountain View</div>
-        <div class="card">Santa Clara</div>
-        <div class="card">Cupertino</div>
-        <div class="card">Los Gatos</div>
-        <div class="card">Saratoga</div>
-        <div class="card">Campbell</div>
-        <div class="card">Milpitas</div>
-        <div class="card">Fremont</div>
-        <div class="card">Hayward</div>
-        <div class="card">San Leandro</div>
-        <div class="card">Alameda</div>
-        <div class="card">Richmond</div>
-        <div class="card">Walnut Creek</div>
-        <div class="card">Concord</div>
-        <div class="card">Pleasanton</div>
-        <div class="card">Dublin</div>
-        <div class="card">Livermore</div>
-        <div class="card">San Ramon</div>
-        <div class="card">Danville</div>
-        <div class="card">Menlo Park</div>
-        <div class="card">Los Altos</div>
-        <div class="card">Redwood City</div>
-        <div class="card">San Mateo</div>
-        <div class="card">Foster City</div>
-        <div class="card">Belmont</div>
-        <div class="card">Burlingame</div>
-        <div class="card">Daly City</div>
-        <div class="card">South San Francisco</div>
-        <div class="card">Pacifica</div>
-        <div class="card">Half Moon Bay</div>
-        <div class="card">Sausalito</div>
-        <div class="card">Tiburon</div>
-        <div class="card">Corte Madera</div>
-        <div class="card">San Rafael</div>
-        <div class="card">Novato</div>
-        <div class="card">Napa</div>
-        <div class="card">Sonoma</div>
-        <div class="card">Petaluma</div>
-        <div class="card">Santa Rosa</div>
-        <div class="card">Morgan Hill</div>
-        <div class="card">Gilroy</div>
+    <section class="section geo-section">
+      <h2 class="section-title">Service Areas</h2>
+      <p class="geo-intro">Wolf repair across the San Francisco Bay Area, Los Angeles, San Diego, and Seattle. Bay Area coverage is especially broad—same-day or next-day options.</p>
+      <div class="geo-regions">
+        <details class="geo-region">
+          <summary>San Francisco Bay Area</summary>
+          <div class="geo-tags">
+            <span class="geo-tag">San Francisco</span><span class="geo-tag">San Jose</span><span class="geo-tag">Oakland</span><span class="geo-tag">Berkeley</span><span class="geo-tag">Palo Alto</span><span class="geo-tag">Sunnyvale</span><span class="geo-tag">Mountain View</span><span class="geo-tag">Santa Clara</span><span class="geo-tag">Cupertino</span><span class="geo-tag">Los Gatos</span><span class="geo-tag">Saratoga</span><span class="geo-tag">Campbell</span><span class="geo-tag">Milpitas</span><span class="geo-tag">Fremont</span><span class="geo-tag">Hayward</span><span class="geo-tag">San Leandro</span><span class="geo-tag">Alameda</span><span class="geo-tag">Richmond</span><span class="geo-tag">Walnut Creek</span><span class="geo-tag">Concord</span><span class="geo-tag">Pleasanton</span><span class="geo-tag">Dublin</span><span class="geo-tag">Livermore</span><span class="geo-tag">San Ramon</span><span class="geo-tag">Danville</span><span class="geo-tag">Menlo Park</span><span class="geo-tag">Los Altos</span><span class="geo-tag">Redwood City</span><span class="geo-tag">San Mateo</span><span class="geo-tag">Foster City</span><span class="geo-tag">Belmont</span><span class="geo-tag">Burlingame</span><span class="geo-tag">Daly City</span><span class="geo-tag">South San Francisco</span><span class="geo-tag">Pacifica</span><span class="geo-tag">Half Moon Bay</span><span class="geo-tag">Sausalito</span><span class="geo-tag">Tiburon</span><span class="geo-tag">Corte Madera</span><span class="geo-tag">San Rafael</span><span class="geo-tag">Novato</span><span class="geo-tag">Napa</span><span class="geo-tag">Sonoma</span><span class="geo-tag">Petaluma</span><span class="geo-tag">Santa Rosa</span><span class="geo-tag">Morgan Hill</span><span class="geo-tag">Gilroy</span>
+          </div>
+        </details>
+        <details class="geo-region">
+          <summary>Los Angeles & Orange County</summary>
+          <div class="geo-tags">
+            <span class="geo-tag">Los Angeles</span><span class="geo-tag">Santa Monica</span><span class="geo-tag">Beverly Hills</span><span class="geo-tag">Pasadena</span><span class="geo-tag">Glendale</span><span class="geo-tag">Burbank</span><span class="geo-tag">West Hollywood</span><span class="geo-tag">Culver City</span><span class="geo-tag">Inglewood</span><span class="geo-tag">Torrance</span><span class="geo-tag">Long Beach</span><span class="geo-tag">Irvine</span><span class="geo-tag">Anaheim</span><span class="geo-tag">Newport Beach</span><span class="geo-tag">Costa Mesa</span><span class="geo-tag">Huntington Beach</span><span class="geo-tag">Fullerton</span><span class="geo-tag">Orange County</span>
+          </div>
+        </details>
+        <details class="geo-region">
+          <summary>San Diego</summary>
+          <div class="geo-tags">
+            <span class="geo-tag">San Diego</span><span class="geo-tag">La Jolla</span><span class="geo-tag">Del Mar</span><span class="geo-tag">Encinitas</span><span class="geo-tag">Carlsbad</span><span class="geo-tag">Oceanside</span><span class="geo-tag">Coronado</span><span class="geo-tag">Chula Vista</span><span class="geo-tag">Poway</span><span class="geo-tag">Rancho Bernardo</span><span class="geo-tag">Scripps Ranch</span><span class="geo-tag">Carmel Valley</span><span class="geo-tag">Rancho Santa Fe</span><span class="geo-tag">Solana Beach</span><span class="geo-tag">Escondido</span><span class="geo-tag">La Mesa</span>
+          </div>
+        </details>
+        <details class="geo-region">
+          <summary>Seattle & Puget Sound</summary>
+          <div class="geo-tags">
+            <span class="geo-tag">Seattle</span><span class="geo-tag">Bellevue</span><span class="geo-tag">Kirkland</span><span class="geo-tag">Redmond</span><span class="geo-tag">Mercer Island</span><span class="geo-tag">Medina</span><span class="geo-tag">Sammamish</span><span class="geo-tag">Issaquah</span><span class="geo-tag">Tacoma</span><span class="geo-tag">Renton</span><span class="geo-tag">Kent</span><span class="geo-tag">Federal Way</span><span class="geo-tag">Edmonds</span><span class="geo-tag">Shoreline</span><span class="geo-tag">Bothell</span><span class="geo-tag">Woodinville</span><span class="geo-tag">Everett</span>
+          </div>
+        </details>
       </div>
-      <h3>Los Angeles & Orange County</h3>
-      <div class="grid">
-        <div class="card">Los Angeles</div>
-        <div class="card">Santa Monica</div>
-        <div class="card">Beverly Hills</div>
-        <div class="card">Pasadena</div>
-        <div class="card">Glendale</div>
-        <div class="card">Burbank</div>
-        <div class="card">West Hollywood</div>
-        <div class="card">Culver City</div>
-        <div class="card">Inglewood</div>
-        <div class="card">Torrance</div>
-        <div class="card">Long Beach</div>
-        <div class="card">Irvine</div>
-        <div class="card">Anaheim</div>
-        <div class="card">Newport Beach</div>
-        <div class="card">Costa Mesa</div>
-        <div class="card">Huntington Beach</div>
-        <div class="card">Fullerton</div>
-        <div class="card">Orange County</div>
-      </div>
-      <h3>San Diego</h3>
-      <div class="grid">
-        <div class="card">San Diego</div>
-        <div class="card">La Jolla</div>
-        <div class="card">Del Mar</div>
-        <div class="card">Encinitas</div>
-        <div class="card">Carlsbad</div>
-        <div class="card">Oceanside</div>
-        <div class="card">Coronado</div>
-        <div class="card">Chula Vista</div>
-        <div class="card">Poway</div>
-        <div class="card">Rancho Bernardo</div>
-        <div class="card">Scripps Ranch</div>
-        <div class="card">Carmel Valley</div>
-        <div class="card">Rancho Santa Fe</div>
-        <div class="card">Solana Beach</div>
-        <div class="card">Escondido</div>
-        <div class="card">La Mesa</div>
-      </div>
-      <h3>Seattle & Puget Sound</h3>
-      <div class="grid">
-        <div class="card">Seattle</div>
-        <div class="card">Bellevue</div>
-        <div class="card">Kirkland</div>
-        <div class="card">Redmond</div>
-        <div class="card">Mercer Island</div>
-        <div class="card">Medina</div>
-        <div class="card">Sammamish</div>
-        <div class="card">Issaquah</div>
-        <div class="card">Tacoma</div>
-        <div class="card">Renton</div>
-        <div class="card">Kent</div>
-        <div class="card">Federal Way</div>
-        <div class="card">Edmonds</div>
-        <div class="card">Shoreline</div>
-        <div class="card">Bothell</div>
-        <div class="card">Woodinville</div>
-        <div class="card">Everett</div>
+      <div class="cta-final">
+        <h2 class="section-title">Book Wolf Service</h2>
+        <p>We’ll confirm availability, diagnose the issue, and provide a clear estimate before repair.</p>
+        <div class="cta-group">
+          <a class="cta" href="/#form-card">Request Service</a>
+          <a class="cta secondary" href="tel:+18883997974">Call +1 (888) 399-7974</a>
+        </div>
       </div>
     </section>
 
-    <div class="callout">
-      <h2>Book Wolf Service</h2>
-      <p>We will confirm availability, diagnose the issue, and provide a clear estimate before repair.</p>
-      <div class="cta-group">
-        <a class="cta" href="/#form-card">Request Service</a>
-        <a class="cta secondary" href="tel:+18883997974">Call +1 (888) 399-7974</a>
-      </div>
-    </div>
-
     <footer>Need Sub-Zero service? <a href="/brands/subzero/">Sub-Zero page</a> • <a href="/services/">Service overview</a></footer>
   </main>
-
+  <div class="sticky-cta" aria-label="Quick actions">
+    <a class="cta" href="/#form-card">Book Service</a>
+    <a class="cta secondary" href="tel:+18883997974" aria-label="Call">📞</a>
+  </div>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
