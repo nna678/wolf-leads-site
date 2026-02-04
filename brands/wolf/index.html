@@ -16,16 +16,39 @@
   <link rel="canonical" href="https://wolf-subzero-repair.netlify.app/brands/wolf/" />
   <style>
     :root { color-scheme: dark; }
-    body { margin: 0; font-family: Arial, sans-serif; background: #0a0d12; color: #fbfbf9; line-height: 1.6; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px 80px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #0a0d12; color: #fbfbf9; line-height: 1.65; }
+    a { color: inherit; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 36px 20px 90px; }
     header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-    nav a { color: #f0b873; text-decoration: none; margin-right: 14px; }
-    h1 { font-size: 32px; margin: 20px 0 10px; }
-    h2 { margin-top: 28px; font-size: 22px; }
-    .cta { display: inline-block; margin-top: 16px; padding: 12px 18px; background: #cd853f; color: #0a0d12; border-radius: 8px; text-decoration: none; font-weight: 600; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 14px; margin-top: 14px; }
-    .card { background: rgba(22,24,32,0.98); border: 1px solid #424656; padding: 16px; border-radius: 10px; }
-    footer { margin-top: 40px; opacity: 0.8; font-size: 14px; }
+    nav a { color: #f0b873; text-decoration: none; margin-right: 14px; font-weight: 600; }
+    nav a:last-child { margin-right: 0; }
+    h1 { font-size: 36px; margin: 20px 0 10px; }
+    h2 { margin: 26px 0 10px; font-size: 24px; }
+    h3 { margin: 18px 0 8px; font-size: 18px; }
+    p { margin: 0 0 12px; color: #dcdcd4; }
+    .hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; align-items: center; margin-top: 18px; }
+    .hero .badge { display: inline-flex; gap: 8px; align-items: center; padding: 6px 10px; border-radius: 999px; background: rgba(205,133,63,0.2); color: #f0b873; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+    .hero-media { background: rgba(22,24,32,0.98); border: 1px solid #424656; border-radius: 16px; overflow: hidden; }
+    .hero-media img { width: 100%; display: block; height: 100%; object-fit: cover; }
+    .cta-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+    .cta { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; background: #cd853f; color: #0a0d12; border-radius: 10px; text-decoration: none; font-weight: 700; }
+    .cta.secondary { background: transparent; color: #f0b873; border: 1px solid #f0b873; }
+    .trustbar { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 18px 0 6px; }
+    .trust-item { padding: 12px; border: 1px solid #424656; border-radius: 10px; background: rgba(22,24,32,0.98); text-align: center; font-weight: 600; font-size: 14px; }
+    .section { margin-top: 30px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 16px; margin-top: 14px; }
+    .card { background: rgba(22,24,32,0.98); border: 1px solid #424656; padding: 16px; border-radius: 12px; }
+    .card img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 14px; margin-top: 12px; }
+    .step { padding: 16px; border-radius: 12px; border: 1px solid #424656; background: rgba(22,24,32,0.98); }
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 14px; margin-top: 14px; }
+    .testimonial { border: 1px solid #424656; border-radius: 12px; padding: 16px; background: rgba(22,24,32,0.98); }
+    details { border: 1px solid #424656; border-radius: 10px; padding: 12px 14px; background: rgba(22,24,32,0.98); }
+    details + details { margin-top: 10px; }
+    summary { cursor: pointer; font-weight: 700; }
+    .callout { margin-top: 26px; padding: 18px; border-radius: 14px; background: rgba(205,133,63,0.12); border: 1px solid rgba(205,133,63,0.5); }
+    footer { margin-top: 40px; opacity: 0.85; font-size: 14px; }
   </style>
 </head>
 <body>
@@ -39,37 +62,110 @@
       <nav>
         <a href="/">Home</a>
         <a href="/services/">Services</a>
-        <a href="/subzero/">Sub‑Zero</a>
+        <a href="/subzero/">Sub-Zero</a>
       </nav>
     </header>
 
-    <h1>Wolf Range & Oven Repair</h1>
-    <p>We repair Wolf ranges, ovens, cooktops, and ventilation. Fast diagnosis and clear estimates before repair.</p>
-    <a class="cta" href="/#form-card">Book Wolf Service</a>
+    <section class="hero">
+      <div>
+        <div class="badge">Wolf Specialists</div>
+        <h1>Wolf Range & Oven Repair</h1>
+        <p>From ignition issues to temperature errors, we diagnose Wolf ranges, ovens, and cooktops fast and provide a clear estimate before repair.</p>
+        <div class="cta-group">
+          <a class="cta" href="/#form-card">Book Wolf Service</a>
+          <a class="cta secondary" href="tel:+18883997974">Call +1 (888) 399-7974</a>
+        </div>
+        <div class="trustbar">
+          <div class="trust-item">Gas & dual fuel</div>
+          <div class="trust-item">Ignition repair</div>
+          <div class="trust-item">Control boards</div>
+          <div class="trust-item">Warranty support</div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="/assets/images/repairs/wolf/wolf-03-ignition.webp" alt="Wolf ignition repair" loading="lazy" />
+      </div>
+    </section>
 
-    <h2>Common Wolf Issues</h2>
-    <div class="grid">
-      <div class="card">Ignition or burner not lighting</div>
-      <div class="card">Uneven heating or temperature errors</div>
-      <div class="card">Control board or display problems</div>
-      <div class="card">Fan or convection issues</div>
+    <section class="section">
+      <h2>Common Wolf Issues We Fix</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="/assets/images/repairs/wolf/wolf-04-igniter.webp" alt="Wolf igniter repair" loading="lazy" />
+          <h3>Ignition & Burners</h3>
+          <p>Burners not lighting, delayed ignition, or clicking without flame.</p>
+        </div>
+        <div class="card">
+          <img src="/assets/images/repairs/wolf/wolf-05-control-board.webp" alt="Wolf control board repair" loading="lazy" />
+          <h3>Control & Display</h3>
+          <p>Error codes, unresponsive controls, or display issues.</p>
+        </div>
+        <div class="card">
+          <img src="/assets/images/repairs/wolf/wolf-06-convection-fan.webp" alt="Wolf convection fan repair" loading="lazy" />
+          <h3>Heating & Airflow</h3>
+          <p>Uneven heating, fan noise, or convection performance drops.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Before the Technician Arrives</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>Model Details</h3>
+          <p>Find the model/serial label and note the symptoms.</p>
+        </div>
+        <div class="step">
+          <h3>Power & Gas</h3>
+          <p>Confirm if the unit has power or gas flow issues.</p>
+        </div>
+        <div class="step">
+          <h3>Access</h3>
+          <p>Clear the area for safe access to the range or oven.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Customer Feedback</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>"Ignition issue fixed fast. Tech explained everything and tested the burners."</p>
+          <p><strong>- Amir G.</strong></p>
+        </div>
+        <div class="testimonial">
+          <p>"Wolf oven heating was uneven. Repair was quick and the estimate was clear."</p>
+          <p><strong>- Emily P.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Do you service Wolf ranges and ovens?</summary>
+        <p>Yes, including gas, dual fuel, and electric models.</p>
+      </details>
+      <details>
+        <summary>Can you fix ignition problems?</summary>
+        <p>Yes, we repair igniters, valves, and related parts.</p>
+      </details>
+      <details>
+        <summary>How fast can you come?</summary>
+        <p>Same-day or next-day depending on availability.</p>
+      </details>
+    </section>
+
+    <div class="callout">
+      <h2>Book Wolf Service</h2>
+      <p>We will confirm availability, diagnose the issue, and provide a clear estimate before repair.</p>
+      <div class="cta-group">
+        <a class="cta" href="/#form-card">Request Service</a>
+        <a class="cta secondary" href="tel:+18883997974">Call +1 (888) 399-7974</a>
+      </div>
     </div>
 
-    <h2>Repair Process</h2>
-    <ol>
-      <li>Submit request with model details.</li>
-      <li>Technician diagnoses the issue.</li>
-      <li>We provide a clear estimate before repair.</li>
-    </ol>
-
-    <h2>FAQ</h2>
-    <div class="card">
-      <p><strong>Do you service Wolf ranges and ovens?</strong><br>Yes, including gas, dual fuel, and electric models.</p>
-      <p><strong>Can you fix ignition problems?</strong><br>Yes, we repair igniters, valves, and related parts.</p>
-      <p><strong>How fast can you come?</strong><br>Same‑day or next‑day depending on availability.</p>
-    </div>
-
-    <footer>Need help now? Call <a href="tel:+18883997974">+1 (888) 399‑7974</a></footer>
+    <footer>Need Sub-Zero service? <a href="/brands/subzero/">Sub-Zero page</a></footer>
   </div>
 
   <script type="application/ld+json">
@@ -79,7 +175,7 @@
     "mainEntity": [
       { "@type": "Question", "name": "Do you service Wolf ranges and ovens?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, including gas, dual fuel, and electric models." } },
       { "@type": "Question", "name": "Can you fix ignition problems?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we repair igniters, valves, and related parts." } },
-      { "@type": "Question", "name": "How fast can you come?", "acceptedAnswer": { "@type": "Answer", "text": "Same‑day or next‑day depending on availability." } }
+      { "@type": "Question", "name": "How fast can you come?", "acceptedAnswer": { "@type": "Answer", "text": "Same-day or next-day depending on availability." } }
     ]
   }
   </script>
