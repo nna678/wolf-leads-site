@@ -60,11 +60,22 @@
     .step { padding: 16px; border-radius: 12px; border: 1px solid #424656; background: rgba(22,24,32,0.98); }
     .testimonials { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 14px; margin-top: 14px; }
     .testimonial { border: 1px solid #424656; border-radius: 12px; padding: 16px; background: rgba(22,24,32,0.98); }
-    details { border: 1px solid #424656; border-radius: 10px; padding: 12px 14px; background: rgba(22,24,32,0.98); }
-    details + details { margin-top: 10px; }
-    summary { cursor: pointer; font-weight: 700; }
     .callout { margin-top: 26px; padding: 18px; border-radius: 14px; background: rgba(205,133,63,0.12); border: 1px solid rgba(205,133,63,0.5); }
     footer { margin-top: 40px; opacity: 0.85; font-size: 14px; }
+    /* FAQ — same style as main landing */
+    .faq { margin-top: 32px; display: grid; gap: 16px; }
+    .faq-item { position: relative; background: rgba(18,18,20,0.92); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 20px; transition: border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease; box-shadow: 0 6px 18px rgba(0,0,0,0.2); overflow: hidden; }
+    .faq-item::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, rgba(205,133,63,0.7), rgba(205,133,63,0.4)); opacity: 0; transition: opacity 0.25s ease; }
+    .faq-item:hover { border-color: rgba(205,133,63,0.35); box-shadow: 0 10px 24px rgba(0,0,0,0.24); background: rgba(20,20,22,0.95); }
+    .faq-item[open] { border-color: #cd853f; background: rgba(22,22,26,0.96); box-shadow: 0 12px 28px rgba(0,0,0,0.28); }
+    .faq-item[open]::before { opacity: 1; }
+    .faq-item summary { cursor: pointer; list-style: none; font-weight: 800; font-size: 17px; padding-right: 32px; position: relative; color: #ffffff; letter-spacing: -0.01em; line-height: 1.4; transition: color 0.25s ease; }
+    .faq-item summary::after { content: "›"; position: absolute; right: 0; top: 50%; transform: translateY(-50%) rotate(90deg); width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; font-size: 20px; color: #cd853f; transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease; font-weight: 700; opacity: 0.9; }
+    .faq-item[open] summary::after { content: "›"; transform: translateY(-50%) rotate(-90deg); color: #f2f2ec; opacity: 1; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-body { overflow: hidden; max-height: 0; opacity: 0; transform: translateY(6px); transition: max-height 0.42s ease-in-out, opacity 0.32s ease, transform 0.32s ease; }
+    .faq-item[open] .faq-body { max-height: 80vh; opacity: 1; transform: translateY(0); }
+    .faq-body p { margin-top: 12px; color: #d8d8d3; font-size: 15px; line-height: 1.8; padding-left: 4px; }
   </style>
 </head>
 <body>
@@ -185,42 +196,77 @@
 
     <section class="section">
       <h2>FAQ</h2>
-      <details>
-        <summary>Do you service both Sub-Zero and Wolf?</summary>
-        <p>Yes. We specialize in both brands and stock common parts.</p>
-      </details>
-      <details>
-        <summary>How fast can a technician arrive?</summary>
-        <p>Same-day or next-day depending on availability and location.</p>
-      </details>
-      <details>
-        <summary>Do you provide estimates?</summary>
-        <p>Yes. You receive a clear estimate before any work begins.</p>
-      </details>
+      <div class="faq">
+        <details class="faq-item">
+          <summary>Do you service both Sub-Zero and Wolf?</summary>
+          <div class="faq-body"><p>Yes. We specialize in both brands and stock common parts.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>How fast can a technician arrive?</summary>
+          <div class="faq-body"><p>Same-day or next-day depending on availability and location.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Do you provide estimates?</summary>
+          <div class="faq-body"><p>Yes. You receive a clear estimate before any work begins.</p></div>
+        </details>
+      </div>
     </section>
 
     <section class="section">
       <h2>Service Areas</h2>
-      <p>We serve the San Francisco Bay Area, Los Angeles, San Diego, and Seattle metro areas, including nearby cities and neighborhoods.</p>
+      <p>We serve the San Francisco Bay Area, Los Angeles, San Diego, and Seattle metro areas with multiple technicians. Bay Area coverage is especially broad—from San Francisco and the Peninsula to the South Bay, East Bay, and North Bay—for same-day or next-day service.</p>
       <h3>San Francisco Bay Area</h3>
+      <p>Full coverage: Peninsula, South Bay, East Bay, North Bay, and San Francisco.</p>
       <div class="grid">
-        <div class="card">San Jose</div>
-        <div class="card">Los Gatos</div>
-        <div class="card">Campbell</div>
-        <div class="card">Saratoga</div>
-        <div class="card">Cupertino</div>
-        <div class="card">Sunnyvale</div>
-        <div class="card">Mountain View</div>
-        <div class="card">Palo Alto</div>
-        <div class="card">Santa Clara</div>
-        <div class="card">Milpitas</div>
-        <div class="card">Redwood City</div>
-        <div class="card">San Mateo</div>
         <div class="card">San Francisco</div>
+        <div class="card">San Jose</div>
         <div class="card">Oakland</div>
         <div class="card">Berkeley</div>
+        <div class="card">Palo Alto</div>
+        <div class="card">Sunnyvale</div>
+        <div class="card">Mountain View</div>
+        <div class="card">Santa Clara</div>
+        <div class="card">Cupertino</div>
+        <div class="card">Los Gatos</div>
+        <div class="card">Saratoga</div>
+        <div class="card">Campbell</div>
+        <div class="card">Milpitas</div>
+        <div class="card">Fremont</div>
+        <div class="card">Hayward</div>
+        <div class="card">San Leandro</div>
+        <div class="card">Alameda</div>
+        <div class="card">Richmond</div>
+        <div class="card">Walnut Creek</div>
+        <div class="card">Concord</div>
+        <div class="card">Pleasanton</div>
+        <div class="card">Dublin</div>
+        <div class="card">Livermore</div>
+        <div class="card">San Ramon</div>
+        <div class="card">Danville</div>
+        <div class="card">Menlo Park</div>
+        <div class="card">Los Altos</div>
+        <div class="card">Redwood City</div>
+        <div class="card">San Mateo</div>
+        <div class="card">Foster City</div>
+        <div class="card">Belmont</div>
+        <div class="card">Burlingame</div>
+        <div class="card">Daly City</div>
+        <div class="card">South San Francisco</div>
+        <div class="card">Pacifica</div>
+        <div class="card">Half Moon Bay</div>
+        <div class="card">Sausalito</div>
+        <div class="card">Tiburon</div>
+        <div class="card">Corte Madera</div>
+        <div class="card">San Rafael</div>
+        <div class="card">Novato</div>
+        <div class="card">Napa</div>
+        <div class="card">Sonoma</div>
+        <div class="card">Petaluma</div>
+        <div class="card">Santa Rosa</div>
+        <div class="card">Morgan Hill</div>
+        <div class="card">Gilroy</div>
       </div>
-      <h3>Los Angeles</h3>
+      <h3>Los Angeles & Orange County</h3>
       <div class="grid">
         <div class="card">Los Angeles</div>
         <div class="card">Santa Monica</div>
@@ -230,9 +276,15 @@
         <div class="card">Burbank</div>
         <div class="card">West Hollywood</div>
         <div class="card">Culver City</div>
+        <div class="card">Inglewood</div>
         <div class="card">Torrance</div>
         <div class="card">Long Beach</div>
         <div class="card">Irvine</div>
+        <div class="card">Anaheim</div>
+        <div class="card">Newport Beach</div>
+        <div class="card">Costa Mesa</div>
+        <div class="card">Huntington Beach</div>
+        <div class="card">Fullerton</div>
         <div class="card">Orange County</div>
       </div>
       <h3>San Diego</h3>
@@ -242,24 +294,37 @@
         <div class="card">Del Mar</div>
         <div class="card">Encinitas</div>
         <div class="card">Carlsbad</div>
+        <div class="card">Oceanside</div>
         <div class="card">Coronado</div>
         <div class="card">Chula Vista</div>
         <div class="card">Poway</div>
         <div class="card">Rancho Bernardo</div>
         <div class="card">Scripps Ranch</div>
+        <div class="card">Carmel Valley</div>
+        <div class="card">Rancho Santa Fe</div>
+        <div class="card">Solana Beach</div>
+        <div class="card">Escondido</div>
+        <div class="card">La Mesa</div>
       </div>
-      <h3>Seattle</h3>
+      <h3>Seattle & Puget Sound</h3>
       <div class="grid">
         <div class="card">Seattle</div>
         <div class="card">Bellevue</div>
         <div class="card">Kirkland</div>
         <div class="card">Redmond</div>
         <div class="card">Mercer Island</div>
-        <div class="card">Clyde Hill</div>
         <div class="card">Medina</div>
         <div class="card">Sammamish</div>
         <div class="card">Issaquah</div>
         <div class="card">Tacoma</div>
+        <div class="card">Renton</div>
+        <div class="card">Kent</div>
+        <div class="card">Federal Way</div>
+        <div class="card">Edmonds</div>
+        <div class="card">Shoreline</div>
+        <div class="card">Bothell</div>
+        <div class="card">Woodinville</div>
+        <div class="card">Everett</div>
       </div>
     </section>
 
