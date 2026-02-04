@@ -1238,6 +1238,8 @@
     .legal-modal h3 { font-size: 22px; margin-bottom: 6px; }
     .legal-modal h4 { font-size: 16px; margin: 14px 0 6px; color: var(--accent); }
     .legal-modal p { color: #dcdcd6; margin: 6px 0; line-height: 1.6; font-size: 14px; }
+    .legal-modal .legal-lead { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+    .legal-modal--terms { max-height: 85vh; overflow-y: auto; }
     .legal-modal .close-legal {
       display: inline-flex;
       align-items: center;
@@ -2651,10 +2653,10 @@
     <!-- Privacy Policy -->
     <div class="legal-modal-backdrop" id="legal-modal">
       <div class="legal-modal">
-        <button class="close-legal" id="close-legal">✕ Close</button>
+        <button class="close-legal" id="close-legal" aria-label="Close">✕ Close</button>
         <h3>Privacy Policy</h3>
         <div class="legal-subtitle">Last Updated: April 28, 2025</div>
-        <p><strong>Winline Technology LLC</strong> is a licensed independent service provider (License #19111730, Town of Los Gatos, CA). We repair Sub-Zero and Wolf appliances and are not affiliated with any brand.</p>
+        <p><strong>Glacier Appliance Repair</strong> is a licensed independent service provider (UBI #605945520, Spokane, WA). We repair Sub-Zero and Wolf appliances and are not affiliated with any brand.</p>
         <h4>What We Collect</h4>
         <p>Contact details (name, phone, email), service address/ZIP, appliance details, and basic site usage data (IP, browser, pages visited). Payment is handled by secure third parties.</p>
         <h4>How We Use It</h4>
@@ -2666,7 +2668,54 @@
         <h4>Security</h4>
         <p>We use reasonable security measures, but no system is 100% secure.</p>
         <h4>Contact</h4>
-        <p>https://wolf-subzero-cove.com/contact | Phone: <a class="zphone" href="tel:+18883997974">(888) 399-7974</a> | Address: 873 Castlewood Dr 3, Los Gatos, CA 95032-1332</p>
+        <p><a href="https://wolf-subzero-repair.netlify.app/">https://wolf-subzero-repair.netlify.app</a> · Phone: <a class="zphone" href="tel:+18883997974">(888) 399-7974</a> · Spokane, WA</p>
+      </div>
+    </div>
+
+    <!-- Terms of Service -->
+    <div class="legal-modal-backdrop" id="terms-modal">
+      <div class="legal-modal legal-modal--terms">
+        <button class="close-legal" id="close-terms" aria-label="Close">✕ Close</button>
+        <h3>Terms of Service</h3>
+        <div class="legal-subtitle">Effective Date: November 12, 2025</div>
+        <p><strong>Glacier Appliance Repair</strong> is a licensed independent service provider (UBI #605945520, Spokane, WA) authorized to repair household appliances. We are not affiliated with Sub-Zero, Wolf, Cove, or any other appliance brand.</p>
+        <p class="legal-lead">These Terms form a legal contract between you and Glacier Appliance Repair. They apply when you use our website, services, and content. Please read them carefully. They include an arbitration provision and class action waiver. If you do not agree, do not use the content. We may revise these Terms; continued use after changes means acceptance.</p>
+        <h4>Purchases and Payments</h4>
+        <p>By scheduling or allowing our technician to start work, you agree to pay: any unpaid balance upon completion, maximum interest allowed by law, a $30 fee if your check or card is not honored, handling charges for untimely cancellation, and collection costs including attorney’s fees. Payment is due on provision of service unless otherwise agreed.</p>
+        <h4>Cancellation of Service</h4>
+        <p>We reserve the right to charge 100% of the service call amount for any appointment missed, canceled, or changed without at least 8 hours’ notice (or as otherwise agreed). You agree to pay shipping, handling, and nonreturnable parts costs when applicable.</p>
+        <h4>Service Call (Diagnostic)</h4>
+        <p>The appliance must be installed and accessible. The Service Call fee includes the trip, initial inspection, diagnosis, and written estimate. It is not refundable; if you approve the repair, it is included in the total repair cost. Technicians cannot change agreed charges; they may add charges for additional work or if access is not provided. If the issue cannot be duplicated or no problem is found, you are responsible for the service call fee. Intermittent problems may not be diagnosable; you remain responsible for the fee. For service more than 50 miles from our office, an additional trip fee may apply.</p>
+        <h4>Multiple Appliances</h4>
+        <p>For multiple appliances, a discounted Service Call fee per additional appliance may apply at our discretion. Technicians cannot inspect or “look at” any appliance without documenting it and charging the appropriate Service Call fee.</p>
+        <h4>Repair</h4>
+        <p>Estimates are not hourly-based; they reflect complexity, risk, tools, and other factors. Technicians cannot change agreed charges; they may add charges for additional services or access issues.</p>
+        <h4>Warranty</h4>
+        <p>Repair warranty (30–180 days depending on parts) applies to the repaired issue and manufacturer part failure. Warranty is void if additional work is done by others, damage by a third party, or if you choose not to repair as diagnosed. No warranty against other problems on the same unit or incidental damages. Parts carry the manufacturer’s warranty (typically 30–180 days). Repair charges apply after the warranty period or if void.</p>
+        <h4>Intermittent Conditions</h4>
+        <p>There is no labor warranty on units with intermittent problems.</p>
+        <h4>Limitation of Liability</h4>
+        <p>We are not liable for indirect, punitive, incidental, special, or consequential damages (including loss of business, revenues, or goodwill), or for damages exceeding the amounts you paid in the six months before the claim or $10, whichever applies. These limitations apply to the fullest extent permitted by law.</p>
+        <h4>COI</h4>
+        <p>We carry insurance (COI) of $1,000,000. Costs associated with covered risks may be covered under this COI.</p>
+        <h4>Damage Waivers</h4>
+        <p>By allowing our technician to start work, you accept our waivers. <strong>Moving appliance:</strong> You accept the risk of damage to the unit, flooring, cabinetry, or countertops and hold the technician and us faultless. <strong>Lifting glass cooktop:</strong> You accept the risk of breakage and hold us harmless. <strong>Electronic components / power surges:</strong> Warranty does not apply to failures caused by power surges or unstable supply; we recommend a surge protector. <strong>Manufacturer / extended warranty work:</strong> You confirm that you will pay for the repair and seek reimbursement from the manufacturer or warranty provider; you remain personally responsible if they do not pay.</p>
+        <h4>License and Use</h4>
+        <p>You receive a limited, non-exclusive license to use our content for personal use. You may not copy, reverse-engineer, resell, or use the content for unlawful purposes, data mining, or to train AI systems. You must provide accurate information and comply with applicable laws.</p>
+        <h4>Account and Communications</h4>
+        <p>If you register, keep credentials confidential. We may send electronic communications; they constitute valid legal notice. Your electronic actions (clicks, submissions) constitute your signature and agreement.</p>
+        <h4>Submissions and Payment</h4>
+        <p>You grant us a royalty-free license to use submissions. Purchases are final; no refunds except as stated or required by law. You authorize charges to your payment method and are responsible for taxes and account security.</p>
+        <h4>Third-Party Services and Links</h4>
+        <p>Some features use third-party providers; your data may be shared per our Privacy Policy. We do not endorse third-party products or services and disclaim liability for them. Google Ads may be used; Google’s Terms also apply.</p>
+        <h4>Data Privacy</h4>
+        <p>Our Privacy Policy is available at <a href="https://wolf-subzero-repair.netlify.app/">https://wolf-subzero-repair.netlify.app</a> and explains how we collect and use personally identifiable information.</p>
+        <h4>Disclaimers</h4>
+        <p>Content is provided “as is.” We disclaim warranties of title, merchantability, and fitness for a particular purpose. We do not warrant error-free or uninterrupted operation.</p>
+        <h4>Indemnification</h4>
+        <p>You agree to indemnify and hold harmless Glacier Appliance Repair and its officers, employees, and agents from claims arising from your violation of these Terms, infringement of third-party rights, or your submissions.</p>
+        <h4>Contact</h4>
+        <p><a href="https://wolf-subzero-repair.netlify.app/">https://wolf-subzero-repair.netlify.app</a> · Phone: <a class="zphone" href="tel:+18883997974">(888) 399-7974</a> · Spokane, WA</p>
       </div>
     </div>
 
@@ -2682,6 +2731,8 @@
       </div>
       <div style="margin-top: 8px;">
         <a href="#" id="open-legal" style="color: var(--accent-light); text-decoration: underline;">Privacy Policy</a>
+        <span style="color: var(--muted);"> · </span>
+        <a href="#" id="open-terms" style="color: var(--accent-light); text-decoration: underline;">Terms of Service</a>
       </div>
     </footer>
 
@@ -3677,17 +3728,28 @@
       });
     }
 
-    // Legal modal handlers
+    // Legal modal handlers (Privacy + Terms)
     function initLegalModal() {
-      const modal = document.getElementById("legal-modal");
-      const openBtn = document.getElementById("open-legal");
-      const closeBtn = document.getElementById("close-legal");
-      if (!modal || !openBtn || !closeBtn) return;
-      const close = () => { modal.style.display = "none"; document.body.style.overflow = ""; };
-      openBtn.addEventListener("click", (e) => { e.preventDefault(); modal.style.display = "flex"; document.body.style.overflow = "hidden"; });
-      closeBtn.addEventListener("click", close);
-      modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
-      document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+      const legalModal = document.getElementById("legal-modal");
+      const termsModal = document.getElementById("terms-modal");
+      const openLegal = document.getElementById("open-legal");
+      const openTerms = document.getElementById("open-terms");
+      const closeLegal = document.getElementById("close-legal");
+      const closeTerms = document.getElementById("close-terms");
+      const closeAny = () => {
+        [legalModal, termsModal].forEach(m => { if (m && m.style.display === "flex") { m.style.display = "none"; document.body.style.overflow = ""; } });
+      };
+      if (openLegal && legalModal && closeLegal) {
+        openLegal.addEventListener("click", (e) => { e.preventDefault(); legalModal.style.display = "flex"; document.body.style.overflow = "hidden"; });
+        closeLegal.addEventListener("click", () => { legalModal.style.display = "none"; document.body.style.overflow = ""; });
+        legalModal.addEventListener("click", (e) => { if (e.target === legalModal) { legalModal.style.display = "none"; document.body.style.overflow = ""; } });
+      }
+      if (openTerms && termsModal && closeTerms) {
+        openTerms.addEventListener("click", (e) => { e.preventDefault(); termsModal.style.display = "flex"; document.body.style.overflow = "hidden"; });
+        closeTerms.addEventListener("click", () => { termsModal.style.display = "none"; document.body.style.overflow = ""; });
+        termsModal.addEventListener("click", (e) => { if (e.target === termsModal) { termsModal.style.display = "none"; document.body.style.overflow = ""; } });
+      }
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeAny(); });
     }
 
     if (document.readyState === "loading") {
