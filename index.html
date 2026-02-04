@@ -2006,7 +2006,7 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M79LGWTV"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div class="page">
+  <main class="page" id="main-content">
     <div class="trust-visual"></div>
     <header class="top-bar">
       <div class="bar-inner">
@@ -2292,10 +2292,10 @@
           <div class="repairs-badge">Protective mats &amp; shoe covers</div>
         </div>
         <div class="repairs-tabs-label">Choose your brand</div>
-        <div class="repairs-tabs" role="tablist">
-          <button class="tab-btn" type="button" data-tab="subzero" aria-selected="false" aria-controls="repairs-panel-subzero">Sub-Zero (8)</button>
-          <button class="tab-btn" type="button" data-tab="wolf" aria-selected="false" aria-controls="repairs-panel-wolf">Wolf (8)</button>
-          <button class="tab-btn is-active" type="button" data-tab="all" aria-selected="true">All (16)</button>
+        <div class="repairs-tabs" role="group" aria-label="Repair brand filter">
+          <button class="tab-btn" type="button" data-tab="subzero" aria-pressed="false">Sub-Zero (8)</button>
+          <button class="tab-btn" type="button" data-tab="wolf" aria-pressed="false">Wolf (8)</button>
+          <button class="tab-btn is-active" type="button" data-tab="all" aria-pressed="true">All (16)</button>
         </div>
         <p class="repairs-tabs-hint">Not sure? Select “All” to browse both brands.</p>
         <div class="repairs-panel is-active" data-panel="subzero" id="repairs-panel-subzero">
@@ -2831,7 +2831,7 @@
         <button class="btn btn-primary" id="cookie-accept" type="button">Accept all</button>
       </div>
     </div>
-  </div>
+  </main>
 
   <script>
     // Optimized location detection with caching
@@ -3591,7 +3591,7 @@
           tabs.forEach((t) => {
             const isActive = t.dataset.tab === key;
             t.classList.toggle("is-active", isActive);
-            t.setAttribute("aria-selected", isActive ? "true" : "false");
+            t.setAttribute("aria-pressed", isActive ? "true" : "false");
           });
           if (key === "all") {
             panels.forEach((p) => p.classList.add("is-active"));
