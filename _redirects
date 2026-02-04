@@ -1,0 +1,3 @@
+# Явно отдаём sitemap и robots с 200 — иначе Netlify или GSC могут не получить файл
+/sitemap.xml  /sitemap.xml  200
+/robots.txt   /robots.txt   200
