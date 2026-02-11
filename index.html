@@ -320,6 +320,14 @@ YF<!DOCTYPE html>
       margin-left: auto;
       margin-right: auto;
     }
+    .service-areas-static {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 6px;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .appliance-line {
       margin-top: 10px;
       color: #e5e5e0;
@@ -2089,10 +2097,11 @@ YF<!DOCTYPE html>
             </div>
           </div>
 
-          <!-- Service area -->
+          <!-- Service area: dynamic + static fallback -->
           <div class="service-areas">
-            Serving <span class="location-dynamic" id="location-text">Bay Area, Los Angeles, San Diego, Seattle, Denver</span> and nearby areas
+            Serving <span class="location-dynamic" id="location-text">Bay Area, Los Angeles, San Diego, Seattle</span> and nearby areas
           </div>
+          <div class="service-areas-static">We serve Bay Area, Los Angeles, San Diego, Seattle and nearby areas.</div>
 
           <!-- Trust benefits -->
           <div class="trust">
@@ -2716,7 +2725,7 @@ YF<!DOCTYPE html>
         <details class="faq-item">
           <summary>Where do you provide service?</summary>
           <div class="faq-body">
-            <p>We serve the Bay Area, Los Angeles, San Diego, Seattle, Denver, and nearby cities. Ask us about your ZIP.</p>
+            <p>We serve the Bay Area, Los Angeles, San Diego, Seattle and nearby cities. Ask us about your ZIP.</p>
           </div>
         </details>
         <details class="faq-item">
@@ -2907,7 +2916,7 @@ YF<!DOCTYPE html>
   <script>
     // Optimized location detection with caching
     const locationData = {
-      default: "Bay Area, Los Angeles, San Diego, Seattle, Denver",
+      default: "Bay Area, Los Angeles, San Diego, Seattle",
       cities: {
         "San Francisco": "San Francisco Bay Area",
         "Oakland": "San Francisco Bay Area",
@@ -2915,7 +2924,6 @@ YF<!DOCTYPE html>
         "Los Angeles": "Los Angeles",
         "San Diego": "San Diego",
         "Seattle": "Seattle",
-        "Denver": "Denver",
         "Portland": "Portland",
         "Sacramento": "Sacramento"
       }
