@@ -307,7 +307,7 @@
       color: #d8d8d3;
     }
 
-    /* Service areas */
+    /* Service areas — left-aligned with rest of hero */
     .service-areas {
       color: var(--text);
       font-size: 15px;
@@ -317,16 +317,18 @@
       border-top: 1px solid rgba(255,255,255,0.08);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       max-width: 760px;
-      margin-left: auto;
+      margin-left: 0;
       margin-right: auto;
+      text-align: left;
     }
     .service-areas-static {
       font-size: 13px;
       color: var(--muted);
       margin-top: 6px;
       max-width: 760px;
-      margin-left: auto;
+      margin-left: 0;
       margin-right: auto;
+      text-align: left;
     }
     .appliance-line {
       margin-top: 10px;
@@ -649,7 +651,7 @@
     .scope-card.common .scope-list li::before { content: "✓"; }
     .scope-card.complex .scope-list li::before { content: "•"; }
 
-    /* Desktop mini floating CTA */
+    /* Desktop mini floating CTA — shown only after scroll past hero */
     .float-cta {
       position: fixed;
       right: 18px;
@@ -658,6 +660,13 @@
       flex-direction: column;
       gap: 8px;
       z-index: 40;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .float-cta.float-cta-visible {
+      opacity: 1;
+      pointer-events: auto;
     }
     .float-cta button,
     .float-cta a {
@@ -679,6 +688,7 @@
 
     @media (min-width: 1025px) {
       .float-cta { display: flex; }
+      .float-cta.float-cta-visible { opacity: 1; pointer-events: auto; }
     }
 
     .social-proof {
@@ -3175,6 +3185,23 @@
     bindScroll(scrollBtn2, "book_service_repairs");
     bindScroll(scrollBtnMobile, "book_service_mobile_bar");
     bindScroll(scrollBtnFloating, "book_service_floating");
+
+    (function() {
+      var hero = document.getElementById("hero");
+      var floatCta = document.querySelector(".float-cta");
+      if (!hero || !floatCta) return;
+      function checkFloatCta() {
+        var rect = hero.getBoundingClientRect();
+        if (rect.bottom < window.innerHeight * 0.5) {
+          floatCta.classList.add("float-cta-visible");
+        } else {
+          floatCta.classList.remove("float-cta-visible");
+        }
+      }
+      window.addEventListener("scroll", checkFloatCta, { passive: true });
+      window.addEventListener("resize", checkFloatCta);
+      checkFloatCta();
+    })();
 
     // Track phone clicks
     document.querySelectorAll('a[href^="tel:"]').forEach(link => {
