@@ -462,6 +462,16 @@ YF<!DOCTYPE html>
       min-width: 200px;
       position: relative;
     }
+    .hero-cta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+    .hero-cta .btn {
+      width: 100%;
+      min-width: 0;
+    }
     .cta-note {
       font-size: 13px;
       color: var(--muted);
@@ -1332,7 +1342,16 @@ YF<!DOCTYPE html>
         max-height: min(52vh, 360px);
         overflow: auto;
       }
-      .top-bar .btn { display: none; }
+      .page {
+        padding-bottom: calc(74px + env(safe-area-inset-bottom));
+      }
+      .top-bar .btn {
+        display: inline-flex;
+        width: auto;
+        padding: 8px 12px;
+        font-size: 13px;
+        min-height: 36px;
+      }
       .cta-row { padding: 16px 0 8px; gap: 10px; }
       .cta-row .btn-primary { font-size: 16px; padding: 16px 20px; }
       .cta-row .btn-outline { display: none; }
@@ -1351,12 +1370,12 @@ YF<!DOCTYPE html>
         font-size: 13px;
       }
       .trust .trust-item:nth-child(n+3) { display: none; }
-      .social-proof .social-chip:nth-child(n+3) { display: none; }
+      .social-proof .social-chip:nth-child(n+2) { display: none; }
       .hero-issues .chip:nth-child(n+3) { display: none; }
       .mobile-call .bar { padding: 10px; gap: 8px; }
       .mobile-call .call-btn { background: rgba(205,133,63,0.16); color: var(--text); border: 1px solid rgba(205,133,63,0.35); }
       .mobile-call .book-btn { background: var(--accent); color: #0b0b0c; }
-      .mobile-call .call-time { font-size: 11px; opacity: 0.85; }
+      .mobile-call .call-time { display: none; }
     }
 
     /* Urgency badge */
@@ -1848,9 +1867,12 @@ YF<!DOCTYPE html>
     }
 
     @media (max-width: 1024px) {
+      .page {
+        padding-bottom: calc(92px + env(safe-area-inset-bottom));
+      }
       .mobile-call {
         display: block;
-        position: sticky;
+        position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
@@ -1908,6 +1930,9 @@ YF<!DOCTYPE html>
         padding: 12px 0 6px;
         gap: 12px;
       }
+      .hero-cta {
+        grid-template-columns: 1fr;
+      }
       .cta-row::before { left: 0; right: 0; }
       .cta-row .btn { min-width: 0; }
       .cta-note { margin-top: 6px; line-height: 1.4; }
@@ -1915,7 +1940,7 @@ YF<!DOCTYPE html>
       .form-card { padding: 24px; }
       .mobile-call {
         display: block;
-        position: sticky;
+        position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
@@ -1982,14 +2007,15 @@ YF<!DOCTYPE html>
       .form-card { padding: 20px; }
       .hero-copy { padding: 16px; }
       .top-bar .bar-inner {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         gap: 8px;
       }
       .top-bar .btn {
-        width: 100%;
-        padding: 12px 14px;
-        font-size: 15px;
+        width: auto;
+        padding: 8px 12px;
+        font-size: 13px;
         justify-content: center;
       }
       .trust .trust-item:nth-child(n+4) { display: none; }
@@ -2035,6 +2061,32 @@ YF<!DOCTYPE html>
     @media (hover: none) and (pointer: coarse) {
       .btn { padding: 15px 26px; min-height: 48px; }
       .form-group input, .form-group select { padding: 15px; min-height: 48px; }
+    }
+    @media (min-width: 1025px) and (max-height: 860px) {
+      .section#hero {
+        padding-top: 28px;
+      }
+      .hero-copy {
+        padding: 18px 20px;
+        gap: 10px;
+      }
+      .service-areas {
+        padding: 10px 0;
+      }
+      .trust {
+        padding: 10px 0;
+      }
+      .pricing-group {
+        padding: 10px 0;
+      }
+      .cta-row {
+        padding: 12px 0 8px;
+      }
+      .cta-note-secondary,
+      .hero-issues,
+      .conversion-motivator.hero-motivator {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -3852,16 +3904,23 @@ YF<!DOCTYPE html>
     function initMobileCallVisibility() {
       const bar = document.querySelector(".mobile-call");
       const formCard = document.getElementById("form-card");
+      const heroSection = document.getElementById("hero");
+      const heroCta = document.querySelector(".hero-cta");
       if (!bar || !formCard || window.innerWidth > 1024) return;
       bar.classList.add("is-hidden");
       const submitBtn = formCard.querySelector(".form-submit");
       const updateVisibility = () => {
         if (!submitBtn) return;
+        const heroTarget = heroCta || heroSection;
+        const heroRect = heroTarget ? heroTarget.getBoundingClientRect() : null;
+        const passedHero = !heroRect ? window.scrollY > window.innerHeight : heroRect.bottom <= 0;
         const rect = submitBtn.getBoundingClientRect();
         const submitBottom = rect.bottom + window.pageYOffset;
         const submitVisible = rect.top < window.innerHeight - 10 && rect.bottom > 10;
         const pastSubmit = window.scrollY >= submitBottom;
-        if (pastSubmit) {
+        if (!passedHero) {
+          bar.classList.add("is-hidden");
+        } else if (pastSubmit) {
           bar.classList.remove("is-hidden");
         } else if (submitVisible) {
           bar.classList.add("is-hidden");
