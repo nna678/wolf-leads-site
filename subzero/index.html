@@ -2082,7 +2082,7 @@
           <div class="trust">
             <div class="trust-item"><span>Insured</span></div>
             <div class="trust-item"><span>180-day warranty on labor &amp; parts</span></div>
-            <div class="trust-item"><span>Same- or next-day</span></div>
+            <div class="trust-item"><span>Same-day or next-day</span></div>
             <div class="trust-item"><span>Clear estimate after we check</span></div>
           </div>
 
@@ -3159,11 +3159,15 @@
     const scrollBtnFloating = document.getElementById("scroll-to-form-floating");
     const scrollToForm = (label = "book_service_cta") => {
       const card = document.getElementById("form-card");
-      const phone = document.getElementById("phone");
+      const firstField = document.querySelector("#lead-form input, #lead-form select, #lead-form textarea");
       if (card) {
         const cardTop = card.getBoundingClientRect().top + window.pageYOffset - 20;
         window.scrollTo({ top: cardTop, behavior: "smooth" });
-        setTimeout(() => { if (phone) { phone.focus(); phone.select(); } }, 400);
+        setTimeout(() => {
+          if (firstField && firstField instanceof HTMLElement) {
+            firstField.focus();
+          }
+        }, 400);
       }
       trackEvent("click", {
         event_category: "engagement",
