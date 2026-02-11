@@ -2817,56 +2817,42 @@
       }
     }
 
-    // Improved location detection with multiple fallbacks
+    // Improved location detection with multiple fallbacks (all HTTPS)
+    async function tryGeo(url, getCityRegion) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
+      try {
+        const response = await fetch(url, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        if (!response.ok) return false;
+        const data = await response.json();
+        const pair = getCityRegion(data);
+        if (pair && pair.city) {
+          updateLocation(pair.city, pair.region);
+          return true;
+        }
+      } catch (e) { clearTimeout(timeoutId); }
+      return false;
+    }
     async function detectLocation() {
       const locationText = document.getElementById("location-text");
       if (!locationText) return;
 
-      // Try ipapi.co first
-      try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 3000);
-        
-        const response = await fetch("https://ipapi.co/json/", {
-          signal: controller.signal
-        });
-        
-        clearTimeout(timeoutId);
-        
-        if (response.ok) {
-          const data = await response.json();
-          if (data.city && !data.error) {
-            updateLocation(data.city, data.region);
-            return;
-          }
-        }
-      } catch (e) {
-        console.log("ipapi.co failed, trying alternative");
-      }
+      if (await tryGeo("https://ipapi.co/json/", function(data) {
+        if (data.city && !data.error) return { city: data.city, region: data.region };
+        return null;
+      })) return;
 
-      // Fallback: try ip-api.com (HTTPS)
-      try {
-        const controller2 = new AbortController();
-        const timeoutId2 = setTimeout(() => controller2.abort(), 3000);
-        
-        const response = await fetch("https://ip-api.com/json/?fields=city,regionName", {
-          signal: controller2.signal
-        });
-        
-        clearTimeout(timeoutId2);
-        
-        if (response.ok) {
-          const data = await response.json();
-          if (data.city) {
-            updateLocation(data.city, data.regionName);
-            return;
-          }
-        }
-      } catch (e) {
-        console.log("ip-api.com failed");
-      }
+      if (await tryGeo("https://ipinfo.io/json", function(data) {
+        if (data.city) return { city: data.city, region: data.region || data.regionName };
+        return null;
+      })) return;
 
-      // Final fallback: use default
+      if (await tryGeo("https://ip-api.com/json/?fields=city,regionName", function(data) {
+        if (data && data.city) return { city: data.city, region: data.regionName };
+        return null;
+      })) return;
+
       updateLocation(null, null);
     }
 
