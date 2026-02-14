@@ -3,7 +3,7 @@
 ## Что уже сделано в проекте
 
 - **sitemap.xml** — валидный XML, `lastmod` в прошлом (2025-02-02), без лишних атрибутов.
-- **robots.txt** — `Allow: /` и `Sitemap: https://wolf-subzero-repair.netlify.app/sitemap.xml`.
+- **robots.txt** — `Allow: /` и `Sitemap: https://appliancepros.netlify.app/sitemap.xml`.
 - **_headers** — для `/sitemap.xml` и `/robots.txt` задан правильный `Content-Type` (application/xml и text/plain).
 - **netlify.toml** — те же заголовки в `[[headers]]`.
 - **_redirects** — явная отдача `/sitemap.xml` и `/robots.txt` с кодом 200 (чтобы Netlify точно отдавал файлы).
@@ -16,14 +16,14 @@
 
 1. **Проверить отдачу sitemap (в терминале):**
    ```bash
-   curl -I https://wolf-subzero-repair.netlify.app/sitemap.xml
+   curl -I https://appliancepros.netlify.app/sitemap.xml
    ```
    Ожидается:
    - `HTTP/2 200`
    - `content-type: application/xml; charset=utf-8` (или `application/xml`).
 
 2. **Проверить в браузере (режим инкогнито):**
-   - Открыть: https://wolf-subzero-repair.netlify.app/sitemap.xml
+   - Открыть: https://appliancepros.netlify.app/sitemap.xml
    - Должно быть дерево XML с `<urlset>` и списком `<url>`, без HTML страницы.
 
 ---
@@ -43,7 +43,7 @@
    - Добавить снова: в поле ввести только `sitemap.xml` → Отправить.
 
 2. **Проверка URL**
-   - URL: `https://wolf-subzero-repair.netlify.app/sitemap.xml`
+   - URL: `https://appliancepros.netlify.app/sitemap.xml`
    - Нажать «Проверить URL вживую» (Test live URL) — GSC проверит текущую отдачу.
    - Если в ответе виден XML и статус 200 — через 1–2 дня sitemap обычно переходит в «Успешно» и появляются «Обнаружено страниц».
 

@@ -33,7 +33,7 @@
 
 ### ШАГ 1 — Технический аудит индексации
 - Проверить: `robots.txt`, `sitemap.xml`, meta robots, canonical на всех страницах, редиректы в `netlify.toml`.
-- Убедиться, что в `robots.txt` есть строка: `Sitemap: https://wolf-subzero-repair.netlify.app/sitemap.xml` (или актуальный домен).
+- Убедиться, что в `robots.txt` есть строка: `Sitemap: https://appliancepros.netlify.app/sitemap.xml` (или актуальный домен).
 - SEO-страницы: index, follow; canonical на себя.
 - Paid-лендинги: не делать noindex без явного решения; canonical на себя.
 - Если sitemap генерируется вручную — держать в актуальном состоянии все индексируемые URL.
@@ -77,7 +77,7 @@
 
 - **Стек:** статический HTML, Netlify, GTM, Netlify Functions (`netlify/functions/lead.js`).
 - **Файлы:** `index.html`, `subzero/index.html`, `wolf/index.html`, `services/index.html`, `brands/subzero/index.html`, `brands/wolf/index.html`; `robots.txt`, `sitemap.xml`, `netlify.toml`; изображения в `assets/images/repairs/`.
-- **Домен/контакты:** привести к одному каноническому (например wolf-subzero-repair.netlify.app или прод-домен); NAP единообразно во всех Schema и футерах.
+- **Домен/контакты:** привести к одному каноническому (например appliancepros.netlify.app или прод-домен); NAP единообразно во всех Schema и футерах.
 - **FAQ и кейсы:** использовать для Schema FAQPage и внутренней перелинковки на SEO-страницах.
 
 ---
