@@ -228,14 +228,18 @@ exports.handler = async (event) => {
   const text = buildText(payload);
 
   try {
-    // Пытаемся отправить в оба канала, и возвращаем подробный отчёт
-    const [tg, mail] = await Promise.allSettled([sendTelegram(text), sendEmail(text)]);
+    // Критично: сначала Telegram. Успех лида считаем только при успешной отправке в Telegram.
+    const tgRes = await sendTelegram(text);
+    let mailRes = { ok: false, skipped: true, reason: "Skipped until Telegram success" };
+    if (tgRes.ok) {
+      try {
+        mailRes = await sendEmail(text);
+      } catch (mailErr) {
+        mailRes = { ok: false, error: String(mailErr?.message || mailErr) };
+      }
+    }
 
-    const tgRes = tg.status === "fulfilled" ? tg.value : { ok: false, error: String(tg.reason) };
-    const mailRes = mail.status === "fulfilled" ? mail.value : { ok: false, error: String(mail.reason) };
-
-    // Успех только если улетело и в Telegram, и на email
-    const bothOk = !!(tgRes.ok && mailRes.ok);
+    const telegramOk = !!tgRes.ok;
 
     const summary = {
       lead_id: safeString(payload.lead_id || ""),
@@ -256,20 +260,20 @@ exports.handler = async (event) => {
       const reason = tgRes.reason || tgRes.error || tgRes.telegram?.description || "Telegram failed";
       errorDetails.push(`telegram: ${reason}`);
     }
-    if (!mailRes.ok) {
+    if (!mailRes.ok && !mailRes.skipped) {
       const reason = mailRes.reason || mailRes.error || "Email failed";
       errorDetails.push(`email: ${reason}`);
     }
 
-    if (!bothOk) {
+    if (!telegramOk) {
       console.error("Lead send failed", { telegram: tgRes, email: mailRes });
     }
 
-    return json(bothOk ? 200 : 502, {
-      ok: bothOk,
+    return json(telegramOk ? 200 : 502, {
+      ok: telegramOk,
       telegram: tgRes,
       email: mailRes,
-      error: bothOk ? undefined : `Lead send failed: ${errorDetails.join(" | ")}`,
+      error: telegramOk ? undefined : `Lead send failed: ${errorDetails.join(" | ")}`,
     });
   } catch (e) {
     console.error("Lead handler error", e);
