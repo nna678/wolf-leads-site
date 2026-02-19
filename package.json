@@ -5,6 +5,9 @@
     "engines": {
       "node": ">=18"
     },
+    "scripts": {
+      "threads:post": "node threads-post.mjs"
+    },
     "dependencies": {
       "nodemailer": "^6.9.15"
     }

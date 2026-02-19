@@ -69,7 +69,7 @@ Best regards,
 AppliancePros  
 UBI #605945520 | Spokane, WA  
 [Your email]  
-[Phone: (650) 360-1217]
+[Phone: (888) 399-7974]
 
 ---
 
@@ -115,4 +115,4 @@ UBI #605945520 | Spokane, WA
 AppliancePros  
 UBI #605945520 | Spokane, WA  
 [Твой email]  
-[Телефон: (650) 360-1217]
+[Телефон: (888) 399-7974]

@@ -48,7 +48,7 @@
           {
             "type": "TEMPLATE",
             "key": "html",
-            "value": "<script>(function(w,c){(w[c]=w[c]||[]).push(function(){new zTracker({\"id\":\"d69ccd1772be4cadd51856decfab40d214042\",\"metrics\":{\"metrika\":\"106539905\",\"ga\":\"G-K723BVNTLE\"}});});})(window,\"zTrackerCallbacks\");</script><script async src=\"https://my.zadarma.com/js/ct_phone.min.js\"></script>"
+            "value": "<script>(function(w,c){(w[c]=w[c]||[]).push(function(){new zTracker({\"id\":\"d69ccd1772be4cadd51856decfab40d214042\",\"metrics\":{\"metrika\":\"90982869\",\"ga\":\"G-K723BVNTLE\"}});});})(window,\"zTrackerCallbacks\");</script><script async src=\"https://my.zadarma.com/js/ct_phone.min.js\"></script>"
           }
         ],
         "fingerprint": "0",
