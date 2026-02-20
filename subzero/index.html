@@ -878,18 +878,43 @@
       padding-right: 44px;
       cursor: pointer;
     }
-    #service-date {
-      padding-right: 50px;
-      color-scheme: dark;
+    .form-group.date-field {
+      position: relative;
     }
-    #service-date::-webkit-calendar-picker-indicator {
+    .form-group.date-field #service-date {
+      padding-right: 52px;
+    }
+    .date-picker-btn {
+      position: absolute;
+      right: 14px;
+      top: 52px;
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: transparent;
+      color: var(--accent);
+      opacity: 0.9;
       cursor: pointer;
-      opacity: 1;
-      filter: invert(76%) sepia(34%) saturate(515%) hue-rotate(345deg) brightness(104%) contrast(90%);
-      transform: scale(1.1);
+      padding: 0;
     }
-    #service-date::-webkit-calendar-picker-indicator:hover {
-      filter: invert(82%) sepia(50%) saturate(560%) hue-rotate(346deg) brightness(108%) contrast(92%) drop-shadow(0 0 4px rgba(205,133,63,0.45));
+    .date-picker-btn:hover {
+      opacity: 1;
+      color: var(--accent-light);
+    }
+    .date-picker-btn svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+    .date-picker-native {
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+      pointer-events: none;
     }
     .form-group textarea {
       width: 100%;
@@ -2330,10 +2355,19 @@
 
             <div class="form-section form-two-col">
               <div class="form-section-title">Scheduling</div>
-              <div class="form-group full">
+              <div class="form-group full date-field">
               <label for="service-date">Preferred Service Date (Optional)</label>
-              <input type="date" id="service-date" name="service-date" lang="en-US" />
-              <div class="hint">Type a date or pick one from the calendar.</div>
+              <input type="text" id="service-date" name="service-date" inputmode="numeric" maxlength="10" placeholder="MM/DD/YYYY" autocomplete="off" />
+              <button class="date-picker-btn" id="service-date-btn" type="button" aria-label="Open calendar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="4" width="18" height="17" rx="2" stroke-width="1.8"></rect>
+                  <path d="M8 2.5V6" stroke-width="1.8" stroke-linecap="round"></path>
+                  <path d="M16 2.5V6" stroke-width="1.8" stroke-linecap="round"></path>
+                  <path d="M3 9H21" stroke-width="1.8" stroke-linecap="round"></path>
+                </svg>
+              </button>
+              <input type="date" id="service-date-picker" class="date-picker-native" tabindex="-1" aria-hidden="true" />
+              <div class="hint">Type a date (MM/DD/YYYY) or pick one from the calendar.</div>
               </div>
               <div class="form-group full">
               <label for="time">Preferred Time Window (Optional)</label>
@@ -3225,13 +3259,81 @@
     }
 
     const dateInput = document.getElementById("service-date");
+    const datePicker = document.getElementById("service-date-picker");
+    const datePickerBtn = document.getElementById("service-date-btn");
     if (dateInput) {
-      dateInput.setAttribute("lang", "en-US");
+      const formatDateInput = (value) => {
+        const digits = value.replace(/\D/g, "").slice(0, 8);
+        const mm = digits.slice(0, 2);
+        const dd = digits.slice(2, 4);
+        const yyyy = digits.slice(4, 8);
+        let out = mm;
+        if (dd) out += `/${dd}`;
+        if (yyyy) out += `/${yyyy}`;
+        return out;
+      };
+      const fromIso = (iso) => {
+        if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return "";
+        const [y, m, d] = iso.split("-");
+        return `${m}/${d}/${y}`;
+      };
+      const toIso = (mdy) => {
+        const match = mdy.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+        if (!match) return "";
+        const mm = Number(match[1]);
+        const dd = Number(match[2]);
+        const yyyy = Number(match[3]);
+        if (mm < 1 || mm > 12 || dd < 1 || dd > 31 || yyyy < 2000 || yyyy > 2100) return "";
+        const date = new Date(yyyy, mm - 1, dd);
+        if (date.getFullYear() !== yyyy || date.getMonth() !== (mm - 1) || date.getDate() !== dd) return "";
+        return `${String(yyyy).padStart(4, "0")}-${String(mm).padStart(2, "0")}-${String(dd).padStart(2, "0")}`;
+      };
       const today = new Date();
-      const month = String(today.getMonth() + 1).padStart(2, "0");
-      const day = String(today.getDate()).padStart(2, "0");
-      const minDate = `${today.getFullYear()}-${month}-${day}`;
-      dateInput.setAttribute("min", minDate);
+      const todayIso = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+      if (datePicker) datePicker.min = todayIso;
+
+      dateInput.addEventListener("input", (e) => {
+        e.target.value = formatDateInput(e.target.value);
+      });
+
+      dateInput.addEventListener("blur", () => {
+        if (!dateInput.value) return;
+        const iso = toIso(dateInput.value);
+        if (!iso) {
+          dateInput.value = "";
+          return;
+        }
+        if (iso < todayIso) {
+          dateInput.value = fromIso(todayIso);
+          if (datePicker) datePicker.value = todayIso;
+          return;
+        }
+        dateInput.value = fromIso(iso);
+        if (datePicker) datePicker.value = iso;
+      });
+
+      const openNativeDatePicker = () => {
+        if (!datePicker) return;
+        const iso = toIso(dateInput.value);
+        if (iso) datePicker.value = iso;
+        if (typeof datePicker.showPicker === "function") {
+          datePicker.showPicker();
+        } else {
+          datePicker.focus();
+          datePicker.click();
+        }
+      };
+
+      if (datePicker) {
+        datePicker.addEventListener("change", () => {
+          if (datePicker.value) {
+            dateInput.value = fromIso(datePicker.value);
+          }
+        });
+      }
+      if (datePickerBtn) {
+        datePickerBtn.addEventListener("click", openNativeDatePicker);
+      }
     }
 
     // Form validation
