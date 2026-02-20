@@ -2319,8 +2319,8 @@
               <div class="form-section-title">Scheduling</div>
               <div class="form-group full">
               <label for="service-date">Preferred Service Date (Optional)</label>
-              <input type="text" id="service-date" name="service-date" inputmode="numeric" maxlength="10" placeholder="MM/DD/YYYY" />
-              <div class="hint">Enter a date (MM/DD/YYYY) or pick one.</div>
+              <input type="date" id="service-date" name="service-date" />
+              <div class="hint">Type a date or pick one from the calendar.</div>
               </div>
               <div class="form-group full">
               <label for="time">Preferred Time Window (Optional)</label>
@@ -3213,20 +3213,11 @@
 
     const dateInput = document.getElementById("service-date");
     if (dateInput) {
-      const formatDateInput = (value) => {
-        const digits = value.replace(/\D/g, "").slice(0, 8);
-        const mm = digits.slice(0, 2);
-        const dd = digits.slice(2, 4);
-        const yyyy = digits.slice(4, 8);
-        let out = mm;
-        if (dd) out += `/${dd}`;
-        if (yyyy) out += `/${yyyy}`;
-        return out;
-      };
-      dateInput.addEventListener("input", (e) => {
-        e.target.value = formatDateInput(e.target.value);
-      });
-      dateInput.addEventListener("focus", () => dateInput.select());
+      const today = new Date();
+      const month = String(today.getMonth() + 1).padStart(2, "0");
+      const day = String(today.getDate()).padStart(2, "0");
+      const minDate = `${today.getFullYear()}-${month}-${day}`;
+      dateInput.setAttribute("min", minDate);
     }
 
     // Form validation
@@ -3523,6 +3514,38 @@
       } else {
         cards.forEach(loadImg);
       }
+
+      // After above-the-fold is visible, preload a few likely-next images in idle time.
+      const warmupRepairs = () => {
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        const saveData = !!(connection && connection.saveData);
+        const effectiveType = connection && connection.effectiveType ? String(connection.effectiveType) : "";
+        const isSlowNetwork = /(^|-)2g|3g/.test(effectiveType);
+        const preloadCount = saveData ? 0 : (isSlowNetwork ? 1 : 3);
+        if (!preloadCount) return;
+        const activePanelCards = Array.from(document.querySelectorAll(".repairs-panel.is-active .repair-media[data-src]"));
+        const queue = (activePanelCards.length ? activePanelCards : Array.from(cards)).slice(0, preloadCount);
+        queue.forEach((media, idx) => {
+          setTimeout(() => loadImg(media), idx * 120);
+        });
+      };
+      const scheduleRepairsWarmup = () => {
+        if (window.__repairsWarmupScheduled) return;
+        window.__repairsWarmupScheduled = true;
+        const run = () => {
+          if ("requestIdleCallback" in window) {
+            window.requestIdleCallback(() => warmupRepairs(), { timeout: 1200 });
+          } else {
+            setTimeout(warmupRepairs, 250);
+          }
+        };
+        if (document.readyState === "complete") {
+          run();
+        } else {
+          window.addEventListener("load", run, { once: true });
+        }
+      };
+      scheduleRepairsWarmup();
     }
 
     // Issue quick picker
