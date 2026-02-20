@@ -408,7 +408,7 @@ YF<!DOCTYPE html>
       font-size: 15px;
       padding: 16px 0;
       max-width: 760px;
-      margin-left: auto;
+      margin-left: 0;
       margin-right: auto;
     }
     .trust-item {
@@ -694,8 +694,8 @@ YF<!DOCTYPE html>
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .float-cta a { text-align: center; }
-    .float-cta .call { background: var(--accent); color: #0b0b0c; }
-    .float-cta .book { background: rgba(15,15,18,0.92); color: var(--text); border: 1px solid rgba(255,255,255,0.1); }
+    .float-cta .call { background: rgba(15,15,18,0.92); color: var(--text); border: 1px solid rgba(255,255,255,0.1); }
+    .float-cta .book { background: var(--accent); color: #0b0b0c; border: none; }
     .float-cta button:hover,
     .float-cta a:hover { transform: translateY(-1px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
 
@@ -1372,12 +1372,17 @@ YF<!DOCTYPE html>
         padding: 10px 14px;
         font-size: 13px;
       }
-      .trust .trust-item:nth-child(n+3) { display: none; }
+      .trust .trust-item:nth-child(n+5) { display: none; }
+      .trust {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
       .social-proof .social-chip:nth-child(n+2) { display: none; }
       .hero-issues .chip:nth-child(n+3) { display: none; }
       .mobile-call .bar { padding: 10px; gap: 8px; }
-      .mobile-call .call-btn { background: rgba(205,133,63,0.16); color: var(--text); border: 1px solid rgba(205,133,63,0.35); }
-      .mobile-call .book-btn { background: var(--accent); color: #0b0b0c; }
+      .mobile-call .call-btn { background: var(--accent); color: #0b0b0c; border: none; }
+      .mobile-call .book-btn { background: rgba(205,133,63,0.16); color: var(--text); border: 1px solid rgba(205,133,63,0.35); }
       .mobile-call .call-time { display: none; }
     }
 
@@ -1928,7 +1933,7 @@ YF<!DOCTYPE html>
       .pricing-group {
         padding: 10px 0;
       }
-      .trust .trust-item:nth-child(n+4) { display: none; }
+      .trust .trust-item:nth-child(n+5) { display: none; }
       .fee-line {
         font-size: 16px;
       }
@@ -2024,7 +2029,7 @@ YF<!DOCTYPE html>
         font-size: 13px;
         justify-content: center;
       }
-      .trust .trust-item:nth-child(n+4) { display: none; }
+      .trust .trust-item:nth-child(n+5) { display: none; }
       .brand { font-size: 12px; letter-spacing: 0.12em; }
       .footer-call { display: none; }
       .bar-note { display: none; }
@@ -2195,11 +2200,10 @@ YF<!DOCTYPE html>
           
           <!-- Main CTAs - Enhanced -->
           <div class="cta-row hero-cta">
-            <a class="btn btn-primary zphone" href="tel:+18883997974">Call Now (888) 399-7974</a>
-            <button class="btn btn-outline" id="scroll-to-form" type="button">Book Service</button>
+            <a class="btn btn-outline zphone" href="tel:+18883997974">Call Now (888) 399-7974</a>
+            <button class="btn btn-primary" id="scroll-to-form" type="button">Book Service</button>
           </div>
           <div class="cta-note">No spam. We confirm by SMS and call only if needed.</div>
-          <div class="cta-note cta-note-secondary">No pressure. You approve the estimate before any work.</div>
           <div class="cta-trust">Fast response • We confirm your time window shortly</div>
           <div class="cta-row brand-cta" style="margin-top: 10px;">
             <a class="btn btn-outline" href="/subzero/">Sub-Zero Repair</a>
@@ -3351,17 +3355,32 @@ YF<!DOCTYPE html>
     const scrollBtn2 = document.getElementById("scroll-to-form-2");
     const scrollBtnMobile = document.getElementById("scroll-to-form-mobile");
     const scrollBtnFloating = document.getElementById("scroll-to-form-floating");
+    const getFirstFormField = () => {
+      const leadForm = document.getElementById("lead-form");
+      if (!leadForm) return null;
+      const fields = leadForm.querySelectorAll(
+        'input:not([type="hidden"]):not([disabled]), select:not([disabled]), textarea:not([disabled])'
+      );
+      return Array.from(fields).find((field) => field instanceof HTMLElement && field.offsetParent !== null) || null;
+    };
+    const focusFirstFormField = () => {
+      const firstField = getFirstFormField();
+      if (firstField && firstField instanceof HTMLElement) {
+        firstField.focus({ preventScroll: true });
+      }
+    };
     const scrollToForm = (label = "book_service_cta") => {
       const card = document.getElementById("form-card");
-      const firstField = document.querySelector("#lead-form input, #lead-form select, #lead-form textarea");
       if (card) {
         const cardTop = card.getBoundingClientRect().top + window.pageYOffset - 20;
         window.scrollTo({ top: cardTop, behavior: "smooth" });
+        setTimeout(focusFirstFormField, 420);
         setTimeout(() => {
-          if (firstField && firstField instanceof HTMLElement) {
-            firstField.focus();
+          const firstField = getFirstFormField();
+          if (firstField && document.activeElement !== firstField) {
+            focusFirstFormField();
           }
-        }, 400);
+        }, 900);
       }
       trackEvent("click", {
         event_category: "engagement",
@@ -3457,13 +3476,13 @@ YF<!DOCTYPE html>
 
     // Mobile CTA pulse (subtle)
     if (window.innerWidth <= 768) {
-      const mobileBookBtn = document.querySelector(".mobile-call .book-btn");
-      if (mobileBookBtn) {
+      const mobileCallBtn = document.querySelector(".mobile-call .call-btn");
+      if (mobileCallBtn) {
         let pulseInterval = setInterval(() => {
-          mobileBookBtn.style.transform = "scale(1.015)";
-          setTimeout(() => { mobileBookBtn.style.transform = "scale(1)"; }, 200);
+          mobileCallBtn.style.transform = "scale(1.015)";
+          setTimeout(() => { mobileCallBtn.style.transform = "scale(1)"; }, 200);
         }, 6000);
-        mobileBookBtn.addEventListener("click", () => clearInterval(pulseInterval));
+        mobileCallBtn.addEventListener("click", () => clearInterval(pulseInterval));
       }
     }
 
