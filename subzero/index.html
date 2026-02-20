@@ -1358,6 +1358,21 @@
       .cta-row { padding: 16px 0 8px; gap: 10px; }
       .cta-row .btn-primary { font-size: 16px; padding: 16px 20px; }
       .cta-row .btn-outline { display: none; }
+      .cta-balanced .btn-outline { display: inline-flex; }
+      .cta-balanced .scroll-to-form-trigger,
+      .cta-inline .scroll-to-form-trigger {
+        background: rgba(205,133,63,0.16);
+        color: var(--text);
+        border: 1px solid rgba(205,133,63,0.35);
+        box-shadow: none;
+      }
+      .cta-balanced .zphone,
+      .cta-inline .zphone {
+        background: var(--accent);
+        color: #0b0b0c;
+        border: none;
+        box-shadow: 0 6px 24px var(--accent-glow), 0 2px 10px rgba(0,0,0,0.3);
+      }
       .cta-note { font-size: 12px; }
       .cta-note-secondary { display: none; }
       .hero-cta .btn-primary { display: none; }
@@ -2442,7 +2457,7 @@
                 <div class="repair-actions"><button class="view-details" type="button">View details</button></div>
               </div>
             </div>
-            <div class="repair-card" data-title="Sub-Zero — Ice maker & valve" data-client="Nicole A., Denver, CO" data-timeline="2–4 hours (parts 3–7 days if needed)" data-problem="No ice and frost buildup." data-fix="Water/ice system diagnosis, valve service, airflow check." data-result="Ice production restored; frost stopped." data-review="Ice came back the same day." data-image="assets/images/repairs/subzero/subzero-07-ice-maker.webp">
+            <div class="repair-card" data-title="Sub-Zero — Ice maker & valve" data-client="Nicole A., Seattle, WA" data-timeline="2–4 hours (parts 3–7 days if needed)" data-problem="No ice and frost buildup." data-fix="Water/ice system diagnosis, valve service, airflow check." data-result="Ice production restored; frost stopped." data-review="Ice came back the same day." data-image="assets/images/repairs/subzero/subzero-07-ice-maker.webp">
               <div class="repair-media" data-src="assets/images/repairs/subzero/subzero-07-ice-maker.webp">
                 <div class="repair-placeholder">Sub-Zero repair</div>
                 <img alt="Ice maker and valve repair" loading="lazy" decoding="async" width="800" height="496" referrerpolicy="no-referrer" crossorigin="anonymous" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
@@ -2585,8 +2600,9 @@
           </div>
         </div>
         <div class="chips-caption">Experienced technicians on every visit. One clear estimate after we check the unit.</div>
-        <div class="cta-row" style="margin-top: 16px;">
-          <a class="btn btn-primary zphone" href="tel:+18883997974">Call Now (888) 399-7974</a>
+        <div class="cta-row cta-balanced" style="margin-top: 16px;">
+          <button class="btn btn-primary scroll-to-form-trigger" data-scroll-form="book_service_scope" type="button">Book Service</button>
+          <a class="btn btn-outline zphone" href="tel:+18883997974">Call Now (888) 399-7974</a>
         </div>
         <div class="cta-note">No pressure. You approve the estimate before any work.</div>
         <div class="chips-caption">Trusted local service</div>
@@ -2614,8 +2630,9 @@
             We check on site and give a clear estimate. Same-day in most areas.
           </div>
         </div>
-        <div class="cta-row" style="margin-top: 18px; justify-content: center;">
-          <a class="btn btn-primary zphone" href="tel:+18883997974">Call Now (888) 399-7974</a>
+        <div class="cta-row cta-balanced" style="margin-top: 18px; justify-content: center;">
+          <button class="btn btn-primary scroll-to-form-trigger" data-scroll-form="book_service_next" type="button">Book Service</button>
+          <a class="btn btn-outline zphone" href="tel:+18883997974">Call Now (888) 399-7974</a>
         </div>
         <div class="cta-note" style="text-align:center;">We confirm your window shortly.</div>
       </div>
@@ -2644,7 +2661,8 @@
           </div>
         </div>
         <div class="cta-inline">
-          <a class="btn btn-primary zphone" href="tel:+18883997974">Call (888) 399-7974</a>
+          <button class="btn btn-primary scroll-to-form-trigger" data-scroll-form="book_service_answers" type="button">Book Service</button>
+          <a class="btn btn-outline zphone" href="tel:+18883997974">Call (888) 399-7974</a>
         </div>
       </div>
     </section>
@@ -2724,7 +2742,8 @@
         </div>
         <button class="btn btn-outline faq-more" id="faq-more" type="button">Show more</button>
         <div class="cta-inline" style="margin-top: 18px;">
-          <a class="btn btn-primary zphone" href="tel:+18883997974">Call Now (888) 399-7974</a>
+          <button class="btn btn-primary scroll-to-form-trigger" data-scroll-form="book_service_faq" type="button">Book Service</button>
+          <a class="btn btn-outline zphone" href="tel:+18883997974">Call Now (888) 399-7974</a>
         </div>
         <div class="cta-note" style="text-align:center;">Still have questions? We reply fast.</div>
       </div>
@@ -3263,6 +3282,9 @@
     bindScroll(scrollBtn2, "book_service_repairs");
     bindScroll(scrollBtnMobile, "book_service_mobile_bar");
     bindScroll(scrollBtnFloating, "book_service_floating");
+    document.querySelectorAll(".scroll-to-form-trigger").forEach((btn) => {
+      btn.addEventListener("click", () => scrollToForm(btn.dataset.scrollForm || "book_service_inline"));
+    });
 
     (function() {
       var hero = document.getElementById("hero");
