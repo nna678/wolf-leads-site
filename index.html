@@ -881,32 +881,35 @@ YF<!DOCTYPE html>
     .form-group.date-field {
       position: relative;
     }
+    .form-group.date-field .date-input-wrap {
+      position: relative;
+    }
     .form-group.date-field #service-date {
-      padding-right: 52px;
+      padding-right: 46px;
+    }
+    .form-group.date-field #service-date:focus {
+      transform: none;
     }
     .date-picker-btn {
       position: absolute;
-      right: 14px;
-      top: 52px;
-      width: 22px;
-      height: 22px;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border: none;
       background: transparent;
-      color: var(--accent);
-      opacity: 0.9;
+      color: #cd853f;
+      opacity: 1;
       cursor: pointer;
       padding: 0;
     }
-    .date-picker-btn:hover {
-      opacity: 1;
-      color: var(--accent-light);
-    }
     .date-picker-btn svg {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       display: block;
     }
     .date-picker-native {
@@ -2378,16 +2381,18 @@ YF<!DOCTYPE html>
               <div class="form-section-title">Scheduling</div>
               <div class="form-group full date-field">
               <label for="service-date">Preferred Service Date (Optional)</label>
-              <input type="text" id="service-date" name="service-date" inputmode="numeric" maxlength="10" placeholder="MM/DD/YYYY" autocomplete="off" />
-              <button class="date-picker-btn" id="service-date-btn" type="button" aria-label="Open calendar">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3" y="4" width="18" height="17" rx="2" stroke-width="1.8"></rect>
-                  <path d="M8 2.5V6" stroke-width="1.8" stroke-linecap="round"></path>
-                  <path d="M16 2.5V6" stroke-width="1.8" stroke-linecap="round"></path>
-                  <path d="M3 9H21" stroke-width="1.8" stroke-linecap="round"></path>
-                </svg>
-              </button>
-              <input type="date" id="service-date-picker" class="date-picker-native" tabindex="-1" aria-hidden="true" />
+              <div class="date-input-wrap">
+                <input type="text" id="service-date" name="service-date" inputmode="numeric" maxlength="10" placeholder="MM/DD/YYYY" autocomplete="off" />
+                <button class="date-picker-btn" id="service-date-btn" type="button" aria-label="Open calendar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="18" height="17" rx="2" stroke-width="1.8"></rect>
+                    <path d="M8 2.5V6" stroke-width="1.8" stroke-linecap="round"></path>
+                    <path d="M16 2.5V6" stroke-width="1.8" stroke-linecap="round"></path>
+                    <path d="M3 9H21" stroke-width="1.8" stroke-linecap="round"></path>
+                  </svg>
+                </button>
+                <input type="date" id="service-date-picker" class="date-picker-native" tabindex="-1" aria-hidden="true" />
+              </div>
               <div class="hint">Type a date (MM/DD/YYYY) or pick one from the calendar.</div>
               </div>
               <div class="form-group full">
