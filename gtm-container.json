@@ -56,45 +56,264 @@
       },
       {
         "tagId": "4",
-        "name": "GA4 - form_submit (HTML)",
-        "type": "html",
+        "name": "GA4 - form_submit (Event)",
+        "type": "gaawe",
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "html",
-            "value": "<script>window.gtag=window.gtag||function(){(window.dataLayer=window.dataLayer||[]).push(arguments)};gtag('event','form_submit',{'lead_id':'{{DLV - lead_id}}','form_time_ms':'{{DLV - form_time_ms}}'});</script>"
+            "key": "eventName",
+            "value": "form_submit"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "lead_id" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - lead_id}}" }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "form_time_ms" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - form_time_ms}}" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Configuration"
           }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["2"]
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" }
       },
       {
         "tagId": "5",
-        "name": "GA4 - phone_click (HTML)",
-        "type": "html",
+        "name": "GA4 - phone_click (Event)",
+        "type": "gaawe",
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "html",
-            "value": "<script>window.gtag=window.gtag||function(){(window.dataLayer=window.dataLayer||[]).push(arguments)};gtag('event','phone_click');</script>"
+            "key": "eventName",
+            "value": "phone_click"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Configuration"
           }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["3"]
+        "firingTriggerId": ["3"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" }
       },
       {
         "tagId": "6",
-        "name": "GA4 - scroll_depth (HTML)",
-        "type": "html",
+        "name": "GA4 - scroll_depth (Event)",
+        "type": "gaawe",
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "html",
-            "value": "<script>window.gtag=window.gtag||function(){(window.dataLayer=window.dataLayer||[]).push(arguments)};gtag('event','scroll_depth',{'percent':'{{DLV - percent}}'});</script>"
+            "key": "eventName",
+            "value": "scroll_depth"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "percent" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - percent}}" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Configuration"
           }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["4"]
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" }
+      },
+      {
+        "tagId": "7",
+        "name": "GA4 - form_submit_attempt (Event)",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "form_submit_attempt"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "lead_id" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - lead_id}}" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Configuration"
+          }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["5"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" }
+      },
+      {
+        "tagId": "8",
+        "name": "GA4 - form_submit_error (Event)",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "form_submit_error"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "lead_id" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - lead_id}}" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Configuration"
+          }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["6"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" }
+      },
+      {
+        "tagId": "9",
+        "name": "GA4 - book_service_click (Event)",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "book_service_click"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "cta_label" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - event_label}}" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Configuration"
+          }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["7"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" }
+      },
+      {
+        "tagId": "10",
+        "name": "GA4 - form_start_custom (Event)",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "form_start_custom"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Configuration"
+          }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["8"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" }
+      },
+      {
+        "tagId": "11",
+        "name": "GA4 - time_window_selected (Event)",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "time_window_selected"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "selected_window" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - event_label}}" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Configuration"
+          }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["9"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" }
       }
     ],
     "trigger": [
@@ -149,6 +368,81 @@
           }
         ],
         "fingerprint": "0"
+      },
+      {
+        "triggerId": "5",
+        "name": "CE - form_submit_attempt",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "form_submit_attempt" }
+            ]
+          }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "triggerId": "6",
+        "name": "CE - form_submit_error",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "form_submit_error" }
+            ]
+          }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "triggerId": "7",
+        "name": "CE - dl_book_service_click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "dl_book_service_click" }
+            ]
+          }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "triggerId": "8",
+        "name": "CE - dl_form_start",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "dl_form_start" }
+            ]
+          }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "triggerId": "9",
+        "name": "CE - dl_time_window_selected",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "dl_time_window_selected" }
+            ]
+          }
+        ],
+        "fingerprint": "0"
       }
     ],
     "variable": [
@@ -176,6 +470,15 @@
         "type": "v",
         "parameter": [
           { "type": "TEMPLATE", "key": "name", "value": "percent" }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "variableId": "4",
+        "name": "DLV - event_label",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "event_label" }
         ],
         "fingerprint": "0"
       }

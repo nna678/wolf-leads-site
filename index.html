@@ -3550,6 +3550,10 @@
         event_category: "engagement",
         event_label: label
       });
+      trackEvent("dl_book_service_click", {
+        event_category: "engagement",
+        event_label: label
+      });
     };
     const bindScroll = (btn, label) => {
       if (btn) btn.addEventListener("click", () => scrollToForm(label));
@@ -3601,8 +3605,23 @@
             event_category: "engagement",
             event_label: "form_interaction"
           });
+          trackEvent("dl_form_start", {
+            event_category: "engagement",
+            event_label: "form_interaction"
+          });
         }
       }, true);
+    }
+
+    const timeWindowSelect = document.getElementById("time");
+    if (timeWindowSelect) {
+      timeWindowSelect.addEventListener("change", () => {
+        if (!timeWindowSelect.value) return;
+        trackEvent("dl_time_window_selected", {
+          event_category: "engagement",
+          event_label: timeWindowSelect.value
+        });
+      });
     }
 
     // Scroll depth tracking (25/50/75)
