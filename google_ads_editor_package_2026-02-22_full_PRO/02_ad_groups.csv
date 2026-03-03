@@ -1,0 +1,61 @@
+Campaign,Ad Group,Max CPC,Campaign Status,Ad Group Status,Comment
+SZ_Search_BayArea_Full_PRO,Appliance Repair Core,35.00,Enabled,Enabled,Intent/Geo cluster: Appliance Repair Core
+SZ_Search_BayArea_Full_PRO,Compressor Fan Motor,35.00,Enabled,Enabled,Intent/Geo cluster: Compressor Fan Motor
+SZ_Search_BayArea_Full_PRO,Door Ajar Beeping,35.00,Enabled,Enabled,Intent/Geo cluster: Door Ajar Beeping
+SZ_Search_BayArea_Full_PRO,Door Gasket Repair,35.00,Enabled,Enabled,Intent/Geo cluster: Door Gasket Repair
+SZ_Search_BayArea_Full_PRO,Emergency Same Day,46.00,Enabled,Enabled,Intent/Geo cluster: Emergency Same Day
+SZ_Search_BayArea_Full_PRO,Freezer Not Freezing,39.00,Enabled,Enabled,Intent/Geo cluster: Freezer Not Freezing
+SZ_Search_BayArea_Full_PRO,Freezer Not Working,35.00,Enabled,Enabled,Intent/Geo cluster: Freezer Not Working
+SZ_Search_BayArea_Full_PRO,Freezer Repair Core,35.00,Enabled,Enabled,Intent/Geo cluster: Freezer Repair Core
+SZ_Search_BayArea_Full_PRO,Freezer Service Core,32.00,Enabled,Enabled,Intent/Geo cluster: Freezer Service Core
+SZ_Search_BayArea_Full_PRO,Fridge Not Cooling,39.00,Enabled,Enabled,Intent/Geo cluster: Fridge Not Cooling
+SZ_Search_BayArea_Full_PRO,Fridge Warm Freezer Cold,35.00,Enabled,Enabled,Intent/Geo cluster: Fridge Warm Freezer Cold
+SZ_Search_BayArea_Full_PRO,Geo Alameda Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Alameda Repair
+SZ_Search_BayArea_Full_PRO,Geo Belmont Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Belmont Repair
+SZ_Search_BayArea_Full_PRO,Geo Berkeley Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Berkeley Repair
+SZ_Search_BayArea_Full_PRO,Geo Burlingame Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Burlingame Repair
+SZ_Search_BayArea_Full_PRO,Geo Campbell Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Campbell Repair
+SZ_Search_BayArea_Full_PRO,Geo CastroValley Rep,38.00,Enabled,Enabled,Intent/Geo cluster: Geo CastroValley Rep
+SZ_Search_BayArea_Full_PRO,Geo Concord Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Concord Repair
+SZ_Search_BayArea_Full_PRO,Geo Cupertino Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Cupertino Repair
+SZ_Search_BayArea_Full_PRO,Geo DalyCity Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo DalyCity Repair
+SZ_Search_BayArea_Full_PRO,Geo Emeryville Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Emeryville Repair
+SZ_Search_BayArea_Full_PRO,Geo FosterCity Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo FosterCity Repair
+SZ_Search_BayArea_Full_PRO,Geo Fremont Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Fremont Repair
+SZ_Search_BayArea_Full_PRO,Geo Hayward Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Hayward Repair
+SZ_Search_BayArea_Full_PRO,Geo Livermore Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Livermore Repair
+SZ_Search_BayArea_Full_PRO,Geo LosAltos Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo LosAltos Repair
+SZ_Search_BayArea_Full_PRO,Geo LosGatos Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo LosGatos Repair
+SZ_Search_BayArea_Full_PRO,Geo MenloPark Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo MenloPark Repair
+SZ_Search_BayArea_Full_PRO,Geo Millbrae Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Millbrae Repair
+SZ_Search_BayArea_Full_PRO,Geo Milpitas Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Milpitas Repair
+SZ_Search_BayArea_Full_PRO,Geo MtnView Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo MtnView Repair
+SZ_Search_BayArea_Full_PRO,Geo Novato Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Novato Repair
+SZ_Search_BayArea_Full_PRO,Geo Oakland Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Oakland Repair
+SZ_Search_BayArea_Full_PRO,Geo PaloAlto Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo PaloAlto Repair
+SZ_Search_BayArea_Full_PRO,Geo Pleasanton Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Pleasanton Repair
+SZ_Search_BayArea_Full_PRO,Geo Redwood Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Redwood Repair
+SZ_Search_BayArea_Full_PRO,Geo Richmond Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Richmond Repair
+SZ_Search_BayArea_Full_PRO,Geo SF Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo SF Repair
+SZ_Search_BayArea_Full_PRO,Geo SJ Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo SJ Repair
+SZ_Search_BayArea_Full_PRO,Geo SanBruno Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo SanBruno Repair
+SZ_Search_BayArea_Full_PRO,Geo SanLeandro Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo SanLeandro Repair
+SZ_Search_BayArea_Full_PRO,Geo SanMateo Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo SanMateo Repair
+SZ_Search_BayArea_Full_PRO,Geo SanRafael Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo SanRafael Repair
+SZ_Search_BayArea_Full_PRO,Geo SantaClara Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo SantaClara Repair
+SZ_Search_BayArea_Full_PRO,Geo Sunnyvale Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo Sunnyvale Repair
+SZ_Search_BayArea_Full_PRO,Geo UnionCity Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo UnionCity Repair
+SZ_Search_BayArea_Full_PRO,Geo WalnutCrk Repair,38.00,Enabled,Enabled,Intent/Geo cluster: Geo WalnutCrk Repair
+SZ_Search_BayArea_Full_PRO,Ice Maker Not Working,39.00,Enabled,Enabled,Intent/Geo cluster: Ice Maker Not Working
+SZ_Search_BayArea_Full_PRO,Ice Not Making,39.00,Enabled,Enabled,Intent/Geo cluster: Ice Not Making
+SZ_Search_BayArea_Full_PRO,Near Me Core,41.00,Enabled,Enabled,Intent/Geo cluster: Near Me Core
+SZ_Search_BayArea_Full_PRO,Noise And Fan Repair,35.00,Enabled,Enabled,Intent/Geo cluster: Noise And Fan Repair
+SZ_Search_BayArea_Full_PRO,Refrigerator Not Working,35.00,Enabled,Enabled,Intent/Geo cluster: Refrigerator Not Working
+SZ_Search_BayArea_Full_PRO,Refrigerator Repair Core,35.00,Enabled,Enabled,Intent/Geo cluster: Refrigerator Repair Core
+SZ_Search_BayArea_Full_PRO,Refrigerator Service Core,32.00,Enabled,Enabled,Intent/Geo cluster: Refrigerator Service Core
+SZ_Search_BayArea_Full_PRO,Repair Cost Quote,32.00,Enabled,Enabled,Intent/Geo cluster: Repair Cost Quote
+SZ_Search_BayArea_Full_PRO,Technician Request,35.00,Enabled,Enabled,Intent/Geo cluster: Technician Request
+SZ_Search_BayArea_Full_PRO,Temperature Control,35.00,Enabled,Enabled,Intent/Geo cluster: Temperature Control
+SZ_Search_BayArea_Full_PRO,Water Dispenser Repair,35.00,Enabled,Enabled,Intent/Geo cluster: Water Dispenser Repair
+SZ_Search_BayArea_Full_PRO,Water Leak Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Water Leak Repair
+SZ_Search_BayArea_Full_PRO,Wine Cooler Repair,35.00,Enabled,Enabled,Intent/Geo cluster: Wine Cooler Repair

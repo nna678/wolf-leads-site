@@ -1,0 +1,67 @@
+Campaign,Ad Group,Max CPC,Campaign Status,Ad Group Status,Comment
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Geo San Francisco Repair,42.00,Enabled,Enabled,Hyper-segmentation: geo | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Geo San Jose Repair,42.00,Enabled,Enabled,Hyper-segmentation: geo | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Geo Oakland Repair,41.00,Enabled,Enabled,Hyper-segmentation: geo | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Geo Palo Alto Repair,41.00,Enabled,Enabled,Hyper-segmentation: geo | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Geo Mountain View Repair,41.00,Enabled,Enabled,Hyper-segmentation: geo | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Geo Sunnyvale Repair,41.00,Enabled,Enabled,Hyper-segmentation: geo | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Geo San Mateo Repair,41.00,Enabled,Enabled,Hyper-segmentation: geo | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Geo Redwood City Repair,41.00,Enabled,Enabled,Hyper-segmentation: geo | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Geo Santa Clara Repair,41.00,Enabled,Enabled,Hyper-segmentation: geo | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Geo Fremont Repair,41.00,Enabled,Enabled,Hyper-segmentation: geo | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Wine Cooler Repair,37.00,Enabled,Enabled,Hyper-segmentation: wine | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Wine Cooler Service,36.00,Enabled,Enabled,Hyper-segmentation: wine | service
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Wine Cooler Not Cooling,39.00,Enabled,Enabled,Hyper-segmentation: wine | not_cooling
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Wine Cooler Not Working,39.00,Enabled,Enabled,Hyper-segmentation: wine | not_working
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Ice Maker Repair,41.00,Enabled,Enabled,Hyper-segmentation: ice | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Ice Maker Service,39.00,Enabled,Enabled,Hyper-segmentation: ice | service
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Ice Maker Near Me,42.00,Enabled,Enabled,Hyper-segmentation: ice | near_me
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Ice Maker Technician,40.00,Enabled,Enabled,Hyper-segmentation: ice | technician
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Ice Maker Not Working,42.00,Enabled,Enabled,Hyper-segmentation: ice | not_working
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Ice Maker Not Making Ice,42.00,Enabled,Enabled,Hyper-segmentation: ice | not_making_ice
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Ice Maker Leaking,42.00,Enabled,Enabled,Hyper-segmentation: ice | leaking
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Ice Dispenser Not Working,42.00,Enabled,Enabled,Hyper-segmentation: ice | ice_dispenser_not_working
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Freezer Repair,39.00,Enabled,Enabled,Hyper-segmentation: freezer | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Freezer Service,37.00,Enabled,Enabled,Hyper-segmentation: freezer | service
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Freezer Near Me,41.00,Enabled,Enabled,Hyper-segmentation: freezer | near_me
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Freezer Technician,38.00,Enabled,Enabled,Hyper-segmentation: freezer | technician
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Freezer Not Cooling,42.00,Enabled,Enabled,Hyper-segmentation: freezer | not_cooling
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Freezer Not Freezing,42.00,Enabled,Enabled,Hyper-segmentation: freezer | not_freezing
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Freezer Not Working,42.00,Enabled,Enabled,Hyper-segmentation: freezer | not_working
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Freezer Leaking,42.00,Enabled,Enabled,Hyper-segmentation: freezer | leaking
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Fridge Repair,39.00,Enabled,Enabled,Hyper-segmentation: fridge | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Fridge Service,37.00,Enabled,Enabled,Hyper-segmentation: fridge | service
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Fridge Near Me,41.00,Enabled,Enabled,Hyper-segmentation: fridge | near_me
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Fridge Technician,38.00,Enabled,Enabled,Hyper-segmentation: fridge | technician
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Fridge Not Cooling,42.00,Enabled,Enabled,Hyper-segmentation: fridge | not_cooling
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Fridge Not Freezing,42.00,Enabled,Enabled,Hyper-segmentation: fridge | not_freezing
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Fridge Not Working,42.00,Enabled,Enabled,Hyper-segmentation: fridge | not_working
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Fridge Leaking,42.00,Enabled,Enabled,Hyper-segmentation: fridge | leaking
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Fridge Warm,40.00,Enabled,Enabled,Hyper-segmentation: fridge | warm
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Refrigerator Repair,40.00,Enabled,Enabled,Hyper-segmentation: refrigerator | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Refrigerator Service,38.00,Enabled,Enabled,Hyper-segmentation: refrigerator | service
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Refrigerator Near Me,42.00,Enabled,Enabled,Hyper-segmentation: refrigerator | near_me
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Refrigerator Same Day,45.00,Enabled,Enabled,Hyper-segmentation: refrigerator | same_day
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Refrigerator Technician,39.00,Enabled,Enabled,Hyper-segmentation: refrigerator | technician
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Refrigerator Not Cooling,43.00,Enabled,Enabled,Hyper-segmentation: refrigerator | not_cooling
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Refrigerator Not Freezing,43.00,Enabled,Enabled,Hyper-segmentation: refrigerator | not_freezing
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Refrigerator Not Working,43.00,Enabled,Enabled,Hyper-segmentation: refrigerator | not_working
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Refrigerator Leaking,43.00,Enabled,Enabled,Hyper-segmentation: refrigerator | leaking
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Refrigerator Warm,41.00,Enabled,Enabled,Hyper-segmentation: refrigerator | warm
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Refrigerator Error Code,38.00,Enabled,Enabled,Hyper-segmentation: refrigerator | error_code
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Brand Repair,38.00,Enabled,Enabled,Hyper-segmentation: core | repair
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Brand Service,37.00,Enabled,Enabled,Hyper-segmentation: core | service
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Near Me,43.00,Enabled,Enabled,Hyper-segmentation: core | near_me
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Same Day,46.00,Enabled,Enabled,Hyper-segmentation: core | same_day
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Emergency,48.00,Enabled,Enabled,Hyper-segmentation: core | emergency
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Technician,39.00,Enabled,Enabled,Hyper-segmentation: core | technician
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Repairman,39.00,Enabled,Enabled,Hyper-segmentation: core | repairman
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Mechanic,38.00,Enabled,Enabled,Hyper-segmentation: core | mechanic
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Specialist,38.00,Enabled,Enabled,Hyper-segmentation: core | specialist
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Not Cooling,43.00,Enabled,Enabled,Hyper-segmentation: core | not_cooling
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Not Freezing,43.00,Enabled,Enabled,Hyper-segmentation: core | not_freezing
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Not Working,43.00,Enabled,Enabled,Hyper-segmentation: core | not_working
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Leaking,43.00,Enabled,Enabled,Hyper-segmentation: core | leaking
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Warm,40.00,Enabled,Enabled,Hyper-segmentation: core | warm
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Beeping Noise,38.00,Enabled,Enabled,Hyper-segmentation: core | beeping_noise
+SZ_Search_BayArea_Hyper_ExactPhrase_2026,Core Error Code,38.00,Enabled,Enabled,Hyper-segmentation: core | error_code

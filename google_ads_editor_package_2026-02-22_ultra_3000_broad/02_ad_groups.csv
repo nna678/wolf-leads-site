@@ -1,0 +1,55 @@
+Campaign,Ad Group,Max CPC,Campaign Status,Ad Group Status,Comment
+SZ_Search_BayArea_ULTRA3000_Broad,Core Brand Repair,35.00,Enabled,Enabled,Intent/Geo cluster: Core Brand Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Core Brand Service,33.00,Enabled,Enabled,Intent/Geo cluster: Core Brand Service
+SZ_Search_BayArea_ULTRA3000_Broad,Core Emergency,46.00,Enabled,Enabled,Intent/Geo cluster: Core Emergency
+SZ_Search_BayArea_ULTRA3000_Broad,Core Maintenance,33.00,Enabled,Enabled,Intent/Geo cluster: Core Maintenance
+SZ_Search_BayArea_ULTRA3000_Broad,Core Near Me,42.00,Enabled,Enabled,Intent/Geo cluster: Core Near Me
+SZ_Search_BayArea_ULTRA3000_Broad,Core Technician,35.00,Enabled,Enabled,Intent/Geo cluster: Core Technician
+SZ_Search_BayArea_ULTRA3000_Broad,Door Seal Repair,35.00,Enabled,Enabled,Intent/Geo cluster: Door Seal Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Freezer Repair,35.00,Enabled,Enabled,Intent/Geo cluster: Freezer Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Fridge Repair,35.00,Enabled,Enabled,Intent/Geo cluster: Fridge Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Alameda Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Alameda Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Belmont Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Belmont Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Berkeley Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Berkeley Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Burlingame Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Burlingame Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Campbell Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Campbell Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo CastroValley Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo CastroValley Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Concord Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Concord Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Cupertino Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Cupertino Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo DalyCity Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo DalyCity Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Emeryville Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Emeryville Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo FosterCity Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo FosterCity Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Fremont Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Fremont Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Hayward Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Hayward Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Livermore Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Livermore Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo LosAltos Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo LosAltos Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo LosGatos Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo LosGatos Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo MenloPark Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo MenloPark Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Millbrae Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Millbrae Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Milpitas Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Milpitas Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo MountainView Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo MountainView Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Novato Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Novato Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Oakland Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Oakland Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo PaloAlto Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo PaloAlto Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Pleasanton Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Pleasanton Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo RedwoodCity Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo RedwoodCity Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Richmond Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Richmond Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo SanBruno Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo SanBruno Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo SanFrancisco Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo SanFrancisco Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo SanJose Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo SanJose Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo SanLeandro Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo SanLeandro Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo SanMateo Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo SanMateo Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo SanRafael Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo SanRafael Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo SantaClara Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo SantaClara Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo Sunnyvale Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo Sunnyvale Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo UnionCity Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo UnionCity Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Geo WalnutCreek Repair,39.00,Enabled,Enabled,Intent/Geo cluster: Geo WalnutCreek Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Ice Maker Repair,40.00,Enabled,Enabled,Intent/Geo cluster: Ice Maker Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Noise Fan Compressor,35.00,Enabled,Enabled,Intent/Geo cluster: Noise Fan Compressor
+SZ_Search_BayArea_ULTRA3000_Broad,Not Cooling Issues,40.00,Enabled,Enabled,Intent/Geo cluster: Not Cooling Issues
+SZ_Search_BayArea_ULTRA3000_Broad,Not Freezing Issues,40.00,Enabled,Enabled,Intent/Geo cluster: Not Freezing Issues
+SZ_Search_BayArea_ULTRA3000_Broad,Not Working Issues,35.00,Enabled,Enabled,Intent/Geo cluster: Not Working Issues
+SZ_Search_BayArea_ULTRA3000_Broad,Refrigerator Repair,35.00,Enabled,Enabled,Intent/Geo cluster: Refrigerator Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Temperature Issues,35.00,Enabled,Enabled,Intent/Geo cluster: Temperature Issues
+SZ_Search_BayArea_ULTRA3000_Broad,Water Leak Repair,40.00,Enabled,Enabled,Intent/Geo cluster: Water Leak Repair
+SZ_Search_BayArea_ULTRA3000_Broad,Wine Cooler Repair,35.00,Enabled,Enabled,Intent/Geo cluster: Wine Cooler Repair

@@ -1,0 +1,26 @@
+Campaign,Ad Group,Max CPC,Campaign Status,Ad Group Status,Comment
+SZ_Search_BayArea_Core,Near Me Repair,40.00,Enabled,Enabled,Intent cluster: Sub-Zero Repair Near Me
+SZ_Search_BayArea_Core,Refrigerator Repair,36.00,Enabled,Enabled,Intent cluster: Sub-Zero Fridge Repair
+SZ_Search_BayArea_Core,Freezer Repair,36.00,Enabled,Enabled,Intent cluster: Sub-Zero Freezer Repair
+SZ_Search_BayArea_Core,Wine Cooler Repair,34.00,Enabled,Enabled,Intent cluster: Sub-Zero Wine Cooler Repair
+SZ_Search_BayArea_Core,Fridge Not Cooling,38.00,Enabled,Enabled,Intent cluster: Sub-Zero Not Cooling Repair
+SZ_Search_BayArea_Core,Fridge Warm Freezer Cold,38.00,Enabled,Enabled,Intent cluster: Fridge Warm Freezer Cold
+SZ_Search_BayArea_Core,Freezer Not Freezing,37.00,Enabled,Enabled,Intent cluster: Sub-Zero Freezer Not Freezing
+SZ_Search_BayArea_Core,Ice Maker Not Working,39.00,Enabled,Enabled,Intent cluster: Sub-Zero Ice Maker Repair
+SZ_Search_BayArea_Core,Ice Not Making,39.00,Enabled,Enabled,Intent cluster: Sub-Zero Not Making Ice
+SZ_Search_BayArea_Core,Water Dispenser Repair,34.00,Enabled,Enabled,Intent cluster: Water Dispenser Repair
+SZ_Search_BayArea_Core,Leaking Water Repair,37.00,Enabled,Enabled,Intent cluster: Sub-Zero Water Leak Repair
+SZ_Search_BayArea_Core,Door Gasket Repair,33.00,Enabled,Enabled,Intent cluster: Sub-Zero Door Seal Repair
+SZ_Search_BayArea_Core,Door Ajar Beeping,34.00,Enabled,Enabled,Intent cluster: Sub-Zero Door Issue Repair
+SZ_Search_BayArea_Core,Temperature Control,35.00,Enabled,Enabled,Intent cluster: Sub-Zero Temp Control Repair
+SZ_Search_BayArea_Core,Noise And Fan Repair,34.00,Enabled,Enabled,Intent cluster: Sub-Zero Noise Repair
+SZ_Search_BayArea_Core,Emergency Same Day,45.00,Enabled,Enabled,Intent cluster: Same-Day Sub-Zero Repair
+SZ_Search_BayArea_Core,Technician Request,34.00,Enabled,Enabled,Intent cluster: Sub-Zero Technician
+SZ_Search_BayArea_Core,Appliance Repair Service,33.00,Enabled,Enabled,Intent cluster: Sub-Zero Appliance Repair
+SZ_Search_BayArea_Core,Refrigerator Service,32.00,Enabled,Enabled,Intent cluster: Sub-Zero Fridge Service
+SZ_Search_BayArea_Core,Freezer Service,32.00,Enabled,Enabled,Intent cluster: Sub-Zero Freezer Service
+SZ_Search_BayArea_Core,Repair Cost Quote,31.00,Enabled,Enabled,Intent cluster: Sub-Zero Repair Estimate
+SZ_Search_BayArea_Core,San Francisco Repair,39.00,Enabled,Enabled,Intent cluster: Sub-Zero Repair San Francisco
+SZ_Search_BayArea_Core,San Jose Repair,39.00,Enabled,Enabled,Intent cluster: Sub-Zero Repair San Jose
+SZ_Search_BayArea_Core,Oakland Repair,38.00,Enabled,Enabled,Intent cluster: Sub-Zero Repair Oakland
+SZ_Search_BayArea_Core,Palo Alto Repair,38.00,Enabled,Enabled,Intent cluster: Sub-Zero Repair Palo Alto
