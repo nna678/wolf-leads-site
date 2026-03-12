@@ -9,8 +9,10 @@
       "accountId": "0",
       "containerId": "0",
       "name": "appliance-pros",
-      "publicId": "GTM-598X2WWM",
-      "usageContext": ["WEB"],
+      "publicId": "GTM-K3SH23J9",
+      "usageContext": [
+        "WEB"
+      ],
       "fingerprint": "0",
       "tagManagerUrl": "https://tagmanager.google.com/"
     },
@@ -20,25 +22,37 @@
         "name": "GA4 Configuration",
         "type": "gaawc",
         "parameter": [
-          { "type": "TEMPLATE", "key": "measurementId", "value": "G-Q8FR72HQRJ" },
-          { "type": "BOOLEAN", "key": "sendPageView", "value": "true" }
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "G-1F7KY5VD1S"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendPageView",
+            "value": "true"
+          }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["2147479553"]
+        "firingTriggerId": [
+          "2147479553"
+        ]
       },
       {
         "tagId": "2",
-        "name": "Yandex Metrika 107093189",
+        "name": "Yandex Metrika 91715605",
         "type": "html",
         "parameter": [
           {
             "type": "TEMPLATE",
             "key": "html",
-            "value": "<script type=\"text/javascript\">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107093189','ym');ym(107093189,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:\"dataLayer\",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});</script><noscript><div><img src=\"https://mc.yandex.ru/watch/107093189\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>"
+            "value": "<script type=\"text/javascript\">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');ym(91715605, 'init', {webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});</script><noscript><div><img src=\"https://mc.yandex.ru/watch/91715605\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>"
           }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["2147479553"]
+        "firingTriggerId": [
+          "2147479553"
+        ]
       },
       {
         "tagId": "3",
@@ -48,11 +62,13 @@
           {
             "type": "TEMPLATE",
             "key": "html",
-            "value": "<script>(function(w,c){(w[c]=w[c]||[]).push(function(){new zTracker({\"id\":\"d69ccd1772be4cadd51856decfab40d214042\",\"metrics\":{\"metrika\":\"107093189\",\"ga\":\"G-Q8FR72HQRJ\"}});});})(window,\"zTrackerCallbacks\");</script><script async src=\"https://my.zadarma.com/js/ct_phone.min.js\"></script>"
+            "value": "<script>(function(w, c){(w[c]=w[c]||[]).push(function(){new zTracker({\"id\":\"bc0dc6a06b4012daf08ccaff3a40a9cc14642\",\"metrics\":{\"metrika\":\"91715605\",\"ga\":\"G-1F7KY5VD1S\"}});});})(window, \"zTrackerCallbacks\");</script><script async src=\"https://my.zadarma.com/js/ct_phone.min.js\"></script>"
           }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["2147479553"]
+        "firingTriggerId": [
+          "2147479553"
+        ]
       },
       {
         "tagId": "4",
@@ -71,15 +87,31 @@
               {
                 "type": "MAP",
                 "map": [
-                  { "type": "TEMPLATE", "key": "name", "value": "lead_id" },
-                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - lead_id}}" }
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "lead_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - lead_id}}"
+                  }
                 ]
               },
               {
                 "type": "MAP",
                 "map": [
-                  { "type": "TEMPLATE", "key": "name", "value": "form_time_ms" },
-                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - form_time_ms}}" }
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "form_time_ms"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - form_time_ms}}"
+                  }
                 ]
               }
             ]
@@ -91,10 +123,16 @@
           }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["2"],
+        "firingTriggerId": [
+          "2"
+        ],
         "tagFiringOption": "ONCE_PER_EVENT",
-        "monitoringMetadata": { "type": "MAP" },
-        "consentSettings": { "consentStatus": "NOT_SET" }
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
       },
       {
         "tagId": "5",
@@ -113,10 +151,16 @@
           }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["3"],
+        "firingTriggerId": [
+          "3"
+        ],
         "tagFiringOption": "ONCE_PER_EVENT",
-        "monitoringMetadata": { "type": "MAP" },
-        "consentSettings": { "consentStatus": "NOT_SET" }
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
       },
       {
         "tagId": "6",
@@ -135,8 +179,16 @@
               {
                 "type": "MAP",
                 "map": [
-                  { "type": "TEMPLATE", "key": "name", "value": "percent" },
-                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - percent}}" }
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "percent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - percent}}"
+                  }
                 ]
               }
             ]
@@ -148,10 +200,16 @@
           }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["4"],
+        "firingTriggerId": [
+          "4"
+        ],
         "tagFiringOption": "ONCE_PER_EVENT",
-        "monitoringMetadata": { "type": "MAP" },
-        "consentSettings": { "consentStatus": "NOT_SET" }
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
       },
       {
         "tagId": "7",
@@ -170,8 +228,16 @@
               {
                 "type": "MAP",
                 "map": [
-                  { "type": "TEMPLATE", "key": "name", "value": "lead_id" },
-                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - lead_id}}" }
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "lead_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - lead_id}}"
+                  }
                 ]
               }
             ]
@@ -183,10 +249,16 @@
           }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["5"],
+        "firingTriggerId": [
+          "5"
+        ],
         "tagFiringOption": "ONCE_PER_EVENT",
-        "monitoringMetadata": { "type": "MAP" },
-        "consentSettings": { "consentStatus": "NOT_SET" }
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
       },
       {
         "tagId": "8",
@@ -205,8 +277,16 @@
               {
                 "type": "MAP",
                 "map": [
-                  { "type": "TEMPLATE", "key": "name", "value": "lead_id" },
-                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - lead_id}}" }
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "lead_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - lead_id}}"
+                  }
                 ]
               }
             ]
@@ -218,10 +298,16 @@
           }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["6"],
+        "firingTriggerId": [
+          "6"
+        ],
         "tagFiringOption": "ONCE_PER_EVENT",
-        "monitoringMetadata": { "type": "MAP" },
-        "consentSettings": { "consentStatus": "NOT_SET" }
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
       },
       {
         "tagId": "9",
@@ -240,8 +326,16 @@
               {
                 "type": "MAP",
                 "map": [
-                  { "type": "TEMPLATE", "key": "name", "value": "cta_label" },
-                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - event_label}}" }
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "cta_label"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - event_label}}"
+                  }
                 ]
               }
             ]
@@ -253,10 +347,16 @@
           }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["7"],
+        "firingTriggerId": [
+          "7"
+        ],
         "tagFiringOption": "ONCE_PER_EVENT",
-        "monitoringMetadata": { "type": "MAP" },
-        "consentSettings": { "consentStatus": "NOT_SET" }
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
       },
       {
         "tagId": "10",
@@ -275,10 +375,16 @@
           }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["8"],
+        "firingTriggerId": [
+          "8"
+        ],
         "tagFiringOption": "ONCE_PER_EVENT",
-        "monitoringMetadata": { "type": "MAP" },
-        "consentSettings": { "consentStatus": "NOT_SET" }
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
       },
       {
         "tagId": "11",
@@ -297,8 +403,16 @@
               {
                 "type": "MAP",
                 "map": [
-                  { "type": "TEMPLATE", "key": "name", "value": "selected_window" },
-                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - event_label}}" }
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "selected_window"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - event_label}}"
+                  }
                 ]
               }
             ]
@@ -310,10 +424,16 @@
           }
         ],
         "fingerprint": "0",
-        "firingTriggerId": ["9"],
+        "firingTriggerId": [
+          "9"
+        ],
         "tagFiringOption": "ONCE_PER_EVENT",
-        "monitoringMetadata": { "type": "MAP" },
-        "consentSettings": { "consentStatus": "NOT_SET" }
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
       }
     ],
     "trigger": [
@@ -332,8 +452,16 @@
           {
             "type": "EQUALS",
             "parameter": [
-              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
-              { "type": "TEMPLATE", "key": "arg1", "value": "dl_form_submit" }
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "dl_form_submit"
+              }
             ]
           }
         ],
@@ -347,8 +475,16 @@
           {
             "type": "EQUALS",
             "parameter": [
-              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
-              { "type": "TEMPLATE", "key": "arg1", "value": "dl_phone_click" }
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "dl_phone_click"
+              }
             ]
           }
         ],
@@ -362,8 +498,16 @@
           {
             "type": "EQUALS",
             "parameter": [
-              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
-              { "type": "TEMPLATE", "key": "arg1", "value": "dl_scroll_depth" }
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "dl_scroll_depth"
+              }
             ]
           }
         ],
@@ -377,8 +521,16 @@
           {
             "type": "EQUALS",
             "parameter": [
-              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
-              { "type": "TEMPLATE", "key": "arg1", "value": "form_submit_attempt" }
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "form_submit_attempt"
+              }
             ]
           }
         ],
@@ -392,8 +544,16 @@
           {
             "type": "EQUALS",
             "parameter": [
-              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
-              { "type": "TEMPLATE", "key": "arg1", "value": "form_submit_error" }
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "form_submit_error"
+              }
             ]
           }
         ],
@@ -407,8 +567,16 @@
           {
             "type": "EQUALS",
             "parameter": [
-              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
-              { "type": "TEMPLATE", "key": "arg1", "value": "dl_book_service_click" }
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "dl_book_service_click"
+              }
             ]
           }
         ],
@@ -422,8 +590,16 @@
           {
             "type": "EQUALS",
             "parameter": [
-              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
-              { "type": "TEMPLATE", "key": "arg1", "value": "dl_form_start" }
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "dl_form_start"
+              }
             ]
           }
         ],
@@ -437,8 +613,16 @@
           {
             "type": "EQUALS",
             "parameter": [
-              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
-              { "type": "TEMPLATE", "key": "arg1", "value": "dl_time_window_selected" }
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "dl_time_window_selected"
+              }
             ]
           }
         ],
@@ -451,7 +635,11 @@
         "name": "DLV - lead_id",
         "type": "v",
         "parameter": [
-          { "type": "TEMPLATE", "key": "name", "value": "lead_id" }
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "lead_id"
+          }
         ],
         "fingerprint": "0"
       },
@@ -460,7 +648,11 @@
         "name": "DLV - form_time_ms",
         "type": "v",
         "parameter": [
-          { "type": "TEMPLATE", "key": "name", "value": "form_time_ms" }
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "form_time_ms"
+          }
         ],
         "fingerprint": "0"
       },
@@ -469,7 +661,11 @@
         "name": "DLV - percent",
         "type": "v",
         "parameter": [
-          { "type": "TEMPLATE", "key": "name", "value": "percent" }
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "percent"
+          }
         ],
         "fingerprint": "0"
       },
@@ -478,7 +674,11 @@
         "name": "DLV - event_label",
         "type": "v",
         "parameter": [
-          { "type": "TEMPLATE", "key": "name", "value": "event_label" }
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "event_label"
+          }
         ],
         "fingerprint": "0"
       }
