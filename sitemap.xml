@@ -1,39 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://appliancepros.netlify.app/</loc>
+    <loc>https://my-appliance-repair.pro/</loc>
     <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://appliancepros.netlify.app/subzero/</loc>
+    <loc>https://my-appliance-repair.pro/subzero/</loc>
     <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://appliancepros.netlify.app/wolf/</loc>
+    <loc>https://my-appliance-repair.pro/wolf/</loc>
     <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://appliancepros.netlify.app/services/</loc>
+    <loc>https://my-appliance-repair.pro/services/</loc>
     <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://appliancepros.netlify.app/brands/subzero/</loc>
+    <loc>https://my-appliance-repair.pro/brands/subzero/</loc>
     <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://appliancepros.netlify.app/brands/wolf/</loc>
+    <loc>https://my-appliance-repair.pro/brands/wolf/</loc>
     <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://my-appliance-repair.pro/privacy-policy/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://my-appliance-repair.pro/terms-of-service/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://appliancepros.netlify.app/sitemap.xml
+Sitemap: https://my-appliance-repair.pro/sitemap.xml
