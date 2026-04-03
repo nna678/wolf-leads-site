@@ -1,0 +1,8 @@
+Campaign,Header,Values,Campaign Status,Status,Comment
+SZ_Search_BayArea_Hyper_ExactPhrase_2026_v3,Service catalog,Refrigerator Repair;Freezer Repair;Ice Maker Repair;Wine Cooler Repair,Enabled,Enabled,Structured snippet set 1
+SZ_Search_BayArea_Hyper_ExactPhrase_2026_v3,Types,Same-Day Service;Emergency Repair;Technician Visit;Diagnostic Service,Enabled,Enabled,Structured snippet set 2
+SZ_Search_BayArea_Hyper_ExactPhrase_2026_v3,Neighborhoods,San Francisco;San Jose;Oakland;Palo Alto,Enabled,Enabled,Structured snippet v3
+SZ_Search_BayArea_Hyper_ExactPhrase_2026_v3,Models,Built-In Fridge;French Door;Ice Maker;Wine Cooler,Enabled,Enabled,Structured snippet v3
+SZ_Search_BayArea_Hyper_ExactPhrase_2026_v3,Brands,Sub-Zero;Wolf;Cove;Built-In Refrigeration,Enabled,Enabled,Structured snippet v3+ quality
+SZ_Search_BayArea_Hyper_ExactPhrase_2026_v3,Types,Same-Day Repair;Emergency Repair;Service Call;Diagnostic Visit,Enabled,Enabled,Structured snippet v3+ quality
+SZ_Search_BayArea_Hyper_ExactPhrase_2026_v3,Neighborhoods,Los Gatos;Palo Alto;San Jose;San Francisco,Enabled,Enabled,Structured snippet v3+ quality
